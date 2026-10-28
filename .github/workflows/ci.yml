@@ -8,11 +8,15 @@ jobs:
     timeout-minutes: 25
     env:
       PYTHONUTF8: '1'
-      GMSH_CI_EVIDENCE: ${{ runner.temp }}/gmsh-evidence
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+      - name: Prepare evidence directory
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/gmsh-evidence"
+          printf 'GMSH_CI_EVIDENCE=%s\n' "$RUNNER_TEMP/gmsh-evidence" >> "$GITHUB_ENV"
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24.11.0'
