@@ -73,7 +73,7 @@ jobs:
         run: |
           set -euo pipefail
           python tools/verify-reference.py --skip-benchmark --evidence "$GMSH_CI_EVIDENCE/reference.json"
-          python tools/verify-boundary.py --skip-benchmark --evidence "$GMSH_CI_EVIDENCE/boundary.json"
+          python tools/verify-boundary.py --evidence "$GMSH_CI_EVIDENCE/boundary.json"
           python tools/verify-facet-cycles.py
           cp evidence/facet-cycles-reference.json "$GMSH_CI_EVIDENCE/facet-cycles.json"
           python tools/verify-public-t1.py --evidence "$GMSH_CI_EVIDENCE/public-t1.json"
