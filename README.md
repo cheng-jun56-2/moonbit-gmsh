@@ -91,7 +91,7 @@ node tools/gmsh.mjs COMMAND INPUT [OPTIONS.json] [OUTPUT]
 node tools/gmsh.mjs create OPTIONS.json OUTPUT
 ```
 
-OPTIONS 是 UTF-8 JSON **文件路径**，不是内联 JSON。
+OPTIONS 是 UTF-8 JSON **文件路径**，不是内联 JSON。 CLI与单帧/多帧VTK文件例程在解码前校验外部JSON选项字节；非法UTF-8退出2且不创建输出，合法Unicode（包括正确编码的U+FFFD）保持原样。原有文件预算和禁止覆盖规则保持。
 可写命令：`copy convert subset physical compact boundary-msh select-fields`。报告命令：
 `inspect dump validate quality topology components boundary coverage vtk obj`，另有`field-frames`、`surface-field-coverage`、`integrate-surface-normal-field`、`vtk-field`和`vtk-fields`。两个字段VTK命令返回含文本/原头/损失的JSON，文件配对例程见上方指南。
 未指定 OUTPUT 时报告到 stdout；VTK/OBJ 输出文本，其余输出 JSON。

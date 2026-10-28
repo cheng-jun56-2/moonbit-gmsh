@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
+import {isUtf8} from 'node:buffer';
 import {report,transform,new_file} from '../_build/js/release/build/cmd/bridge/bridge.js';
 const usage=`Usage: node tools/gmsh.mjs COMMAND INPUT [OPTIONS.json] [OUTPUT]
        node tools/gmsh.mjs create OPTIONS.json OUTPUT
@@ -30,7 +31,10 @@ function read(file,limit) {
   } finally {fs.closeSync(fd);}
 }
 function options(file) {
-  const o=file?JSON.parse(read(file,8_000_000).toString('utf8')):{};
+  const bytes=file?read(file,8_000_000):null;
+  // Check raw bytes before replacement decoding; a correctly encoded U+FFFD is legal.
+  if(bytes&&!isUtf8(bytes)) throw new Error('options file must contain valid UTF-8');
+  const o=bytes?JSON.parse(bytes.toString('utf8')):{};
   if(!o||typeof o!=='object'||Array.isArray(o)) throw new Error('options must be an object');
   return o;
 }

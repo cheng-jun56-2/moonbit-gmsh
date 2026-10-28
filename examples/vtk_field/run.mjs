@@ -1,5 +1,6 @@
 // IO only: MoonBit decides data order, IDs, geometry and every omission.
 import fs from 'node:fs';
+import {isUtf8} from 'node:buffer';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {report} from '../../_build/js/release/build/cmd/bridge/bridge.js';
@@ -8,6 +9,7 @@ try {
   if(!input||!optionsFile||!destination||extra.length)throw new Error('Usage: node examples/vtk_field/run.mjs INPUT.msh OPTIONS.json NEW_DIRECTORY');
   if(fs.existsSync(destination))throw new Error('destination already exists');
   const bytes=fs.readFileSync(input),optionsBytes=fs.readFileSync(optionsFile);
+  if(!isUtf8(optionsBytes))throw new Error('options file must contain valid UTF-8');
   const options=JSON.parse(optionsBytes.toString('utf8'));
   if(!options||typeof options!=='object'||Array.isArray(options))throw new Error('options must be an object');
   const {text,...audit}=JSON.parse(report(bytes,JSON.stringify({...options,command:'vtk-field'})));
