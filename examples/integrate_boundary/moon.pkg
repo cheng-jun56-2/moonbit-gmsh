@@ -1,0 +1,5 @@
+import {
+  "cheng-jun56/gmsh",
+}
+
+pkgtype(kind: "executable")

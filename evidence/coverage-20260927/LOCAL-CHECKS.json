@@ -1,0 +1,117 @@
+{
+  "utc": "2026-09-26T19:57:41.957516+00:00",
+  "version": "0.2.0",
+  "checks": [
+    {
+      "name": "format",
+      "command": [
+        "moon",
+        "fmt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "api",
+      "command": [
+        "moon",
+        "info"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "check",
+      "command": [
+        "moon",
+        "check",
+        "--target",
+        "all"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "js",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "wasm",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "wasm-gc"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "command": [
+        "moon",
+        "build",
+        "--target",
+        "js",
+        "--release"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli",
+      "command": [
+        "node",
+        "tools/check-cli.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "boundary",
+      "command": [
+        "C:\\Users\\uiwcv\\Documents\\Codex\\2026-09-10\\ban\\work\\five-reference312\\Scripts\\python.exe",
+        "tools/verify-boundary.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "public-t1",
+      "command": [
+        "C:\\Users\\uiwcv\\Documents\\Codex\\2026-09-10\\ban\\work\\five-reference312\\Scripts\\python.exe",
+        "tools/verify-public-t1.py",
+        "--evidence",
+        "C:\\Users\\uiwcv\\Documents\\Codex\\2026-09-10\\ban\\outputs\\repos\\moonbit-gmsh\\evidence\\coverage-20260927\\public-t1.json"
+      ],
+      "exitCode": 0,
+      "previousInvocation": true
+    },
+    {
+      "name": "example",
+      "command": [
+        "node",
+        "examples/run-public-coverage.mjs",
+        "C:\\Users\\uiwcv\\AppData\\Local\\Temp\\gmsh-public-example-h8o3ot9c\\export"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "sourceHashPolicy": "LF-normalized text",
+  "sources": {
+    "coverage.mbt": "45f102d85f77d887373a9fb1fd9250212a385a80d7ca47d82f480515e74b3cc5",
+    "boundary.mbt": "6f07d005f841932ac7fa8912198d1ee22a6c7375cc567ede90e0972617d87df5",
+    "boundary_test.mbt": "8545f897794020a0388a02f3ee52b373bb4e5051cd4ed28efac9c88b0bc8e357",
+    "cmd/bridge/main.mbt": "a590dd1704bbfb6a3681f4594a6a17657b7bf2e00518245d78830a863ae95c18",
+    "tools/verify-public-t1.py": "910a7bd86248e3a863a663d82257d6b54ee502dbd910ca1fb1face6247236223",
+    "tools/gmsh.mjs": "bd94468a26c05b51fb74247fd3997a79fdd9d8691e6b750d9426d06bb771966b",
+    "examples/run-public-coverage.mjs": "fd219b0ccdbba950f2e2724b4eb8a69e0ce6b4c390a9b7fb51251eb4093452cb",
+    "pkg.generated.mbti": "a76ec6808c0fbbc27aa5e5fe76a0975c191a777d5d5bb58bc0a0f0a81cef9ad3",
+    "moon.mod": "4ca9b563503fc29c3dcdc39a695b6ca44d120b336691f3ad6de214007ff5e35e"
+  },
+  "bridgeSha256": "acfa5635c5145779126241ebe4b7d1ae36f92ed4776a1344d8fdc08de2d594e8",
+  "limits": [
+    "upstream tutorial, not engineering customer",
+    "no FE correctness certification",
+    "local checks, remote CI not run"
+  ]
+}

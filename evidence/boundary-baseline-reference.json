@@ -1,0 +1,66 @@
+{
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "meshio": "5.3.5",
+  "numpy": "2.5.3",
+  "cases": 586,
+  "checks": 2053,
+  "seconds": 4.142371300000377,
+  "benchmarks": [
+    {
+      "nodes": 81,
+      "elements": 128,
+      "bytes": 6998,
+      "write_seconds": 0.007411799997498747,
+      "validate_seconds": 0.007249399997817818,
+      "topology_seconds": 0.004353899999841815,
+      "synthetic": true
+    },
+    {
+      "nodes": 4225,
+      "elements": 8192,
+      "bytes": 397654,
+      "write_seconds": 0.2871846000016376,
+      "validate_seconds": 0.2502996000002895,
+      "topology_seconds": 0.23382249999849591,
+      "synthetic": true
+    }
+  ],
+  "source_sha256": {
+    "anisotropic_geometry_test.mbt": "e3dd8427daf4102ef56f633f15db926467df32528593d57492ee08bb4772457b",
+    "boundaries_wbtest.mbt": "069e706e7c2ec765211a61654db88c9e209002c4a9f80fa5c9b00a895de18602",
+    "boundary.mbt": "6f07d005f841932ac7fa8912198d1ee22a6c7375cc567ede90e0972617d87df5",
+    "boundary_test.mbt": "3538ea54061e11bb15c7ee9a42ba8e96dd750f94c05a775cf8c8dcca1f50087a",
+    "cmd/bridge/main.mbt": "64bcdf3d04978fc144d6249ae58dea6836f5d61205285e00053e950d612f96d7",
+    "cmd/bridge/moon.pkg": "6023f52a09bb885b81f62f86080744660a968054b08bff1e5ea2032d49738131",
+    "codec.mbt": "7dd407508984ddf91df97c18570f358293cc94ab1459d0fe58696a43c72c1402",
+    "codec_wbtest.mbt": "857d0082b2f90e1d6682b614bf402540b9559d9bbd1dbfb11d14ce4b237922f9",
+    "export.mbt": "0269892b8ae9ee1b2464c09d8651b5eaf6dd2ee36e5453fe97d7e04a5b61f28e",
+    "geometry.mbt": "7f41976a563686ff44343514892ed06d760358c6c9b4df4ce64eef677509a9e2",
+    "model.mbt": "82aa53ae5e81d13455e67f751600626c2976f85ddb51923f2155380575291389",
+    "moon.mod": "9c055407a24a9ddb27a9e22a138ef56548b0441165b7ed466522cecf900fc014",
+    "moon.pkg": "e619f946c41e3dc762a667341c8dfb007e454bbcf45f87e0dc53fd20c45b2c3c",
+    "operations.mbt": "84749df875ac9cc3a33ff7198776fe47ee9977e4eac7c19a6612d96f889e1b89",
+    "operations_wbtest.mbt": "26da8dac7674454b7c8c4819cd6ca410178112c056b0ffe7eec7e5d2935d5fc7",
+    "scaled_geometry.mbt": "e1b5032fa52779ace858c4db9b85f447aa9c2f76aca6076b1bbf5463ead132ec",
+    "tools/check-cli.mjs": "c575210a9a44a76b67d92a3483d65401b38be535c089f018a8a341bb46c51bbb",
+    "tools/gmsh.mjs": "735482033a50ce5accfdb2a5595386887811250583e2d461e263cbe45850fd8d",
+    "tools/oracle-host.mjs": "e3bc1294a61e5bedcccc13ba666135e394cc9de6e156c403a263b91ba0eb7539",
+    "tools/requirements.txt": "f1b1142a8f657f8707de0459087a09cef663e259b599b135187b0d669a24c424",
+    "tools/verify-reference.py": "99a84b98fa462b52cd4ed397e6f8d03b31e73eb6e1efac11a1ee2d1c39b3fb93",
+    "writer.mbt": "c175e26899133bc30130a4f1d67b17d648bdb09ae67ca100dea5a15964aa271d"
+  },
+  "scope": [
+    "meshio bidirectional 17 kinds x 2 versions x ASCII/binary",
+    "wedge15/pyramid13 independent struct bidirectional, not meshio",
+    "independent struct sparse BE/LE size_t32/64 parametric frames",
+    "NumPy geometry, meshio VTK/OBJ, malformed/truncated inputs"
+  ],
+  "extreme_geometry_reference": "100-digit Decimal for anisotropic/subnormal simplices; explicit unrepresentable rejection",
+  "limitations": [
+    "meshio does not independently validate parametric nodes or sparse binary fields",
+    "meshio 5.3.5 omits wedge15/pyramid13 in CellBlock registry; struct used",
+    "NumPy legacy=1.25 print setting required for meshio ASCII scalar repr",
+    "geometry benchmark is synthetic, Windows JS only; no remote CI"
+  ]
+}

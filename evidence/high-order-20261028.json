@@ -1,0 +1,219 @@
+{
+  "gmsh": "4.15.2",
+  "meshio": "5.3.5",
+  "numpy": "2.5.3",
+  "python": "3.12.14",
+  "cases": [
+    {
+      "kind": 8,
+      "geometry": "reference",
+      "samples": 2
+    },
+    {
+      "kind": 8,
+      "geometry": "curved",
+      "samples": 2
+    },
+    {
+      "kind": 8,
+      "geometry": "affine",
+      "samples": 2
+    },
+    {
+      "kind": 8,
+      "geometry": "degenerate",
+      "samples": 2
+    },
+    {
+      "kind": 8,
+      "geometry": "inverted",
+      "samples": 2
+    },
+    {
+      "kind": 9,
+      "geometry": "reference",
+      "samples": 3
+    },
+    {
+      "kind": 9,
+      "geometry": "curved",
+      "samples": 3
+    },
+    {
+      "kind": 9,
+      "geometry": "affine",
+      "samples": 3
+    },
+    {
+      "kind": 9,
+      "geometry": "degenerate",
+      "samples": 3
+    },
+    {
+      "kind": 9,
+      "geometry": "inverted",
+      "samples": 3
+    },
+    {
+      "kind": 10,
+      "geometry": "reference",
+      "samples": 4
+    },
+    {
+      "kind": 10,
+      "geometry": "curved",
+      "samples": 4
+    },
+    {
+      "kind": 10,
+      "geometry": "affine",
+      "samples": 4
+    },
+    {
+      "kind": 10,
+      "geometry": "degenerate",
+      "samples": 4
+    },
+    {
+      "kind": 10,
+      "geometry": "inverted",
+      "samples": 4
+    },
+    {
+      "kind": 11,
+      "geometry": "reference",
+      "samples": 4
+    },
+    {
+      "kind": 11,
+      "geometry": "curved",
+      "samples": 4
+    },
+    {
+      "kind": 11,
+      "geometry": "affine",
+      "samples": 4
+    },
+    {
+      "kind": 11,
+      "geometry": "degenerate",
+      "samples": 4
+    },
+    {
+      "kind": 11,
+      "geometry": "inverted",
+      "samples": 4
+    },
+    {
+      "kind": 12,
+      "geometry": "reference",
+      "samples": 8
+    },
+    {
+      "kind": 12,
+      "geometry": "curved",
+      "samples": 8
+    },
+    {
+      "kind": 12,
+      "geometry": "affine",
+      "samples": 8
+    },
+    {
+      "kind": 12,
+      "geometry": "degenerate",
+      "samples": 8
+    },
+    {
+      "kind": 12,
+      "geometry": "inverted",
+      "samples": 8
+    },
+    {
+      "kind": 16,
+      "geometry": "reference",
+      "samples": 4
+    },
+    {
+      "kind": 16,
+      "geometry": "curved",
+      "samples": 4
+    },
+    {
+      "kind": 16,
+      "geometry": "affine",
+      "samples": 4
+    },
+    {
+      "kind": 16,
+      "geometry": "degenerate",
+      "samples": 4
+    },
+    {
+      "kind": 16,
+      "geometry": "inverted",
+      "samples": 4
+    },
+    {
+      "kind": 17,
+      "geometry": "reference",
+      "samples": 8
+    },
+    {
+      "kind": 17,
+      "geometry": "curved",
+      "samples": 8
+    },
+    {
+      "kind": 17,
+      "geometry": "affine",
+      "samples": 8
+    },
+    {
+      "kind": 17,
+      "geometry": "degenerate",
+      "samples": 8
+    },
+    {
+      "kind": 17,
+      "geometry": "inverted",
+      "samples": 8
+    }
+  ],
+  "requests": 150,
+  "checks": 1641,
+  "maximum_absolute_difference": 3.1530333899354446e-14,
+  "tolerance": {
+    "atol": 1e-11,
+    "rtol": 1e-11
+  },
+  "scope": "Gmsh same-point derivatives/face nodes, meshio export readback, provenance/fields, analytic counterexamples and required refusals; no global validity certification",
+  "source_sha256": {
+    "anisotropic_geometry_test.mbt": "e3dd8427daf4102ef56f633f15db926467df32528593d57492ee08bb4772457b",
+    "audited_export.mbt": "c11f2bb5edaa89bdf6f2d0383e31715370d4353f1f3b7fdc58aa62e2f5919dc4",
+    "boundaries_wbtest.mbt": "069e706e7c2ec765211a61654db88c9e209002c4a9f80fa5c9b00a895de18602",
+    "boundary.mbt": "0dc3681d90a350e5c38cf5c5047b3085031a0cecef62ecfbac76067b303f7bf0",
+    "boundary_test.mbt": "bc9583fac82bd4b4283d98b879a935f6e666b714fbdc9b7ac7b1f5bc1d113d12",
+    "codec.mbt": "7dd407508984ddf91df97c18570f358293cc94ab1459d0fe58696a43c72c1402",
+    "codec_wbtest.mbt": "857d0082b2f90e1d6682b614bf402540b9559d9bbd1dbfb11d14ce4b237922f9",
+    "corner_metrics.mbt": "7d13be2ce7bdb46aae484cfa304074385a0baaeb698d24551ee22d91e12c3db1",
+    "coverage.mbt": "45f102d85f77d887373a9fb1fd9250212a385a80d7ca47d82f480515e74b3cc5",
+    "export.mbt": "e8cd75039db8c900582271eed6ec150107d81d3aff511686ff3c727504cde53e",
+    "geometry.mbt": "7f41976a563686ff44343514892ed06d760358c6c9b4df4ce64eef677509a9e2",
+    "high_order.mbt": "6b0a9ad5b3c40803bc505dd62739d21153add748c295833e8ff56ca777eec8ed",
+    "high_order_reference_test.mbt": "273e7df185ef8419a7b3d095160caf411390b8927044e302a551b5c3437f7f77",
+    "high_order_test.mbt": "d2ef75a17f8ecb88ca71e0bfc302d4d6a44ef0a2cd83fd54cafc0613b26c78e4",
+    "model.mbt": "82aa53ae5e81d13455e67f751600626c2976f85ddb51923f2155380575291389",
+    "operations.mbt": "f1964fee378921f9940e44410f84109bec6bf58ff43767a9bf739b6b1108b041",
+    "operations_wbtest.mbt": "26da8dac7674454b7c8c4819cd6ca410178112c056b0ffe7eec7e5d2935d5fc7",
+    "orientation.mbt": "1cdfc0a0d3b07f040c68617203abe0c6c2fbb66ad3b52c09ec99c5e95b96b295",
+    "scaled_geometry.mbt": "e1b5032fa52779ace858c4db9b85f447aa9c2f76aca6076b1bbf5463ead132ec",
+    "vtk_order.mbt": "2dce8a4bc732dbbc6f70d511e2d27890c28ed0e27fa92f1e2e00b5ebd5814dd6",
+    "writer.mbt": "c175e26899133bc30130a4f1d67b17d648bdb09ae67ca100dea5a15964aa271d",
+    "cmd\\bridge\\main.mbt": "f4cd31d9e7b0710e49e73cdd75068a6a9d0f1387b8f40e041f3907745eb31edf",
+    "examples\\curved_boundary\\main.mbt": "be42ba596566879ccbd13b0bf296df3d5511e5206c8c30fe2984adf9219c19c3",
+    "examples\\extract_boundary\\main.mbt": "245320c2210c51c6220ef56eb0ca736ffd96420f90e9e6d9a510cc6ab72493e8"
+  },
+  "data_license": "self-authored numeric inputs; reference tools external, not MIT-relicensed",
+  "output_dir": "D:\\CodexLocal\\ban\\work\\isolated14-20261027\\reports\\gmsh\\implementation-03\\work\\high-order-reference"
+}

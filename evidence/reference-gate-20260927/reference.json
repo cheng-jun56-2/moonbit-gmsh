@@ -1,0 +1,50 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "meshio": "5.3.5",
+  "numpy": "2.5.3",
+  "cases": 580,
+  "checks": 2041,
+  "seconds": 1.0165565999923274,
+  "benchmarks": [],
+  "source_sha256": {
+    "anisotropic_geometry_test.mbt": "e3dd8427daf4102ef56f633f15db926467df32528593d57492ee08bb4772457b",
+    "boundaries_wbtest.mbt": "069e706e7c2ec765211a61654db88c9e209002c4a9f80fa5c9b00a895de18602",
+    "boundary.mbt": "6f07d005f841932ac7fa8912198d1ee22a6c7375cc567ede90e0972617d87df5",
+    "boundary_test.mbt": "8545f897794020a0388a02f3ee52b373bb4e5051cd4ed28efac9c88b0bc8e357",
+    "cmd/bridge/main.mbt": "a590dd1704bbfb6a3681f4594a6a17657b7bf2e00518245d78830a863ae95c18",
+    "cmd/bridge/moon.pkg": "6023f52a09bb885b81f62f86080744660a968054b08bff1e5ea2032d49738131",
+    "codec.mbt": "7dd407508984ddf91df97c18570f358293cc94ab1459d0fe58696a43c72c1402",
+    "codec_wbtest.mbt": "857d0082b2f90e1d6682b614bf402540b9559d9bbd1dbfb11d14ce4b237922f9",
+    "coverage.mbt": "45f102d85f77d887373a9fb1fd9250212a385a80d7ca47d82f480515e74b3cc5",
+    "export.mbt": "194c11e9eb9cea5541567d4c7a5c18ed0fb595293d538165f0ff67212b698104",
+    "geometry.mbt": "7f41976a563686ff44343514892ed06d760358c6c9b4df4ce64eef677509a9e2",
+    "model.mbt": "82aa53ae5e81d13455e67f751600626c2976f85ddb51923f2155380575291389",
+    "moon.mod": "4ca9b563503fc29c3dcdc39a695b6ca44d120b336691f3ad6de214007ff5e35e",
+    "moon.pkg": "e619f946c41e3dc762a667341c8dfb007e454bbcf45f87e0dc53fd20c45b2c3c",
+    "operations.mbt": "515f30a0c33940304595f670d4fa4650ceee8d55809b9bb89e8019b034736c27",
+    "operations_wbtest.mbt": "26da8dac7674454b7c8c4819cd6ca410178112c056b0ffe7eec7e5d2935d5fc7",
+    "scaled_geometry.mbt": "e1b5032fa52779ace858c4db9b85f447aa9c2f76aca6076b1bbf5463ead132ec",
+    "tools/check-cli.mjs": "c575210a9a44a76b67d92a3483d65401b38be535c089f018a8a341bb46c51bbb",
+    "tools/gmsh.mjs": "bd94468a26c05b51fb74247fd3997a79fdd9d8691e6b750d9426d06bb771966b",
+    "tools/oracle-host.mjs": "e3bc1294a61e5bedcccc13ba666135e394cc9de6e156c403a263b91ba0eb7539",
+    "tools/requirements.txt": "f1b1142a8f657f8707de0459087a09cef663e259b599b135187b0d669a24c424",
+    "tools/verify-reference.py": "1ae1e108cb92a58197598877d8af014da02e0947399761ae1e68e273bd206de5",
+    "writer.mbt": "c175e26899133bc30130a4f1d67b17d648bdb09ae67ca100dea5a15964aa271d"
+  },
+  "benchmark_executed": false,
+  "scope": [
+    "meshio bidirectional 17 kinds x 2 versions x ASCII/binary",
+    "wedge15/pyramid13 independent struct bidirectional, not meshio",
+    "independent struct sparse BE/LE size_t32/64 parametric frames",
+    "NumPy geometry, meshio VTK/OBJ, malformed/truncated inputs"
+  ],
+  "extreme_geometry_reference": "100-digit Decimal for anisotropic/subnormal simplices; explicit unrepresentable rejection",
+  "limitations": [
+    "meshio does not independently validate parametric nodes or sparse binary fields",
+    "meshio 5.3.5 omits wedge15/pyramid13 in CellBlock registry; struct used",
+    "NumPy legacy=1.25 print setting required for meshio ASCII scalar repr",
+    "synthetic correctness fixtures, not production or engineering certification",
+    "this report records its own platform; remote CI status must be checked separately"
+  ]
+}

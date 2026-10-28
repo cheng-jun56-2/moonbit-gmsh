@@ -1,0 +1,392 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cheng-jun56/gmsh"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn decode(Bytes) -> Mesh raise
+
+pub fn element_shape(Int) -> (Int, Int) raise MeshError
+
+pub fn mesh(Array[Node], Array[Element], entities? : Array[Entity], names? : Array[PhysicalName], fields? : Array[Field], unknown? : Array[Section], version? : String) -> Mesh raise MeshError
+
+// Errors
+pub suberror MeshError {
+  Invalid(String)
+} derive(@debug.Debug)
+pub fn MeshError::to_repr(Self) -> @debug.Repr
+
+// Types and methods
+pub struct Boundary {
+  // private fields
+}
+pub fn Boundary::coverage(Self, required_groups? : Array[Int]) -> BoundaryCoverage raise
+pub fn Boundary::mesh(Self, allow_loss? : Bool) -> Mesh raise
+pub fn Boundary::orientation_report(Self) -> Array[FacetOrientation]
+pub fn Boundary::report(Self) -> BoundaryReport
+
+pub(all) struct BoundaryCoverage {
+  boundary_dimension : Int
+  facets : Int
+  groups : Array[BoundaryGroup]
+  unlabeled : Array[BoundarySource]
+  multiple : Array[BoundarySource]
+  missing_groups : Array[Int]
+} derive(ToJson)
+pub fn BoundaryCoverage::to_json(Self) -> Json
+
+pub(all) struct BoundaryField {
+  source_index : Int
+  input_entries : Int
+  retained_entries : Int
+} derive(ToJson)
+pub fn BoundaryField::to_json(Self) -> Json
+
+pub(all) struct BoundaryGroup {
+  tag : Int
+  facets : Int
+} derive(ToJson)
+pub fn BoundaryGroup::to_json(Self) -> Json
+
+pub(all) struct BoundaryNode {
+  tag : Int
+  source_index : Int
+} derive(ToJson)
+pub fn BoundaryNode::to_json(Self) -> Json
+
+pub(all) struct BoundaryReport {
+  source_dimension : Int
+  boundary_dimension : Int
+  selected_elements : Int
+  nodes : Array[BoundaryNode]
+  facets : Array[BoundarySource]
+  fields : Array[BoundaryField]
+  losses : Array[String]
+} derive(ToJson)
+pub fn BoundaryReport::to_json(Self) -> Json
+
+pub(all) struct BoundarySource {
+  element : Int
+  owner : Int
+  owner_index : Int
+  local_facet : Int
+  explicit_element : Int
+} derive(ToJson)
+pub fn BoundarySource::to_json(Self) -> Json
+
+pub(all) struct Datum {
+  tag : Int
+  values : Array[Double]
+} derive(ToJson)
+pub fn Datum::to_json(Self) -> Json
+
+pub(all) struct Diagnostics {
+  isolated : Array[Int]
+  duplicate_nodes : Array[Array[Int]]
+  repeated_connectivity : Array[Int]
+  qualities : Array[Quality]
+  unsupported_quality : Array[Int]
+} derive(ToJson)
+pub fn Diagnostics::to_json(Self) -> Json
+
+pub(all) struct Element {
+  tag : Int
+  kind : Int
+  nodes : Array[Int]
+  entity : Int
+  physical : Array[Int]
+  extra : Array[Int]
+} derive(ToJson)
+pub fn Element::to_json(Self) -> Json
+
+pub(all) struct Entity {
+  dim : Int
+  tag : Int
+  bounds : Array[Double]
+  physical : Array[Int]
+  boundary : Array[Int]
+} derive(ToJson)
+pub fn Entity::to_json(Self) -> Json
+
+pub(all) enum ExportPolicy {
+  Strict
+  PermissiveWithAudit
+}
+
+pub(all) struct Facet {
+  nodes : Array[Int]
+  owners : Array[Int]
+} derive(ToJson)
+pub fn Facet::to_json(Self) -> Json
+
+pub(all) struct FacetOrientation {
+  element : Int
+  owner : Int
+  explicit_reversed : Bool
+  center_normal : Array[Double]
+  center_dot : Double
+  status : String
+} derive(ToJson)
+pub fn FacetOrientation::to_json(Self) -> Json
+
+pub(all) struct Field {
+  location : String
+  strings : Array[String]
+  reals : Array[Double]
+  integers : Array[Int]
+  entries : Array[Datum]
+} derive(ToJson)
+pub fn Field::to_json(Self) -> Json
+
+pub(all) struct FieldFrame {
+  field_index : Int
+  name : String
+  location : String
+  components : Int
+  time_step : Int
+  time : Double?
+  entries : Int
+  interpolation_scheme : String?
+  partition : Int?
+} derive(ToJson)
+pub fn FieldFrame::to_json(Self) -> Json
+
+pub(all) struct JacobianSample {
+  reference : Array[Double]
+  xyz : Array[Double]
+  columns : Array[Array[Double]]
+  measure : Double
+  signed_jacobian : Double?
+  scaled_jacobian : Double
+  normal : Array[Double]
+} derive(ToJson)
+pub fn JacobianSample::to_json(Self) -> Json
+
+pub(all) struct LossReport {
+  source_dimension : Int
+  discarded_curved_node_tags : Array[Int]
+  losses : Array[String]
+  estimated_chord_error : Double
+  error_samples : Int
+  error_measure : String
+  certified_bound : Bool
+  output_vertices : Int
+  output_elements : Int
+  orientations : Array[FacetOrientation]
+} derive(ToJson)
+pub fn LossReport::to_json(Self) -> Json
+
+pub struct Mesh {
+  // private fields
+}
+pub fn Mesh::compact(Self) -> Self raise
+pub fn Mesh::components(Self) -> Array[Array[Int]]
+pub fn Mesh::diagnostics(Self, tolerance? : Double) -> Diagnostics raise
+pub fn Mesh::elements(Self) -> Array[Element]
+pub fn Mesh::encode(Self, version? : String, binary? : Bool, little? : Bool, size_width? : Int, allow_loss? : Bool) -> Bytes raise
+pub fn Mesh::entities(Self) -> Array[Entity]
+pub fn Mesh::export_to_obj(Self, ExportPolicy) -> (String, LossReport) raise
+pub fn Mesh::export_to_stl(Self, ExportPolicy) -> (String, LossReport) raise
+pub fn Mesh::extract_boundary(Self, dimension? : Int, max_facets? : Int) -> Boundary raise
+pub fn Mesh::field_frames(Self) -> Array[FieldFrame]
+pub fn Mesh::fields(Self) -> Array[Field]
+pub fn Mesh::integrate_surface_field(Self, Int, max_samples? : Int) -> SurfaceIntegral raise
+pub fn Mesh::integrate_surface_flux(Self, Int, max_samples? : Int) -> SurfaceFlux raise
+pub fn Mesh::integrate_surface_normal_field(Self, Int, max_samples? : Int) -> SurfaceNormalIntegral raise
+pub fn Mesh::nodes(Self) -> Array[Node]
+pub fn Mesh::obj(Self, allow_loss? : Bool) -> String raise
+pub fn Mesh::physical_names(Self) -> Array[PhysicalName]
+pub fn Mesh::quality(Self, Int, tolerance? : Double) -> Quality raise
+pub fn Mesh::sample_gauss_jacobians(Self, Int, reference_normal? : Array[Double]) -> SamplingQualityReport raise
+pub fn Mesh::select_fields(Self, Array[Int]) -> Self raise
+pub fn Mesh::select_physical(Self, Int, Int) -> Self raise
+pub fn Mesh::source_version(Self) -> String
+pub fn Mesh::subset(Self, Array[Int]) -> Self raise
+pub fn Mesh::surface_field_coverage(Self, Int, max_missing? : Int) -> SurfaceFieldCoverage raise
+pub fn Mesh::surface_flux_breakdown(Self, Int, max_samples? : Int, max_elements? : Int) -> SurfaceFluxBreakdown raise
+pub fn Mesh::topology(Self, dimension? : Int) -> Topology raise
+pub fn Mesh::unknown_sections(Self) -> Array[Section]
+pub fn Mesh::vtk(Self, allow_loss? : Bool) -> String raise
+pub fn Mesh::vtk_field(Self, Int, allow_loss? : Bool) -> VtkFieldExport raise
+pub fn Mesh::vtk_fields(Self, Array[Int], allow_loss? : Bool) -> VtkFieldsExport raise
+pub fn Mesh::without_unknown(Self) -> Self
+
+pub(all) struct Node {
+  tag : Int
+  xyz : Array[Double]
+  dim : Int
+  entity : Int
+  parameters : Array[Double]
+} derive(ToJson)
+pub fn Node::to_json(Self) -> Json
+
+pub(all) struct PhysicalName {
+  dim : Int
+  tag : Int
+  name : String
+} derive(ToJson)
+pub fn PhysicalName::to_json(Self) -> Json
+
+pub(all) struct Quality {
+  tag : Int
+  kind : Int
+  measure : Double
+  signed_volume : Double
+  quality : Double
+  degenerate : Bool
+  inverted : Bool
+} derive(ToJson)
+pub fn Quality::to_json(Self) -> Json
+
+pub(all) struct SamplingQualityReport {
+  tag : Int
+  kind : Int
+  dimension : Int
+  rule : String
+  samples : Array[JacobianSample]
+  minimum_measure : Double
+  minimum_signed : Double?
+  nonpositive_samples : Int
+  globally_certified : Bool
+  corner_edge_ratio : Double?
+  corner_minimum_dihedral_degrees : Double?
+} derive(ToJson)
+pub fn SamplingQualityReport::to_json(Self) -> Json
+
+pub(all) struct Section {
+  name : String
+  body : String
+} derive(ToJson)
+pub fn Section::to_json(Self) -> Json
+
+pub(all) struct SurfaceFieldCoverage {
+  field : FieldFrame
+  elements : Int
+  skipped_lower_dimension : Int
+  required_tags : Int
+  present_tags : Int
+  missing_count : Int
+  missing_tags : Array[Int]
+  missing_truncated : Bool
+  all_required_tags_present : Bool
+} derive(ToJson)
+pub fn SurfaceFieldCoverage::to_json(Self) -> Json
+
+pub(all) struct SurfaceFlux {
+  field_index : Int
+  name : String
+  location : String
+  time_step : Int
+  time : Double?
+  elements : Int
+  skipped_lower_dimension : Int
+  samples : Int
+  rules : Array[String]
+  surface_measure : Double
+  area_vector : Array[Double]
+  flux : Double
+  zero_measure_samples : Int
+  normal_convention : String
+  certified_error_bound : Bool
+} derive(ToJson)
+pub fn SurfaceFlux::to_json(Self) -> Json
+
+pub(all) struct SurfaceFluxBreakdown {
+  total : SurfaceFlux
+  contributions : Array[SurfaceFluxContribution]
+} derive(ToJson)
+pub fn SurfaceFluxBreakdown::to_json(Self) -> Json
+
+pub(all) struct SurfaceFluxContribution {
+  element : Int
+  input_index : Int
+  kind : Int
+  entity : Int
+  samples : Int
+  surface_measure : Double
+  area_vector : Array[Double]
+  flux : Double
+  zero_measure_samples : Int
+} derive(ToJson)
+pub fn SurfaceFluxContribution::to_json(Self) -> Json
+
+pub(all) struct SurfaceIntegral {
+  field_index : Int
+  name : String
+  location : String
+  time_step : Int
+  time : Double?
+  components : Int
+  elements : Int
+  skipped_lower_dimension : Int
+  samples : Int
+  rules : Array[String]
+  surface_measure : Double
+  integral : Array[Double]
+  zero_measure_samples : Int
+  certified_error_bound : Bool
+} derive(ToJson)
+pub fn SurfaceIntegral::to_json(Self) -> Json
+
+pub(all) struct SurfaceNormalIntegral {
+  field_index : Int
+  name : String
+  location : String
+  time_step : Int
+  time : Double?
+  elements : Int
+  skipped_lower_dimension : Int
+  samples : Int
+  rules : Array[String]
+  surface_measure : Double
+  area_vector : Array[Double]
+  normal_integral : Array[Double]
+  zero_measure_samples : Int
+  normal_convention : String
+  certified_error_bound : Bool
+} derive(ToJson)
+pub fn SurfaceNormalIntegral::to_json(Self) -> Json
+
+pub(all) struct Topology {
+  dimension : Int
+  facets : Array[Facet]
+  boundary : Array[Facet]
+  nonmanifold : Array[Facet]
+} derive(ToJson)
+pub fn Topology::to_json(Self) -> Json
+
+pub(all) struct VtkFieldArray {
+  field : FieldFrame
+  value_array : String
+  strings : Array[String]
+  reals : Array[Double]
+  integers : Array[Int]
+} derive(ToJson)
+pub fn VtkFieldArray::to_json(Self) -> Json
+
+pub(all) struct VtkFieldExport {
+  text : String
+  field : FieldFrame
+  source_version : String
+  strings : Array[String]
+  reals : Array[Double]
+  integers : Array[Int]
+  omitted_field_indices : Array[Int]
+  losses : Array[String]
+} derive(ToJson)
+pub fn VtkFieldExport::to_json(Self) -> Json
+
+pub(all) struct VtkFieldsExport {
+  text : String
+  fields : Array[VtkFieldArray]
+  source_version : String
+  omitted_field_indices : Array[Int]
+  losses : Array[String]
+} derive(ToJson)
+pub fn VtkFieldsExport::to_json(Self) -> Json
+
+// Type aliases
+
+// Traits

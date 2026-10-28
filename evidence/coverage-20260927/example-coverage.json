@@ -1,0 +1,84 @@
+{
+  "boundary_dimension": 1,
+  "facets": 80,
+  "groups": [
+    {
+      "tag": 5,
+      "facets": 70
+    }
+  ],
+  "unlabeled": [
+    {
+      "element": 797,
+      "owner": 204,
+      "owner_index": 203,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 798,
+      "owner": 227,
+      "owner_index": 226,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 799,
+      "owner": 241,
+      "owner_index": 240,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 800,
+      "owner": 258,
+      "owner_index": 257,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 801,
+      "owner": 409,
+      "owner_index": 408,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 802,
+      "owner": 457,
+      "owner_index": 456,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 803,
+      "owner": 593,
+      "owner_index": 592,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 804,
+      "owner": 594,
+      "owner_index": 593,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 805,
+      "owner": 683,
+      "owner_index": 682,
+      "local_facet": 0,
+      "explicit_element": 0
+    },
+    {
+      "element": 806,
+      "owner": 684,
+      "owner_index": 683,
+      "local_facet": 0,
+      "explicit_element": 0
+    }
+  ],
+  "multiple": [],
+  "missing_groups": []
+}

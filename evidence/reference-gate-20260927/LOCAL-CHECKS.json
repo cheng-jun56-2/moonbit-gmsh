@@ -1,0 +1,28 @@
+{
+  "recordedUtc": "2026-09-27T05:21:08.224427+00:00",
+  "version": "0.2.0",
+  "scope": "Reference harness and CI maintenance; product core and public API unchanged",
+  "checks": [
+    {
+      "command": "python tools/verify-reference.py --skip-benchmark --evidence evidence/reference-gate-20260927/reference.json",
+      "exit": 0,
+      "cases": 580,
+      "checks": 2041,
+      "benchmarkExecuted": false
+    }
+  ],
+  "python": "3.12.14",
+  "meshio": "5.3.5",
+  "numpy": "2.5.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "reference": "reference.json",
+  "sourceFingerprintVerification": "All LF-normalized source fingerprints in reference.json match current files",
+  "runtimeChanged": false,
+  "remoteCIExecuted": false,
+  "officialAcceptanceEstablished": false,
+  "baseline": "baa0dc0cae9b8387d576ff110f757774e29a7efe",
+  "limitations": [
+    "CI workflow configured but not executed on GitHub in this task",
+    "Independent 17 meshio types plus 2 struct-checked types; synthetic format matrix, not engineering validation"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "https://sources.debian.org/src/gmsh/4.7.1%2Bds1-5/tutorial/t1.geo/",
+  "sourceVersion": "4.7.1+ds1-5",
+  "generator": "Gmsh Python API 4.15.2",
+  "kind": "upstream tutorial generated fixture, not engineering customer data",
+  "license": "t1.geo: GPL-2.0-or-later; unchanged source and Gmsh license retained; no project MIT relicense",
+  "files": {
+    "GMSH-LICENSE.txt": "7fefa67a6c607068a33ba27e0a18aaf8596aa051f7cf2abcca094a3a484c5870",
+    "t1-2.2-0.msh": "daee05ba392750ba6eeb4f42539310a8bae023d3be196c3e2bbeffa0c95e45f8",
+    "t1-2.2-1.msh": "7fc428cbcbdc5fd2f707c6cecea11ded108c2d83de3ea6e2e6fa10cc145e8f11",
+    "t1-4.1-0.msh": "e27c416151eb972fae9d91c95499ba091cef86ce552b48c214815c8d7e4fc23f",
+    "t1-4.1-1.msh": "0a63124bff01a76cc2ebd20a7d9faca4d3f883a010068d2290b4a560a1d6fad0",
+    "t1.geo": "905fca9eb4b39bce3b2d5cb8cbf3408399820ac4369d01182a473a0ef6da8af2"
+  }
+}

@@ -1,0 +1,98 @@
+name: verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+      GMSH_CI_EVIDENCE: ${{ runner.temp }}/gmsh-evidence
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.11.0'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned MoonBit from the official installer
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh -o "$RUNNER_TEMP/install-moonbit.sh"
+          printf '%s  %s\n' '46495f8cdc0050f79b6cb195d66478d101cb3601d68506568fbe377fcdf2a9fe' "$RUNNER_TEMP/install-moonbit.sh" | sha256sum --check
+          bash "$RUNNER_TEMP/install-moonbit.sh" "$(cat .moonbit-version)"
+          printf '%s\n' "$HOME/.moon/bin" >> "$GITHUB_PATH"
+      - name: Record actual tool versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$GMSH_CI_EVIDENCE"
+          moon version --all | tee "$GMSH_CI_EVIDENCE/moon-version.txt"
+          node --version | tee "$GMSH_CI_EVIDENCE/node-version.txt"
+          python --version | tee "$GMSH_CI_EVIDENCE/python-version.txt"
+          git rev-parse HEAD | tee "$GMSH_CI_EVIDENCE/commit.txt"
+      - name: Format, all-target check, and public API identity
+        run: |
+          moon fmt --check
+          moon check --target all --deny-warn
+          moon info
+          git diff --exit-code -- '*.mbti'
+      - name: JavaScript tests
+        run: moon test --target js --deny-warn
+      - name: Wasm-GC tests
+        run: moon test --target wasm-gc --deny-warn
+      - name: Native tests
+        run: moon test --target native --deny-warn
+      - name: Build the actual JavaScript CLI
+        run: moon build --target js --release --deny-warn
+      - name: File CLI and runnable examples
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/check-cli.mjs
+          moon run examples/vtk_fields --target js > "$GMSH_CI_EVIDENCE/example-js.jsonl"
+          moon run examples/vtk_fields --target wasm-gc > "$GMSH_CI_EVIDENCE/example-wasm-gc.jsonl"
+          cmp "$GMSH_CI_EVIDENCE/example-js.jsonl" "$GMSH_CI_EVIDENCE/example-wasm-gc.jsonl"
+      - name: Install independent reference readers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglu1-mesa
+          python -m pip install -r tools/requirements-public.txt
+          python -m pip freeze > "$GMSH_CI_EVIDENCE/python-dependencies.txt"
+      - name: Independent format, boundary and public high-order references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/verify-reference.py --skip-benchmark --evidence "$GMSH_CI_EVIDENCE/reference.json"
+          python tools/verify-boundary.py --skip-benchmark --evidence "$GMSH_CI_EVIDENCE/boundary.json"
+          python tools/verify-facet-cycles.py
+          cp evidence/facet-cycles-reference.json "$GMSH_CI_EVIDENCE/facet-cycles.json"
+          python tools/verify-public-t1.py --evidence "$GMSH_CI_EVIDENCE/public-t1.json"
+          python tools/verify-high-order.py --evidence "$GMSH_CI_EVIDENCE/high-order.json"
+      - name: Independent curved-surface field mathematics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/verify-surface-integral.py --evidence "$GMSH_CI_EVIDENCE/surface-integral.json"
+          python tools/verify-surface-flux.py --evidence "$GMSH_CI_EVIDENCE/surface-flux.json"
+          python tools/verify-surface-normal.py --evidence "$GMSH_CI_EVIDENCE/surface-normal.json"
+      - name: Actual field and export file consumers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/verify-field-selection.py --evidence "$GMSH_CI_EVIDENCE/field-selection.json" --outputs "$GMSH_CI_EVIDENCE/field-selection"
+          python tools/verify-component-consumer.py --evidence "$GMSH_CI_EVIDENCE/components.json" --outputs "$GMSH_CI_EVIDENCE/components"
+          python tools/verify-stl-consumer.py --evidence "$GMSH_CI_EVIDENCE/stl.json" --outputs "$GMSH_CI_EVIDENCE/stl"
+          python tools/verify-vtk-field.py --evidence "$GMSH_CI_EVIDENCE/vtk-field.json" --outputs "$GMSH_CI_EVIDENCE/vtk-field"
+          python tools/verify-vtk-fields.py --evidence "$GMSH_CI_EVIDENCE/vtk-fields.json" --outputs "$GMSH_CI_EVIDENCE/vtk-fields"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: gmsh-ci-evidence
+          path: ${{ runner.temp }}/gmsh-evidence
+          if-no-files-found: warn

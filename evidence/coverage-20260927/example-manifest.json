@@ -1,0 +1,18 @@
+{
+  "input": "bundled upstream Gmsh tutorial, not engineering customer data",
+  "sha256": "0a63124bff01a76cc2ebd20a7d9faca4d3f883a010068d2290b4a560a1d6fad0",
+  "boundaryFacets": 80,
+  "labeledGroups": [
+    {
+      "tag": 5,
+      "facets": 70
+    }
+  ],
+  "unlabeledFacets": 10,
+  "decision": "Review the 10 unlabeled facets; assigning a physical/solver condition is the caller responsibility",
+  "exportLosses": [
+    "entity_graph_and_node_classification",
+    "excluded_element_labels_not_inherited",
+    "unused_physical_names"
+  ]
+}

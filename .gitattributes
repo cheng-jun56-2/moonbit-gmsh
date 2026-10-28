@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.msh binary
+/examples/public/t1.geo -text
+/examples/public/GMSH-LICENSE.txt -text

@@ -1,0 +1,62 @@
+{
+  "version": "2.2",
+  "nodes": [
+    {"tag":110,"xyz":[0,0,0]},
+    {"tag":10,"xyz":[0,0,0]},
+    {"tag":888,"xyz":[9,9,9]},
+    {"tag":20,"xyz":[2,0,0]},
+    {"tag":120,"xyz":[2,0,0]},
+    {"tag":705,"xyz":[2.5,1.5,0.5]},
+    {"tag":30,"xyz":[0,2,0]},
+    {"tag":130,"xyz":[0,2,0]},
+    {"tag":40,"xyz":[1,0,0]},
+    {"tag":50,"xyz":[1,1,0.2]},
+    {"tag":60,"xyz":[0,1,0]},
+    {"tag":710,"xyz":[4,1,0.2]},
+    {"tag":720,"xyz":[3.5,2.5,0.5]},
+    {"tag":730,"xyz":[2.5,2.5,0.5]},
+    {"tag":999,"xyz":[42,42,42]}
+  ],
+  "elements": [
+    {"tag":900,"kind":9,"nodes":[10,20,30,40,50,60],"entity":7,"physical":[44]},
+    {"tag":200,"kind":2,"nodes":[110,120,130],"entity":7,"physical":[44]},
+    {"tag":802,"kind":15,"nodes":[888],"entity":19,"physical":[44]},
+    {"tag":701,"kind":8,"nodes":[50,710,705],"entity":9,"physical":[44]},
+    {"tag":702,"kind":2,"nodes":[705,720,730],"entity":7,"physical":[44]}
+  ],
+  "names": [
+    {"dim":2,"tag":44,"name":"wall"},
+    {"dim":1,"tag":44,"name":"wire"},
+    {"dim":0,"tag":44,"name":"marker"}
+  ],
+  "fields": [
+    {
+      "location":"NodeData","strings":["velocity",""],"reals":[0.5],"integers":[3,3,15,17,99],
+      "entries":[
+        {"tag":110,"values":[110,0.25,-0.125]},
+        {"tag":10,"values":[10,0.25,-0.125]},
+        {"tag":888,"values":[888,9.25,8.875]},
+        {"tag":20,"values":[20,2.25,-0.125]},
+        {"tag":120,"values":[120,2.25,-0.125]},
+        {"tag":705,"values":[705,2.75,1.375]},
+        {"tag":30,"values":[30,0.25,1.875]},
+        {"tag":130,"values":[130,0.25,1.875]},
+        {"tag":40,"values":[40,1.25,-0.125]},
+        {"tag":50,"values":[50,1.25,0.875]},
+        {"tag":60,"values":[60,0.25,0.875]},
+        {"tag":710,"values":[710,4.25,0.875]},
+        {"tag":720,"values":[720,3.75,2.375]},
+        {"tag":730,"values":[730,2.75,2.375]},
+        {"tag":999,"values":[999,42.25,41.875]}
+      ]
+    },
+    {
+      "location":"NodeData","strings":["sparse_temperature"],"reals":[],"integers":[7,1,3],
+      "entries":[{"tag":10,"values":[42]},{"tag":120,"values":[-7]},{"tag":999,"values":[99]}]
+    },
+    {
+      "location":"ElementData","strings":["cell_load"],"reals":[0.75],"integers":[4,1,5,0],
+      "entries":[{"tag":900,"values":[1800]},{"tag":200,"values":[400]},{"tag":802,"values":[1604]},{"tag":701,"values":[1402]},{"tag":702,"values":[1404]}]
+    }
+  ]
+}

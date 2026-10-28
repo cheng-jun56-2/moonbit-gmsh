@@ -1,0 +1,36 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "meshio": "5.3.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cases": 206,
+  "checks": 726,
+  "cli": 15,
+  "seconds": 2.7036882000393234,
+  "benchmarks": [
+    {
+      "nodes": 81,
+      "elements": 128,
+      "boundary_elements": 32,
+      "seconds": 0.00297660002252087
+    },
+    {
+      "nodes": 4225,
+      "elements": 8192,
+      "boundary_elements": 256,
+      "seconds": 0.08291619998635724
+    }
+  ],
+  "scope": [
+    "supporting planes/lines independent of implementation facet templates",
+    "meshio-created 2.2/4.1 ASCII/binary input and meshio output readback",
+    "sparse provenance, explicit winding/labels/fields, loss gates, ambiguity, budgets, high-order refusal",
+    "real file CLI then OBJ/VTK independent downstream readback"
+  ],
+  "limits": [
+    "synthetic convex cells; no arbitrary nonconvex/warped geometry certification",
+    "maximum sparse node tag checked by lightweight independent ASCII reader; meshio uses a dense tag table, so its sparse-fixture readback is independently renumbered; ordinary fixtures use direct readback",
+    "codec endian/size matrix supplements baseline struct oracle; its own dump is not independent validation",
+    "local run, not remote CI"
+  ]
+}

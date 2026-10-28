@@ -1,0 +1,11 @@
+{
+  "gmsh": "4.15.2",
+  "meshio": "5.3.5",
+  "checks": 82,
+  "boundary_facets": 80,
+  "source_explicit_edges": 70,
+  "boundary_nodes": 160,
+  "unlabeled": 10,
+  "input_sha256": "10e7b96cc7afe24dcf6eaf50c70d68c63f868f3cfbefb92140b9f29b3a3ea917",
+  "scope": "tutorial-generated second-order input; full boundary nodes/tags/physical groups and downstream readback; not NASA/engineering adoption"
+}

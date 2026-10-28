@@ -1,0 +1,20 @@
+{
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "permutations": 24,
+  "accepted_cycles": 8,
+  "rejected_cycles": 16,
+  "requests": 72,
+  "checks": 144,
+  "oracle": "independent unordered edge sets; no copied facet matching algorithm",
+  "limits": "synthetic connectivity fixtures, no global outward-normal or geometry certification",
+  "source_sha256": {
+    "operations.mbt": "515f30a0c33940304595f670d4fa4650ceee8d55809b9bb89e8019b034736c27",
+    "boundary.mbt": "6f07d005f841932ac7fa8912198d1ee22a6c7375cc567ede90e0972617d87df5",
+    "boundary_test.mbt": "29821fe2aed9b265ec1c7927ab21b11a0278dca3fe4003bee03915f84b7913b7",
+    "export.mbt": "194c11e9eb9cea5541567d4c7a5c18ed0fb595293d538165f0ff67212b698104",
+    "cmd/bridge/main.mbt": "64bcdf3d04978fc144d6249ae58dea6836f5d61205285e00053e950d612f96d7",
+    "tools/oracle-host.mjs": "e3bc1294a61e5bedcccc13ba666135e394cc9de6e156c403a263b91ba0eb7539",
+    "tools/verify-facet-cycles.py": "eee1bf0e88820ab42bf46e3374f484c7c8ac2dcf88e1dddb24436677aace6e59"
+  }
+}

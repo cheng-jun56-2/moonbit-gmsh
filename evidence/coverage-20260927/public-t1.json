@@ -1,0 +1,99 @@
+{
+  "gmsh": "4.15.2",
+  "meshio": "5.3.5",
+  "numpy": "2.5.3",
+  "files": [
+    {
+      "file": "t1-2.2-0.msh",
+      "nodes": 404,
+      "triangles": 726,
+      "boundary": 80,
+      "labeled": 70,
+      "unlabeled": 10,
+      "groups": [
+        {
+          "tag": 5,
+          "facets": 70
+        }
+      ],
+      "missing_groups": [
+        6
+      ],
+      "losses": [
+        "excluded_element_labels_not_inherited",
+        "unused_physical_names"
+      ]
+    },
+    {
+      "file": "t1-2.2-1.msh",
+      "nodes": 404,
+      "triangles": 726,
+      "boundary": 80,
+      "labeled": 70,
+      "unlabeled": 10,
+      "groups": [
+        {
+          "tag": 5,
+          "facets": 70
+        }
+      ],
+      "missing_groups": [
+        6
+      ],
+      "losses": [
+        "excluded_element_labels_not_inherited",
+        "unused_physical_names"
+      ]
+    },
+    {
+      "file": "t1-4.1-0.msh",
+      "nodes": 404,
+      "triangles": 726,
+      "boundary": 80,
+      "labeled": 70,
+      "unlabeled": 10,
+      "groups": [
+        {
+          "tag": 5,
+          "facets": 70
+        }
+      ],
+      "missing_groups": [
+        6
+      ],
+      "losses": [
+        "entity_graph_and_node_classification",
+        "excluded_element_labels_not_inherited",
+        "unused_physical_names"
+      ]
+    },
+    {
+      "file": "t1-4.1-1.msh",
+      "nodes": 404,
+      "triangles": 726,
+      "boundary": 80,
+      "labeled": 70,
+      "unlabeled": 10,
+      "groups": [
+        {
+          "tag": 5,
+          "facets": 70
+        }
+      ],
+      "missing_groups": [
+        6
+      ],
+      "losses": [
+        "entity_graph_and_node_classification",
+        "excluded_element_labels_not_inherited",
+        "unused_physical_names"
+      ]
+    }
+  ],
+  "scope": "actual upstream-generated tutorial; complete connectivity/coordinates/labels, independent edge incidence and owner map, meshio export readback; strict policy and refusal checks",
+  "limits": [
+    "not engineering/production/adoption evidence",
+    "coverage is not boundary-condition correctness",
+    "Gmsh API and meshio are verification only"
+  ]
+}

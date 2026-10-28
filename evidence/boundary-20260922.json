@@ -1,0 +1,123 @@
+{
+  "recorded_utc": "2026-09-22T13:58:07.011Z",
+  "project": "gmsh",
+  "status": "passed",
+  "base_head": "dc8056c920995b292ec66b760ccb0f6819bdafee",
+  "change": "Reusable boundary extraction with provenance, explicit facet metadata/fields, loss gate, real file export and integer-safe CLI.",
+  "checks": {
+    "strict_all_target": true,
+    "core_js": 20,
+    "core_wasm_gc": 20,
+    "baseline_cli": 24,
+    "boundary_cases": 206,
+    "boundary_checks": 726,
+    "boundary_cli": 15,
+    "baseline_cases": 586,
+    "baseline_checks": 2053,
+    "example_targets": [
+      "js",
+      "wasm-gc"
+    ]
+  },
+  "preceding_commands": {
+    "note": "Observed successful commands in task outputs. Strict all-target and JS tests preceded formatting-only edits. Wasm-GC tests, example runs, fmt check and original CLI passed before reference reruns; no subsequent compiled-code changes.",
+    "commands": [
+      "moon check --target all --deny-warn",
+      "moon test --target js",
+      "moon fmt",
+      "moon info",
+      "moon build --target js --release --deny-warn",
+      "moon fmt --check",
+      "moon test --target wasm-gc",
+      "moon run examples/extract_boundary --target js",
+      "moon run examples/extract_boundary --target wasm-gc",
+      "node tools/check-cli.mjs"
+    ]
+  },
+  "reference_records": [
+    {
+      "command": [
+        "C:/Users/uiwcv/Documents/Codex/2026-09-10/ban/work/five-reference-venv/Scripts/python.exe",
+        "tools/verify-boundary.py"
+      ],
+      "started": "2026-09-22T13:48:31.999Z",
+      "exit": 0,
+      "stdout": "{\r\n  \"python\": \"3.14.4\",\r\n  \"numpy\": \"2.5.3\",\r\n  \"meshio\": \"5.3.5\",\r\n  \"platform\": \"Windows-11-10.0.26200-SP0\",\r\n  \"cases\": 206,\r\n  \"checks\": 726,\r\n  \"cli\": 15,\r\n  \"seconds\": 4.674452499999461,\r\n  \"benchmarks\": [\r\n    {\r\n      \"nodes\": 81,\r\n      \"elements\": 128,\r\n      \"boundary_elements\": 32,\r\n      \"seconds\": 0.0071482999992440455\r\n    },\r\n    {\r\n      \"nodes\": 4225,\r\n      \"elements\": 8192,\r\n      \"boundary_elements\": 256,\r\n      \"seconds\": 0.17837479999798234\r\n    }\r\n  ],\r\n  \"scope\": [\r\n    \"supporting planes/lines independent of implementation facet templates\",\r\n    \"meshio-created 2.2/4.1 ASCII/binary input and meshio output readback\",\r\n    \"sparse provenance, explicit winding/labels/fields, loss gates, ambiguity, budgets, high-order refusal\",\r\n    \"real file CLI then OBJ/VTK independent downstream readback\"\r\n  ],\r\n  \"limits\": [\r\n    \"synthetic convex cells; no arbitrary nonconvex/warped geometry certification\",\r\n    \"maximum sparse node tag checked by lightweight independent ASCII reader; meshio uses a dense tag table, so its sparse-fixture readback is independently renumbered; ordinary fixtures use direct readback\",\r\n    \"codec endian/size matrix supplements baseline struct oracle; its own dump is not independent validation\",\r\n    \"local run, not remote CI\"\r\n  ]\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/Users/uiwcv/Documents/Codex/2026-09-10/ban/work/five-reference-venv/Scripts/python.exe",
+        "tools/verify-reference.py"
+      ],
+      "started": "2026-09-22T13:48:38.086Z",
+      "exit": 0,
+      "stdout": "{\r\n  \"python\": \"3.14.4\",\r\n  \"platform\": \"Windows-11-10.0.26200-SP0\",\r\n  \"meshio\": \"5.3.5\",\r\n  \"numpy\": \"2.5.3\",\r\n  \"cases\": 586,\r\n  \"checks\": 2053,\r\n  \"seconds\": 4.142371300000377,\r\n  \"benchmarks\": [\r\n    {\r\n      \"nodes\": 81,\r\n      \"elements\": 128,\r\n      \"bytes\": 6998,\r\n      \"write_seconds\": 0.007411799997498747,\r\n      \"validate_seconds\": 0.007249399997817818,\r\n      \"topology_seconds\": 0.004353899999841815,\r\n      \"synthetic\": true\r\n    },\r\n    {\r\n      \"nodes\": 4225,\r\n      \"elements\": 8192,\r\n      \"bytes\": 397654,\r\n      \"write_seconds\": 0.2871846000016376,\r\n      \"validate_seconds\": 0.2502996000002895,\r\n      \"topology_seconds\": 0.23382249999849591,\r\n      \"synthetic\": true\r\n    }\r\n  ],\r\n  \"scope\": [\r\n    \"meshio bidirectional 17 kinds x 2 versions x ASCII/binary\",\r\n    \"wedge15/pyramid13 independent struct bidirectional, not meshio\",\r\n    \"independent struct sparse BE/LE size_t32/64 parametric frames\",\r\n    \"NumPy geometry, meshio VTK/OBJ, malformed/truncated inputs\"\r\n  ],\r\n  \"extreme_geometry_reference\": \"100-digit Decimal for anisotropic/subnormal simplices; explicit unrepresentable rejection\",\r\n  \"limitations\": [\r\n    \"meshio does not independently validate parametric nodes or sparse binary fields\",\r\n    \"meshio 5.3.5 omits wedge15/pyramid13 in CellBlock registry; struct used\",\r\n    \"NumPy legacy=1.25 print setting required for meshio ASCII scalar repr\",\r\n    \"geometry benchmark is synthetic, Windows JS only; no remote CI\"\r\n  ]\r\n}\r\n",
+      "stderr": ""
+    }
+  ],
+  "post_reference_changes": {
+    "previously_hashed_files": [
+      "README.md"
+    ],
+    "new_document": "REVIEW.md",
+    "description": "User supplied rejection feedback; documentation now explains task, alternatives, conditional value and missing real deployment evidence. Runtime source unchanged."
+  },
+  "source_sha256": {
+    ".github/workflows/ci.yml": "cf411815b861803f655bce052c0e0808b3ae81b77c5522ec0bd06a0ccfeea880",
+    ".gitignore": "e70178e4e8fa6825c312039fd44728712c89318fec65f89fac49d6eb55f899f0",
+    "AGENTS.md": "be6b9beec2c57b225a0feed45e5b2ea596a4a67a064ed18138dcd5c506f6a5ac",
+    "LICENSE": "840c6a045040f0a5f98fdb027bf094e9d777f836a97b00ed4e9d68740dfd8266",
+    "README.md": "1b797f630cee33031715d36ec8366644b1deedbe340c915dd37bc45e95531f45",
+    "REVIEW.md": "6f165ce72d06de92cd25518ca61415774745259f9b00e0cfb7cb9738277d0ede",
+    "anisotropic_geometry_test.mbt": "e3dd8427daf4102ef56f633f15db926467df32528593d57492ee08bb4772457b",
+    "boundaries_wbtest.mbt": "069e706e7c2ec765211a61654db88c9e209002c4a9f80fa5c9b00a895de18602",
+    "boundary.mbt": "6f07d005f841932ac7fa8912198d1ee22a6c7375cc567ede90e0972617d87df5",
+    "boundary_test.mbt": "3538ea54061e11bb15c7ee9a42ba8e96dd750f94c05a775cf8c8dcca1f50087a",
+    "cmd/bridge/main.mbt": "64bcdf3d04978fc144d6249ae58dea6836f5d61205285e00053e950d612f96d7",
+    "cmd/bridge/moon.pkg": "6023f52a09bb885b81f62f86080744660a968054b08bff1e5ea2032d49738131",
+    "codec.mbt": "7dd407508984ddf91df97c18570f358293cc94ab1459d0fe58696a43c72c1402",
+    "codec_wbtest.mbt": "857d0082b2f90e1d6682b614bf402540b9559d9bbd1dbfb11d14ce4b237922f9",
+    "docs/BOUNDARY.md": "ab5fa3186d23c62b457181c9ad509847629c2a3d6e2e20b454592e5877f2d2ba",
+    "docs/PROGRESS.md": "70da74b9a98ef5a81f8353b79c7a1c755764ed54fb726752e0850b62f0348bfc",
+    "docs/SCOPE.md": "7c7e7ebbdc8fff25f62174dbd7faa46805ba7a4e4da0d58f8015fa5d1b6fdd0d",
+    "docs/SOURCES.md": "b7c960ca7bc03785966a13358adea40c12010678435fd4664e429818249337fb",
+    "docs/TESTING.md": "a138053f14c609ef117aaabfbdf3a7f81c67726a5631b3a4c7e0630d32acbfb3",
+    "examples/boundary.json": "a92a2d4ecc27523c094ad8e8c60062594be5e6eee02df638ad9b17e4a71fa7ee",
+    "examples/convert.json": "58623225ce98fb0a7932009e48b4da1909b0c4388877cec02663f619e8352167",
+    "examples/export.json": "92da2183c0dde36ec4523d3f3268ce3964d72c319f4cc92ac0e73464c0f87a35",
+    "examples/extract_boundary/main.mbt": "245320c2210c51c6220ef56eb0ca736ffd96420f90e9e6d9a510cc6ab72493e8",
+    "examples/extract_boundary/moon.pkg": "23e48d37f2a998a656f5de6770f67fbb3935dcce807ba849f4045f38bac49e89",
+    "examples/extract_boundary/pkg.generated.mbti": "2578f3176bbbf5961a293db64bda609dc58525a1c74937f906dcf80fe9cdf438",
+    "examples/quality.json": "5e4c0cc9af5950addcfd4c1e1c3bb55a646cb3b54a7bf7359b114520fc2dbcce",
+    "examples/strict.json": "1aba658bbe2c5baee597b8d6c26ca4080dfdad81313852d505f7250948c8c5fc",
+    "examples/subset.json": "5dc3d3f83418c744afca1c8f588862c18b4906fe94463abf4890f17ebaa97622",
+    "examples/triangle.msh": "e3bc54119eee556e10769f8a2808f28a64127c2084b6af172cf1eec2d08454fa",
+    "export.mbt": "0269892b8ae9ee1b2464c09d8651b5eaf6dd2ee36e5453fe97d7e04a5b61f28e",
+    "geometry.mbt": "7f41976a563686ff44343514892ed06d760358c6c9b4df4ce64eef677509a9e2",
+    "model.mbt": "82aa53ae5e81d13455e67f751600626c2976f85ddb51923f2155380575291389",
+    "moon.mod": "9c055407a24a9ddb27a9e22a138ef56548b0441165b7ed466522cecf900fc014",
+    "moon.pkg": "e619f946c41e3dc762a667341c8dfb007e454bbcf45f87e0dc53fd20c45b2c3c",
+    "operations.mbt": "84749df875ac9cc3a33ff7198776fe47ee9977e4eac7c19a6612d96f889e1b89",
+    "operations_wbtest.mbt": "26da8dac7674454b7c8c4819cd6ca410178112c056b0ffe7eec7e5d2935d5fc7",
+    "pkg.generated.mbti": "2d2e45e44c90f1f3a49c92f4e9255d0d639932346fc8324ee4bae81d13711c8f",
+    "scaled_geometry.mbt": "e1b5032fa52779ace858c4db9b85f447aa9c2f76aca6076b1bbf5463ead132ec",
+    "tools/check-cli.mjs": "c575210a9a44a76b67d92a3483d65401b38be535c089f018a8a341bb46c51bbb",
+    "tools/gmsh.mjs": "735482033a50ce5accfdb2a5595386887811250583e2d461e263cbe45850fd8d",
+    "tools/oracle-host.mjs": "e3bc1294a61e5bedcccc13ba666135e394cc9de6e156c403a263b91ba0eb7539",
+    "tools/requirements.txt": "f1b1142a8f657f8707de0459087a09cef663e259b599b135187b0d669a24c424",
+    "tools/verify-boundary.py": "a91d88ff44d993604868fb8c30934a8726e8935cf3ae26b0a839102bbc0999e2",
+    "tools/verify-reference.py": "99a84b98fa462b52cd4ed397e6f8d03b31e73eb6e1efac11a1ee2d1c39b3fb93",
+    "writer.mbt": "c175e26899133bc30130a4f1d67b17d648bdb09ae67ca100dea5a15964aa271d"
+  },
+  "evidence_sha256": {
+    "boundary-reference.json": "272e9a9ca936053ffe377a385c754b40bc412c895537088a6c631841fbcc925c",
+    "boundary-baseline-reference.json": "bcb82c1698c4331985821949294462c8f04a7f59763830b438995dae94728f39"
+  },
+  "hash_normalization": "CRLF -> LF",
+  "limitations": [
+    "linear boundary only; not global orientation/CAD/solver certification",
+    "synthetic fixtures; no user adoption proof",
+    "local tests only, no remote CI or publication"
+  ]
+}

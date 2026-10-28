@@ -1,0 +1,198 @@
+{
+  "nodes": [
+    {
+      "tag": 10,
+      "xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "tag": 17,
+      "xyz": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "tag": 24,
+      "xyz": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "tag": 31,
+      "xyz": [
+        0.5,
+        0,
+        0.25
+      ]
+    },
+    {
+      "tag": 38,
+      "xyz": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "tag": 45,
+      "xyz": [
+        0,
+        0.5,
+        0.25
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "tag": 201,
+      "kind": 9,
+      "nodes": [
+        10,
+        24,
+        17,
+        45,
+        38,
+        31
+      ],
+      "entity": 7,
+      "physical": [
+        44
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "location": "NodeData",
+      "strings": [
+        "pressure"
+      ],
+      "reals": [
+        0.25
+      ],
+      "integers": [
+        0,
+        1,
+        6
+      ],
+      "entries": [
+        {
+          "tag": 10,
+          "values": [
+            1
+          ]
+        },
+        {
+          "tag": 17,
+          "values": [
+            2
+          ]
+        },
+        {
+          "tag": 24,
+          "values": [
+            1
+          ]
+        },
+        {
+          "tag": 31,
+          "values": [
+            1.5
+          ]
+        },
+        {
+          "tag": 38,
+          "values": [
+            1.5
+          ]
+        },
+        {
+          "tag": 45,
+          "values": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "location": "NodeData",
+      "strings": [
+        "pressure"
+      ],
+      "reals": [
+        0.5
+      ],
+      "integers": [
+        1,
+        1,
+        6
+      ],
+      "entries": [
+        {
+          "tag": 10,
+          "values": [
+            2
+          ]
+        },
+        {
+          "tag": 17,
+          "values": [
+            4
+          ]
+        },
+        {
+          "tag": 24,
+          "values": [
+            2
+          ]
+        },
+        {
+          "tag": 31,
+          "values": [
+            3.0
+          ]
+        },
+        {
+          "tag": 38,
+          "values": [
+            3.0
+          ]
+        },
+        {
+          "tag": 45,
+          "values": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "location": "ElementData",
+      "strings": [
+        "constant_pressure"
+      ],
+      "reals": [
+        0.25
+      ],
+      "integers": [
+        0,
+        1,
+        1
+      ],
+      "entries": [
+        {
+          "tag": 201,
+          "values": [
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
