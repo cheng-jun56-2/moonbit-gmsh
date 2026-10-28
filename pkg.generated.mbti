@@ -210,6 +210,7 @@ pub fn Mesh::surface_field_coverage(Self, Int, max_missing? : Int) -> SurfaceFie
 pub fn Mesh::surface_flux_breakdown(Self, Int, max_samples? : Int, max_elements? : Int) -> SurfaceFluxBreakdown raise
 pub fn Mesh::topology(Self, dimension? : Int) -> Topology raise
 pub fn Mesh::unknown_sections(Self) -> Array[Section]
+pub fn Mesh::verify_vtk_fields(Self, Bytes, Json) -> VtkFieldsReadback raise
 pub fn Mesh::vtk(Self, allow_loss? : Bool) -> String raise
 pub fn Mesh::vtk_field(Self, Int, allow_loss? : Bool) -> VtkFieldExport raise
 pub fn Mesh::vtk_fields(Self, Array[Int], allow_loss? : Bool) -> VtkFieldsExport raise

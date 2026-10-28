@@ -39,6 +39,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 
+需要核对原始字段时，使用[显式源字段比较](docs/VTK-FIELDS.md#显式源字段比较)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields`。按准确源段索引、完整原头和原tag比较1/3/9分量值；默认字节核验保持，比较成功也不代表几何相同或来源可信。
+
 [完整单帧VTK字段交付](docs/VTK-FIELD.md)：`moon run examples/vtk_field --target js`（亦可wasm-gc）。固定gmsh_value/gmsh_tag数组保留点或单元1/3/9分量与原tag；原时间/方案/额外头在侧车中，不补缺值或解释张量。
 
 已有连通分量的[带字段MSH拆分交付例程](docs/COMPONENT-CONSUMER.md)：`node examples/split_components/run.mjs INPUT.msh NEW_DIRECTORY`保存原tag与紧凑4.1二进制文件及实际tag顺序清单。按完整共享节点连接所有维度，不按坐标焊接；字段随既有subset/compact维护。

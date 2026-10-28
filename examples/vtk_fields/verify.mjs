@@ -4,7 +4,7 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {isUtf8} from 'node:buffer';
 import crypto from 'node:crypto';
-import {read_vtk_fields} from '../../_build/js/release/build/cmd/bridge/bridge.js';
+import {read_vtk_fields,verify_vtk_fields} from '../../_build/js/release/build/cmd/bridge/bridge.js';
 
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const digest=value=>typeof value==='string'&&/^[0-9a-f]{64}$/.test(value);
@@ -18,11 +18,14 @@ function object(value,label) {
 }
 
 /** Consume the unchanged three-file bundle; optional explicit originals pin identity.
+ * compareSourceFields additionally checks exact selected source headers/tuples.
  * Hashes establish consistency with the supplied manifest, not authenticity.
  * The recorded original path is never opened automatically. No files are written.
  */
-export function verifyBundle(directory,{input,options}={}) {
+export function verifyBundle(directory,{input,options,compareSourceFields=false}={}) {
   if((input===undefined)!==(options===undefined))throw new Error('supply both INPUT.msh and OPTIONS.json, or neither');
+  if(typeof compareSourceFields!=='boolean')throw new Error('compareSourceFields must be boolean');
+  if(compareSourceFields&&input===undefined)throw new Error('source field comparison requires explicit INPUT.msh and OPTIONS.json');
   const manifestBytes=fs.readFileSync(path.join(directory,'manifest.json'));
   const manifest=object(JSON.parse(text(manifestBytes,'manifest')),'manifest');
   if(typeof manifest.input!=='string'||!digest(manifest.inputSha256)||!digest(manifest.optionsSha256))throw new Error('manifest source identity is invalid');
@@ -32,25 +35,32 @@ export function verifyBundle(directory,{input,options}={}) {
   const vtk=fs.readFileSync(path.join(directory,'fields.vtk'));
   const audit=fs.readFileSync(path.join(directory,'audit.json'));
   if(sha(vtk)!==outputs['fields.vtk']||sha(audit)!==outputs['audit.json'])throw new Error('bundle payload SHA256 mismatch');
-  const readback=JSON.parse(read_vtk_fields(vtk,text(audit,'audit')));
+  const auditText=text(audit,'audit');
   let sourceIdentity='declared_only';
+  let inputBytes,selected;
   if(input!==undefined) {
-    const inputBytes=fs.readFileSync(input),optionBytes=fs.readFileSync(options);
+    inputBytes=fs.readFileSync(input);
+    const optionBytes=fs.readFileSync(options);
     if(sha(inputBytes)!==manifest.inputSha256||sha(optionBytes)!==manifest.optionsSha256)throw new Error('explicit input/options SHA256 mismatch');
-    const selected=object(JSON.parse(text(optionBytes,'options')),'options').field_indices;
+    selected=object(JSON.parse(text(optionBytes,'options')),'options').field_indices;
+    sourceIdentity='byte_verified';
+  }
+  const readback=JSON.parse(compareSourceFields?verify_vtk_fields(inputBytes,vtk,auditText):read_vtk_fields(vtk,auditText));
+  if(input!==undefined) {
     const actual=readback.fields.map(item=>item.field.field_index);
     if(!Array.isArray(selected)||selected.length!==actual.length||!selected.every((value,index)=>Number.isInteger(value)&&value===actual[index]))throw new Error('selected field indices do not match the sidecar request order');
-    sourceIdentity='byte_verified';
   }
   return {status:'consistent',manifestSha256:sha(manifestBytes),payloadSha256:{'fields.vtk':sha(vtk),'audit.json':sha(audit)},
     sourceIdentity,input:manifest.input,inputSha256:manifest.inputSha256,optionsSha256:manifest.optionsSha256,readback,
-    scope:'saved vtk_fields profile, byte identity and field/tag association coherence; no regeneration, source-value/authenticity or geometry/physics certification'};
+    ...(compareSourceFields?{sourceFieldComparison:{status:'equal',field_indices:readback.fields.map(item=>item.field.field_index),numericEquality:'exact decoded Double values; signed zero equivalent',geometry:'not_compared'}}:{}),
+    scope:compareSourceFields?'saved vtk_fields profile and selected source tuples/raw heads equal; no regeneration, authenticity or geometry/physics certification':'saved vtk_fields profile, byte identity and field/tag association coherence; no regeneration, source-value/authenticity or geometry/physics certification'};
 }
 
 if(process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url) {
   try {
     const args=process.argv.slice(2);
-    if(args.length!==1&&args.length!==3)throw new Error('Usage: node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY [INPUT.msh OPTIONS.json]');
-    console.log(JSON.stringify(verifyBundle(args[0],{input:args[1],options:args[2]}),null,2));
+    const compareSourceFields=args.length===4&&args[3]==='--compare-source-fields';
+    if(args.length!==1&&args.length!==3&&!compareSourceFields)throw new Error('Usage: node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY [INPUT.msh OPTIONS.json [--compare-source-fields]]');
+    console.log(JSON.stringify(verifyBundle(args[0],{input:args[1],options:args[2],compareSourceFields}),null,2));
   } catch(error) {console.error(`verify-vtk-fields: ${error.message}`);process.exitCode=2;}
 }

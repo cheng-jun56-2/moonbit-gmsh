@@ -60,3 +60,26 @@ console.log(receipt.readback.point_tags, receipt.readback.fields);
 ```
 
 复核成功输出JSON；缺文件、载荷SHA不符、帧/关联错误或显式原文件不匹配时退出2。不会创建/覆盖输入、产物或报告文件。独立开发回归为`python tools/verify-vtk-bundle.py --evidence NEW.json --outputs NEW_DIRECTORY`：手工VTK/字段/tag预期、meshio读回、同长度篡改、重算SHA后的关联错误、缺文件、原件错误和Unicode路径；原写出入口及全部既有验证保留。
+
+## 显式源字段比较
+
+接收方同时拥有原MSH时，可以要求保存的字段与该原件实际相等；这是额外的明确请求，原单参数/三参数用法与回执保持：
+
+```sh
+node examples/vtk_fields/verify.mjs EXISTING_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields
+```
+
+```js
+const receipt = verifyBundle(directory, {
+  input: originalMesh, options: originalOptions, compareSourceFields: true,
+});
+console.log(receipt.sourceFieldComparison);
+```
+
+Node先核原件SHA，MoonBit的`Mesh::verify_vtk_fields(Bytes, Json)`再读现有VTK，并与显式解码的源Mesh比较版本、节点/单元数、已携带关联的原tag顺序、准确选中段索引和省略索引，以及完整原字符串/实数/整数头、逐tag的1/3/9分量值。源数据条目的存储顺序可以不同；同名同时间段不合并或猜选。未选中的合法稀疏段仅保留省略身份，不要求其覆盖全网格。
+
+成功仍返回`sourceIdentity=byte_verified`，另加`sourceFieldComparison.status=equal`及选中索引；未启用时没有这个新字段。数值按解码后的Double精确相等，不设容差；沿既有VTK文本策略把正负零视为相等，不保证位模式。空段、额外原头和Unicode保留；原MSH仍使用既有2.2/4.1 ASCII/二进制解码范围及资源预算。
+
+比较不调用写出器或重生成网格，不创建报告文件。差异退出2且没有部分成功JSON。它不比较坐标、连接或单元类型值、未携带元数据、单位/坐标基或省略字段的内容，不做插值、时间对齐和数值/工程认证；`geometry=not_compared`明确保留。提供的原件也可能不可信，字段相等及SHA仍不是来源签名。
+
+独立回归：`python tools/verify-vtk-source.py --evidence NEW.json --outputs NEW_DIRECTORY`。手写VTK、MSH及struct二进制原件给定固定字段/tag/完整头预期；覆盖重算哈希后的数值、额外头、原tag、原段/省略身份差异，八种已支持的源编码与只读成功/失败路径。另用未改的写出例程做一次集成，比较器本身不生成文件。

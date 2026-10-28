@@ -366,6 +366,20 @@ pub fn read_vtk_fields(data : Bytes, audit : String) -> String {
 }
 
 ///|
+pub fn verify_vtk_fields(
+  source : Bytes,
+  data : Bytes,
+  audit : String,
+) -> String {
+  @lib.decode(source)
+  .verify_vtk_fields(data, @json.parse(audit))
+  .to_json()
+  .stringify() catch {
+    e => fail_string(@debug.to_string(e))
+  }
+}
+
+///|
 fn main {
 
 }
