@@ -359,6 +359,13 @@ pub fn new_file(options : String) -> Bytes {
 }
 
 ///|
+pub fn read_vtk_fields(data : Bytes, audit : String) -> String {
+  @lib.read_vtk_fields(data, @json.parse(audit)).to_json().stringify() catch {
+    e => fail_string(@debug.to_string(e))
+  }
+}
+
+///|
 fn main {
 
 }

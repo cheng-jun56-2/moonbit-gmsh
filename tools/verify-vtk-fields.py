@@ -118,8 +118,14 @@ check(json.loads((bundle/'audit.json').read_text())=={k:v for k,v in results['mi
 saved={f.name:sha(f.read_bytes()) for f in bundle.iterdir()};run('example',[root/'examples/vtk_fields/run.mjs',source,opts,bundle],expected=2)
 check({f.name:sha(f.read_bytes()) for f in bundle.iterdir()}==saved,'existing example directory untouched')
 check(sha(source.read_bytes())==source_sha,'original source unchanged')
+offline=run('offline-consumer',[root/'examples/vtk_fields/verify.mjs',bundle,source,opts])
+received=json.loads(offline.stdout)
+check(received['sourceIdentity']=='byte_verified','saved producer bundle verifies explicit original byte identities')
+check(received['readback']['point_tags']==[n['tag'] for n in model['nodes']] and received['readback']['cell_tags']==[e['tag'] for e in model['elements']],'saved producer original tags read without regeneration')
+check([f['field']['field_index'] for f in received['readback']['fields']]==[2,0,1],'saved producer request order matches explicit options')
+check({f.name:sha(f.read_bytes()) for f in bundle.iterdir()}==saved and sha(source.read_bytes())==source_sha,'offline consumer leaves existing producer files unchanged')
 out=dict(status='PASS',checks=len(checks),cliCalls=sum(c['kind']=='cli' for c in calls),exampleInvocations=sum(c['kind']=='example' for c in calls),
- meshioFiles=readbacks,payloadReadbacks=len(manifest['outputs']),commands=calls,checkLabels=checks,sourceSha256=source_sha,
+ meshioFiles=readbacks,payloadReadbacks=len(manifest['outputs']),offlineVerifierInvocations=sum(c['kind']=='offline-consumer' for c in calls),commands=calls,checkLabels=checks,sourceSha256=source_sha,
  bridgeSha256=sha((root/'_build/js/release/build/cmd/bridge/bridge.js').read_bytes()),meshioVersion=meshio.__version__,
  scope='four combined-field requests plus unselected-sparse positive path; source-index aliases and both original-ID maps; no old single/edge matrix replay')
 with evidence.open('x',encoding='utf-8') as f:f.write(json.dumps(out,indent=2)+'\n')

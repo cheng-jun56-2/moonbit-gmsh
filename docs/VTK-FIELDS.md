@@ -35,3 +35,28 @@ OPTIONS例如`{"field_indices":[2,0,1],"allow_loss":true}`。例程保存`fields
 直接`node tools/gmsh.mjs vtk-fields INPUT.msh OPTIONS.json REPORT.json`输出包含文本/完整侧车的JSON。单字段接口的固定`gmsh_value`别名和输出形状不变，选择多字段接口时请按其报告别名读数组。
 
 自建Quad9+三角形、孤立节点和四帧例包含同一步的温度/速度/单元九分量应力，以及同名后一步温度。开发入口`python tools/verify-vtk-fields.py --evidence NEW.json --outputs NEW_DIRECTORY`以原tag/元组、数组组顺序及实际meshio读取核对联合输出；不重复单帧或空数据旧矩阵。
+
+## 离线复核
+
+源码首次使用先完成上面的JS发布构建；之后只需Node和已编译的桥，不调用导出器、Python或Gmsh：
+
+```sh
+node examples/vtk_fields/verify.mjs EXISTING_DIRECTORY
+node examples/vtk_fields/verify.mjs EXISTING_DIRECTORY ORIGINAL.msh OPTIONS.json
+```
+
+它只读现有`manifest.json`、`fields.vtk`、`audit.json`。Node逐文件计算完整SHA256；MoonBit的`read_vtk_fields(Bytes, Json)`消费现有legacy3.0 ASCII布局，检查字段别名/关联/分量/元组数、原头与帧、源索引和省略信息的一致性，并读回按原tag顺序排列的1/3/9分量值。几何仅消费布局/连接索引以定位数组，不重建、修复或积分。
+
+默认`sourceIdentity=declared_only`：清单内的原MSH绝对路径不会被自动打开，来源哈希是声明。显式给两个原文件时核对其原始字节SHA，并核选中段索引及请求顺序，返回`byte_verified`；这仍不证明保存值真实取自该MSH，也不重放生成选项或认证来源。清单可一起被改写，SHA不是签名；需要可信来源时另行保存可信清单哈希。
+
+结果的`readback.fields`保持侧车请求顺序，`values`与相应`point_tags`或`cell_tags`逐项对应。`has_point_tags/has_cell_tags`区分未携带关联与合法的已选零元组。只支持本例程既有bundle的字段布局，不是通用VTK读取器；不恢复MSH实体、单位、时间序列、自定义插值或工程适用性。
+
+也可导入同一只读消费者：
+
+```js
+import {verifyBundle} from './examples/vtk_fields/verify.mjs';
+const receipt = verifyBundle(directory, {input: originalMesh, options: originalOptions});
+console.log(receipt.readback.point_tags, receipt.readback.fields);
+```
+
+复核成功输出JSON；缺文件、载荷SHA不符、帧/关联错误或显式原文件不匹配时退出2。不会创建/覆盖输入、产物或报告文件。独立开发回归为`python tools/verify-vtk-bundle.py --evidence NEW.json --outputs NEW_DIRECTORY`：手工VTK/字段/tag预期、meshio读回、同长度篡改、重算SHA后的关联错误、缺文件、原件错误和Unicode路径；原写出入口及全部既有验证保留。

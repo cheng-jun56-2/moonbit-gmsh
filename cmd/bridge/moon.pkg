@@ -10,6 +10,9 @@ pkgtype(kind: "executable")
 
 options(
   link: {
-    "js": { "exports": [ "report", "transform", "new_file" ], "format": "esm" },
+    "js": {
+      "exports": [ "report", "transform", "new_file", "read_vtk_fields" ],
+      "format": "esm",
+    },
   },
 )

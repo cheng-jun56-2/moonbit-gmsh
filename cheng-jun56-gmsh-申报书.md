@@ -8,13 +8,13 @@ MoonGmsh（cheng-jun56/gmsh，0.11.0）提供MSH交换、完整节点边界、�
 - 网格整理：按单元或物理组取子集，全维按共享节点tag拆连通分量，随后清除未用节点或紧凑编号；输出字段关联一致的子网格，不按坐标焊接。
 - 曲面计算：对Tri3/Tri6/Quad4/Quad8/Quad9完整覆盖字段，以固定Gauss规则计算1/3/9分量面积积分、向量通量及标量法向合量；节点插值与真实导数叉积耦合，返回总量与规则；通量可附逐面贡献，法向符号服从所存绕向。
 - 几何诊断：检查孤立/精确重复节点、重复连接，输出线性三角形面积/质量、四面体有符号体积/翻转/质量；指定高阶族给出采样Jacobian与尺度值，未支持项明确列出。
-- 可视化交付：指定当前段索引，把多个完整点/单元字段写入同一legacy VTK，以gmsh_value_I区分数组、gmsh_tag保存原编号，侧车记录帧/原头/损失；保留几何及单帧接口。OBJ/STL按角点平面近似，报告曲节点、三角化和元数据损失。
+- 可视化交付：完整点/单元字段按原段索引写入同一VTK，gmsh_value_I/gmsh_tag绑定字段与原编号，侧车保存帧/原头/损失。离线入口只读复核清单SHA、字段/tag关联及可选原件字节身份，不重生成或认证真实性。OBJ/STL报告角点平面近似和元数据损失。
 
 核心由MoonBit实现，支持JS/Wasm-GC/native；Node负责文件、参数、退出码及外部JSON选项的严格UTF-8校验，合法Unicode保持原样。Python/Gmsh/meshio仅供开发核验。
 最短示例：安装MoonBit后，在源码根目录执行 `moon run examples/vtk_fields --target js`。
 输出两份JSON报告：一份含温度、三分量速度、九分量单元应力及两类原tag映射，另一份只含点字段；报告内附VTK文本和损失说明，文件落盘步骤见README。
 
 Gmsh、meshio、VTK/PyVista已有交换、积分和多数组能力。本项目贡献是独立实现MoonBit内原tag、完整节点、明确原帧、覆盖检查与损失合同的组合，不主张格式、数学或算法首创。
-JS/Wasm-GC/native及独立解析、Gmsh参考、meshio文件消费已有验证，示例已运行；源码与CI已公开，结果以对应提交Actions为准，竞赛验收未建立。
+JS/Wasm-GC/native、独立解析及Gmsh/meshio消费者已有验证；源码与CI已公开，以对应提交Actions为准，竞赛验收未建立。
 边界：不生成网格或求解，不提供任意高阶/多面体、字段转移、时间对齐、单位/基变换或自定义插值方案解释；固定求积和采样不认证全域有效、外向或工程适用性，单位与压力符号由调用者定义。VTK不能还原完整MSH语义，保留原MSH；不保证所有读者及符号零位级保真，未运行原生VTK。
 仓库：[cheng-jun56-2/moonbit-gmsh](https://github.com/cheng-jun56-2/moonbit-gmsh)。自有代码与自建样例按根LICENSE的MIT许可。附带Gmsh教程t1.geo为GPL-2.0-or-later，保留独立许可与生成文件来源；meshio(MIT)、NumPy(BSD-3-Clause)、Gmsh仅作开发工具，未打包依赖。明细见docs/SOURCES.md。

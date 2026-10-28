@@ -81,3 +81,8 @@ Gauss4三角形与CompositeGauss4四边形规则的数表/权重通过Gmsh4.15.2
 ## 0.11.0 同几何多个字段数组
 
 布局仍依据[VTK官方FIELD多数组语法](https://docs.vtk.org/en/latest/vtk_file_formats/vtk_legacy_file_format.html)。新Quad9/三角形、温度/速度/应力/后一步同名温度和短例自建，代码复用本项目既有几何构建器；未复制第三方实现或增生产依赖。[meshio主项目](https://github.com/nschloe/meshio)已有成熟命名点/单元数据交换，人工组合只作前置缺口证据。Moon registry搜索不证明生态空缺；本版差异仅在原帧索引别名、完整覆盖、双关联tag与原头损失侧车的可组合合同，不主张首创/性能/外部采用。
+
+
+## 现有VTK bundle的离线消费者
+
+`read_vtk_fields`独立编写在MoonBit中，复用本项目原数值词法读取器，只消费既有legacy ASCII布局及本项目原帧侧车，不复制VTK/meshio实现；格式依据[VTK原始说明](https://docs.vtk.org/en/v9.5.2/design_documents/VTKFileFormats.html)。Node只处理文件、SHA及清单/显式原件的字节身份。手工三角形、1/3/9字段和原tag预期自建，meshio仅作开发期独立数组消费。成熟读者和通用哈希工具已有相关能力，本入口的贡献是本项目现有bundle合同的有界组合；不主张首创、真实性、数值或工程认证。

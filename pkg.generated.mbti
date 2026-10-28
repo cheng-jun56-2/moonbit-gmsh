@@ -12,6 +12,8 @@ pub fn element_shape(Int) -> (Int, Int) raise MeshError
 
 pub fn mesh(Array[Node], Array[Element], entities? : Array[Entity], names? : Array[PhysicalName], fields? : Array[Field], unknown? : Array[Section], version? : String) -> Mesh raise MeshError
 
+pub fn read_vtk_fields(Bytes, Json) -> VtkFieldsReadback raise
+
 // Errors
 pub suberror MeshError {
   Invalid(String)
@@ -378,6 +380,13 @@ pub(all) struct VtkFieldExport {
 } derive(ToJson)
 pub fn VtkFieldExport::to_json(Self) -> Json
 
+pub(all) struct VtkFieldReadback {
+  field : FieldFrame
+  value_array : String
+  values : Array[Array[Double]]
+} derive(ToJson)
+pub fn VtkFieldReadback::to_json(Self) -> Json
+
 pub(all) struct VtkFieldsExport {
   text : String
   fields : Array[VtkFieldArray]
@@ -386,6 +395,20 @@ pub(all) struct VtkFieldsExport {
   losses : Array[String]
 } derive(ToJson)
 pub fn VtkFieldsExport::to_json(Self) -> Json
+
+pub(all) struct VtkFieldsReadback {
+  points : Int
+  cells : Int
+  has_point_tags : Bool
+  has_cell_tags : Bool
+  point_tags : Array[Int]
+  cell_tags : Array[Int]
+  fields : Array[VtkFieldReadback]
+  source_version : String
+  omitted_field_indices : Array[Int]
+  losses : Array[String]
+} derive(ToJson)
+pub fn VtkFieldsReadback::to_json(Self) -> Json
 
 // Type aliases
 

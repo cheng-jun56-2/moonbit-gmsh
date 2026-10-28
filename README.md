@@ -37,6 +37,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [同一VTK中的温度、速度和单元应力](docs/VTK-FIELDS.md)：`moon run examples/vtk_fields --target js`（亦可wasm-gc）。显式索引列表使用源索引别名、每关联一套原tag和逐段侧车；不自动对齐时间或合并同名段。
 
+[只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
+
 [完整单帧VTK字段交付](docs/VTK-FIELD.md)：`moon run examples/vtk_field --target js`（亦可wasm-gc）。固定gmsh_value/gmsh_tag数组保留点或单元1/3/9分量与原tag；原时间/方案/额外头在侧车中，不补缺值或解释张量。
 
 已有连通分量的[带字段MSH拆分交付例程](docs/COMPONENT-CONSUMER.md)：`node examples/split_components/run.mjs INPUT.msh NEW_DIRECTORY`保存原tag与紧凑4.1二进制文件及实际tag顺序清单。按完整共享节点连接所有维度，不按坐标焊接；字段随既有subset/compact维护。

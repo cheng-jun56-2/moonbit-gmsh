@@ -94,6 +94,7 @@ jobs:
           python tools/verify-stl-consumer.py --evidence "$GMSH_CI_EVIDENCE/stl.json" --outputs "$GMSH_CI_EVIDENCE/stl"
           python tools/verify-vtk-field.py --evidence "$GMSH_CI_EVIDENCE/vtk-field.json" --outputs "$GMSH_CI_EVIDENCE/vtk-field"
           python tools/verify-vtk-fields.py --evidence "$GMSH_CI_EVIDENCE/vtk-fields.json" --outputs "$GMSH_CI_EVIDENCE/vtk-fields"
+          python tools/verify-vtk-bundle.py --evidence "$GMSH_CI_EVIDENCE/vtk-bundle.json" --outputs "$GMSH_CI_EVIDENCE/vtk-bundle"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
