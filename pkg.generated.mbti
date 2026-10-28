@@ -189,6 +189,7 @@ pub fn Mesh::diagnostics(Self, tolerance? : Double) -> Diagnostics raise
 pub fn Mesh::elements(Self) -> Array[Element]
 pub fn Mesh::encode(Self, version? : String, binary? : Bool, little? : Bool, size_width? : Int, allow_loss? : Bool) -> Bytes raise
 pub fn Mesh::entities(Self) -> Array[Entity]
+pub fn Mesh::evaluate_tet4_nodal_field(Self, Int, Int, Array[Double]) -> Tet4FieldEvaluation raise MeshError
 pub fn Mesh::export_to_obj(Self, ExportPolicy) -> (String, LossReport) raise
 pub fn Mesh::export_to_stl(Self, ExportPolicy) -> (String, LossReport) raise
 pub fn Mesh::extract_boundary(Self, dimension? : Int, max_facets? : Int) -> Boundary raise
@@ -351,6 +352,24 @@ pub(all) struct SurfaceNormalIntegral {
   certified_error_bound : Bool
 } derive(ToJson)
 pub fn SurfaceNormalIntegral::to_json(Self) -> Json
+
+pub(all) struct Tet4FieldEvaluation {
+  field : FieldFrame
+  source_version : String
+  element_tag : Int
+  element_type : Int
+  node_tags : Array[Int]
+  reference : Array[Double]
+  weights : Array[Double]
+  node_xyz : Array[Array[Double]]
+  nodal_values : Array[Array[Double]]
+  xyz : Array[Double]
+  values : Array[Double]
+  strings : Array[String]
+  reals : Array[Double]
+  integers : Array[Int]
+} derive(ToJson)
+pub fn Tet4FieldEvaluation::to_json(Self) -> Json
 
 pub(all) struct Topology {
   dimension : Int

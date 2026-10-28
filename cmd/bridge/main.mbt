@@ -176,6 +176,14 @@ fn do_report(data : Bytes, options : String) -> String raise {
   let m = @lib.decode(data)
   let command : String = opt(o, "command", "inspect")
   let result : Json = match command {
+    "evaluate-tet4-field" =>
+      m
+      .evaluate_tet4_nodal_field(
+        req_int(o, "field_index"),
+        req_int(o, "element_tag"),
+        req(o, "reference"),
+      )
+      .to_json()
     "field-frames" => m.field_frames().to_json()
     "surface-field-coverage" =>
       m

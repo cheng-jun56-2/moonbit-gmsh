@@ -22,6 +22,7 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 | 数据字段 | 多帧 NodeData / ElementData；1/3/9 分量；稀疏数据；时间与额外头标签 |
 | 字段预检 | 原顺序帧目录；完整曲面唯一节点/面tag覆盖，缺失总数与有上限的缺失列表，不作几何认证 |
 | 字段快照 | 按唯一原段索引选择/重排字段或显式移除全部；保留原时间步、完整头/数据与所有网格元数据 |
+| 参考点字段 | 给定当前帧索引、TET4原单元tag及闭单纯形参考坐标，查询标准NodeData的1/3/9分量值与前向xyz；完整原头/四角色见证，不定位或认证几何 |
 | 变换 | 按单元/物理组取子集、清除未使用节点、紧凑编号；同步维护字段关联 |
 | 拓扑 | 线性及Tri6/Tet10/Hex20/Hex27高阶边界；Line3/Quad8/Quad9配套、完整曲面节点匹配；全阶共享节点连通分量 |
 | 边界工作流 | 外面/外边/端点提取，复用显式单元标签/字段，来源映射与损失报告，派生MSH导出 |
@@ -36,6 +37,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 高阶完整用法、族/方向/损失/数值边界和独立核验见 [HIGH-ORDER.md](docs/HIGH-ORDER.md)。
 
 [同一VTK中的温度、速度和单元应力](docs/VTK-FIELDS.md)：`moon run examples/vtk_fields --target js`（亦可wasm-gc）。显式索引列表使用源索引别名、每关联一套原tag和逐段侧车；不自动对齐时间或合并同名段。
+
+[TET4已知参考点的字段值](docs/TET4-FIELD.md)：`moon run examples/tet4_field --target js`（亦可wasm-gc）运行自建公共包接收方。实际文件执行`node tools/gmsh.mjs evaluate-tet4-field examples/tet4_field/source.msh examples/tet4_field/options.json NEW_RESULT.json`；手算标量3.75、向量[0.5,0.375,0.5]及九分量一并覆盖。它是指定点的值，不是积分、物理坐标求逆、客户采用或网格有效性证书。
 
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 

@@ -62,6 +62,14 @@ jobs:
           moon run examples/vtk_fields --target js > "$GMSH_CI_EVIDENCE/example-js.jsonl"
           moon run examples/vtk_fields --target wasm-gc > "$GMSH_CI_EVIDENCE/example-wasm-gc.jsonl"
           cmp "$GMSH_CI_EVIDENCE/example-js.jsonl" "$GMSH_CI_EVIDENCE/example-wasm-gc.jsonl"
+      - name: TET4 reference field receivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          moon run examples/tet4_field --target js > "$GMSH_CI_EVIDENCE/tet4-public-js.json"
+          moon run examples/tet4_field --target wasm-gc > "$GMSH_CI_EVIDENCE/tet4-public-wasm-gc.json"
+          cmp "$GMSH_CI_EVIDENCE/tet4-public-js.json" "$GMSH_CI_EVIDENCE/tet4-public-wasm-gc.json"
+          python tools/verify-tet4-field.py --public-receipt "$GMSH_CI_EVIDENCE/tet4-public-js.json" --evidence "$GMSH_CI_EVIDENCE/tet4-field.json" --outputs "$GMSH_CI_EVIDENCE/tet4-field"
       - name: Install independent reference readers
         run: |
           sudo apt-get update
