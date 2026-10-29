@@ -15,3 +15,5 @@ R09保留step`Exact physical name selection receivers`：双后端公共包完�
 R10新增必要step`Original node cloud receivers`：新节点域快照双后端完整Mesh接收，独立MSH原始读取，再实际以产生的MSH调用既有vtk-fields并独立核对全部点/tag/1/3/9数值及零单元。清空单元数据而不投影，孤立点及稀疏字段保持；不跑旧曲面/高阶generator或把下游接收当原生VTK渲染认证。新本地命令stdout/stderr/exit分开留存。
 
 命名空间同步：当前自有模块与全部公共包导入为`cheng-jun56-2/gmsh`。原完整workflow命令保持，all-target/API与各后端测试重新按此模块构建；Original node cloud receivers实际运行新命名空间公共包及产生文件的独立下游消费。Node桥接仍使用包相对构建路径，旧完整行为期望保持。只改自有标识及当前归属，不改算法、格式、依赖、版权或历史证据。
+
+R11新增必要step`Prescribed tag remap receivers`：新命名空间公共包双后端完整Mesh接收，独立手写双域映射期望/原始MSH接收，并将实际重编号文件交给既有VTK-fields核对全部点/单元tag、Line3/Tri6连结/类型与完整1/3/9数组/原头。交换/循环不串域、语义ID及所有字段保持；旧compact/科学/所有workflow命令保留，本地只做必要干净相关验证。

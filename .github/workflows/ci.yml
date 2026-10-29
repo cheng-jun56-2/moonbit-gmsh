@@ -118,6 +118,14 @@ jobs:
           moon run examples/node_cloud --target wasm-gc > "$GMSH_CI_EVIDENCE/node-cloud-public-wasm-gc.json"
           cmp "$GMSH_CI_EVIDENCE/node-cloud-public-js.json" "$GMSH_CI_EVIDENCE/node-cloud-public-wasm-gc.json"
           python tools/verify-node-cloud.py --public-receipt "$GMSH_CI_EVIDENCE/node-cloud-public-js.json" --evidence "$GMSH_CI_EVIDENCE/node-cloud.json" --outputs "$GMSH_CI_EVIDENCE/node-cloud"
+      - name: Prescribed tag remap receivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          moon run examples/remap_tags --target js > "$GMSH_CI_EVIDENCE/tag-remap-public-js.json"
+          moon run examples/remap_tags --target wasm-gc > "$GMSH_CI_EVIDENCE/tag-remap-public-wasm-gc.json"
+          cmp "$GMSH_CI_EVIDENCE/tag-remap-public-js.json" "$GMSH_CI_EVIDENCE/tag-remap-public-wasm-gc.json"
+          python tools/verify-tag-remap.py --public-receipt "$GMSH_CI_EVIDENCE/tag-remap-public-js.json" --evidence "$GMSH_CI_EVIDENCE/tag-remap.json" --outputs "$GMSH_CI_EVIDENCE/tag-remap"
       - name: Install independent reference readers
         run: |
           sudo apt-get update

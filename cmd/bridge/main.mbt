@@ -333,6 +333,21 @@ pub fn report(data : Bytes, options : String) -> String {
 }
 
 ///|
+fn tag_mappings(
+  o : Map[String, Json],
+  key : String,
+) -> Array[@lib.TagMapping] raise {
+  let rows : Array[Json] = req(o, key)
+  rows.map(row => {
+    let item = dict(row)
+    @lib.TagMapping::{
+      old_tag: req_int(item, "old_tag"),
+      new_tag: req_int(item, "new_tag"),
+    }
+  })
+}
+
+///|
 fn do_transform(data : Bytes, options : String) -> Bytes raise {
   let o = object(options)
   let m = @lib.decode(data)
@@ -343,6 +358,11 @@ fn do_transform(data : Bytes, options : String) -> Bytes raise {
     "select-fields" => m.select_fields(ints(o, "field_indices", required=true))
     "subset" => m.subset(ints(o, "tags", required=true))
     "node-cloud" => m.node_cloud(ints(o, "tags", required=true))
+    "remap-tags" =>
+      m.remap_tags(
+        tag_mappings(o, "node_tags"),
+        tag_mappings(o, "element_tags"),
+      )
     "physical" =>
       m.select_physical(req_int(o, "dimension"), req_int(o, "group"))
     "physical-name" =>

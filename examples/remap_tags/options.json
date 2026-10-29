@@ -1,0 +1,42 @@
+{
+  "node_tags": [
+    {
+      "old_tag": 7,
+      "new_tag": 2147483647
+    },
+    {
+      "old_tag": 150,
+      "new_tag": 50
+    },
+    {
+      "old_tag": 90,
+      "new_tag": 3
+    },
+    {
+      "old_tag": 2147483647,
+      "new_tag": 7
+    },
+    {
+      "old_tag": 200,
+      "new_tag": 90
+    },
+    {
+      "old_tag": 50,
+      "new_tag": 100
+    },
+    {
+      "old_tag": 100,
+      "new_tag": 150
+    }
+  ],
+  "element_tags": [
+    {
+      "old_tag": 700,
+      "new_tag": 7
+    },
+    {
+      "old_tag": 7,
+      "new_tag": 700
+    }
+  ]
+}

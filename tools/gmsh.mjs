@@ -14,7 +14,7 @@ Reports: inspect dump validate quality topology components boundary coverage vtk
          integrate-surface-field / integrate-surface-flux / surface-flux-breakdown
          integrate-surface-normal-field (exactly1 supplied scalar -> vector)
          (field_index required; max_samples optional; breakdown adds max_elements)
-Writes: copy convert subset node-cloud physical physical-name compact boundary-msh select-fields (OUTPUT required)
+Writes: copy convert subset node-cloud remap-tags physical physical-name compact boundary-msh select-fields (OUTPUT required)
 select-fields requires field_indices (unique ordered source positions; [] removes all)
 boundary reports source mapping and losses; boundary-msh requires allow_loss
 when that report lists omissions. Derived MSH defaults to version 2.2.
@@ -57,7 +57,7 @@ try {
     if(a.length<2||a.length>4) throw new Error(usage);
     const [command,input,opts,output]=a,o=options(opts);o.command=command;
     const bytes=read(input,134_217_728);
-    if(['copy','convert','subset','node-cloud','physical','physical-name','compact','boundary-msh','select-fields'].includes(command)) {
+    if(['copy','convert','subset','node-cloud','remap-tags','physical','physical-name','compact','boundary-msh','select-fields'].includes(command)) {
       if(!output) throw new Error('transformation requires OUTPUT');
       save(output,Buffer.from(transform(bytes,JSON.stringify(o))));
     } else {

@@ -1,0 +1,1978 @@
+{
+  "frozenBeforeImplementation": true,
+  "source": {
+    "source_version": "4.1",
+    "nodes": [
+      {
+        "tag": 50,
+        "xyz": [
+          0,
+          2,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0,
+          1
+        ]
+      },
+      {
+        "tag": 2147483647,
+        "xyz": [
+          9,
+          9,
+          9
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          9,
+          9
+        ]
+      },
+      {
+        "tag": 7,
+        "xyz": [
+          2,
+          0,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          1,
+          0
+        ]
+      },
+      {
+        "tag": 90,
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0,
+          0
+        ]
+      },
+      {
+        "tag": 100,
+        "xyz": [
+          1,
+          0,
+          0.25
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0.5,
+          0
+        ]
+      },
+      {
+        "tag": 150,
+        "xyz": [
+          1,
+          1,
+          0.5
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "tag": 200,
+        "xyz": [
+          0,
+          1,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0,
+          0.5
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "tag": 7,
+        "kind": 8,
+        "nodes": [
+          90,
+          7,
+          100
+        ],
+        "entity": 3,
+        "physical": [
+          9
+        ],
+        "extra": []
+      },
+      {
+        "tag": 700,
+        "kind": 9,
+        "nodes": [
+          90,
+          7,
+          50,
+          100,
+          150,
+          200
+        ],
+        "entity": 7,
+        "physical": [
+          44
+        ],
+        "extra": []
+      }
+    ],
+    "entities": [
+      {
+        "dim": 1,
+        "tag": 3,
+        "bounds": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0.25
+        ],
+        "physical": [
+          9
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 7,
+        "bounds": [
+          0,
+          0,
+          0,
+          9,
+          9,
+          9
+        ],
+        "physical": [
+          44
+        ],
+        "boundary": []
+      }
+    ],
+    "physical_names": [
+      {
+        "dim": 1,
+        "tag": 9,
+        "name": "edge metadata"
+      },
+      {
+        "dim": 2,
+        "tag": 44,
+        "name": "surface metadata"
+      }
+    ],
+    "fields": [
+      {
+        "location": "NodeData",
+        "strings": [
+          "temperature",
+          "",
+          "extra"
+        ],
+        "reals": [
+          0.5,
+          7.25
+        ],
+        "integers": [
+          8,
+          1,
+          7,
+          31,
+          90
+        ],
+        "entries": [
+          {
+            "tag": 7,
+            "values": [
+              20
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              30
+            ]
+          },
+          {
+            "tag": 2147483647,
+            "values": [
+              99
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              10
+            ]
+          },
+          {
+            "tag": 100,
+            "values": [
+              12
+            ]
+          },
+          {
+            "tag": 150,
+            "values": [
+              23
+            ]
+          },
+          {
+            "tag": 200,
+            "values": [
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "location": "ElementData",
+        "strings": [
+          "stress",
+          "raw-cell"
+        ],
+        "reals": [
+          0.5
+        ],
+        "integers": [
+          8,
+          9,
+          2,
+          0,
+          92
+        ],
+        "entries": [
+          {
+            "tag": 7,
+            "values": [
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          },
+          {
+            "tag": 700,
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "velocity"
+        ],
+        "reals": [],
+        "integers": [
+          3,
+          3,
+          7
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              9,
+              8,
+              7
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "tag": 200,
+            "values": [
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "tag": 150,
+            "values": [
+              1,
+              1,
+              0.5
+            ]
+          },
+          {
+            "tag": 100,
+            "values": [
+              1,
+              0,
+              0.25
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "tag": 7,
+            "values": [
+              2,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "empty"
+        ],
+        "reals": [],
+        "integers": [
+          7,
+          1,
+          0
+        ],
+        "entries": []
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "tensor",
+          "raw-node-scheme"
+        ],
+        "reals": [
+          0.25
+        ],
+        "integers": [
+          4,
+          9,
+          3
+        ],
+        "entries": [
+          {
+            "tag": 50,
+            "values": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          },
+          {
+            "tag": 2147483647,
+            "values": [
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ]
+          },
+          {
+            "tag": 7,
+            "values": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          }
+        ]
+      }
+    ],
+    "unknown_sections": []
+  },
+  "expected": {
+    "mapped": {
+      "source_version": "4.1",
+      "nodes": [
+        {
+          "tag": 100,
+          "xyz": [
+            0,
+            2,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            1
+          ]
+        },
+        {
+          "tag": 7,
+          "xyz": [
+            9,
+            9,
+            9
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            9,
+            9
+          ]
+        },
+        {
+          "tag": 2147483647,
+          "xyz": [
+            2,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            1,
+            0
+          ]
+        },
+        {
+          "tag": 3,
+          "xyz": [
+            0,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0
+          ]
+        },
+        {
+          "tag": 150,
+          "xyz": [
+            1,
+            0,
+            0.25
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "tag": 50,
+          "xyz": [
+            1,
+            1,
+            0.5
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "tag": 90,
+          "xyz": [
+            0,
+            1,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0.5
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "tag": 700,
+          "kind": 8,
+          "nodes": [
+            3,
+            2147483647,
+            150
+          ],
+          "entity": 3,
+          "physical": [
+            9
+          ],
+          "extra": []
+        },
+        {
+          "tag": 7,
+          "kind": 9,
+          "nodes": [
+            3,
+            2147483647,
+            100,
+            150,
+            50,
+            90
+          ],
+          "entity": 7,
+          "physical": [
+            44
+          ],
+          "extra": []
+        }
+      ],
+      "entities": [
+        {
+          "dim": 1,
+          "tag": 3,
+          "bounds": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0.25
+          ],
+          "physical": [
+            9
+          ],
+          "boundary": []
+        },
+        {
+          "dim": 2,
+          "tag": 7,
+          "bounds": [
+            0,
+            0,
+            0,
+            9,
+            9,
+            9
+          ],
+          "physical": [
+            44
+          ],
+          "boundary": []
+        }
+      ],
+      "physical_names": [
+        {
+          "dim": 1,
+          "tag": 9,
+          "name": "edge metadata"
+        },
+        {
+          "dim": 2,
+          "tag": 44,
+          "name": "surface metadata"
+        }
+      ],
+      "fields": [
+        {
+          "location": "NodeData",
+          "strings": [
+            "temperature",
+            "",
+            "extra"
+          ],
+          "reals": [
+            0.5,
+            7.25
+          ],
+          "integers": [
+            8,
+            1,
+            7,
+            31,
+            90
+          ],
+          "entries": [
+            {
+              "tag": 2147483647,
+              "values": [
+                20
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                30
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                99
+              ]
+            },
+            {
+              "tag": 3,
+              "values": [
+                10
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                12
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                23
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "location": "ElementData",
+          "strings": [
+            "stress",
+            "raw-cell"
+          ],
+          "reals": [
+            0.5
+          ],
+          "integers": [
+            8,
+            9,
+            2,
+            0,
+            92
+          ],
+          "entries": [
+            {
+              "tag": 700,
+              "values": [
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "velocity"
+          ],
+          "reals": [],
+          "integers": [
+            3,
+            3,
+            7
+          ],
+          "entries": [
+            {
+              "tag": 7,
+              "values": [
+                9,
+                8,
+                7
+              ]
+            },
+            {
+              "tag": 3,
+              "values": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                1,
+                1,
+                0.5
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                1,
+                0,
+                0.25
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                2,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "empty"
+          ],
+          "reals": [],
+          "integers": [
+            7,
+            1,
+            0
+          ],
+          "entries": []
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "tensor",
+            "raw-node-scheme"
+          ],
+          "reals": [
+            0.25
+          ],
+          "integers": [
+            4,
+            9,
+            3
+          ],
+          "entries": [
+            {
+              "tag": 100,
+              "values": [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            }
+          ]
+        }
+      ],
+      "unknown_sections": []
+    },
+    "identity": {
+      "source_version": "4.1",
+      "nodes": [
+        {
+          "tag": 50,
+          "xyz": [
+            0,
+            2,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            1
+          ]
+        },
+        {
+          "tag": 2147483647,
+          "xyz": [
+            9,
+            9,
+            9
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            9,
+            9
+          ]
+        },
+        {
+          "tag": 7,
+          "xyz": [
+            2,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            1,
+            0
+          ]
+        },
+        {
+          "tag": 90,
+          "xyz": [
+            0,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0
+          ]
+        },
+        {
+          "tag": 100,
+          "xyz": [
+            1,
+            0,
+            0.25
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "tag": 150,
+          "xyz": [
+            1,
+            1,
+            0.5
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "tag": 200,
+          "xyz": [
+            0,
+            1,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0.5
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "tag": 7,
+          "kind": 8,
+          "nodes": [
+            90,
+            7,
+            100
+          ],
+          "entity": 3,
+          "physical": [
+            9
+          ],
+          "extra": []
+        },
+        {
+          "tag": 700,
+          "kind": 9,
+          "nodes": [
+            90,
+            7,
+            50,
+            100,
+            150,
+            200
+          ],
+          "entity": 7,
+          "physical": [
+            44
+          ],
+          "extra": []
+        }
+      ],
+      "entities": [
+        {
+          "dim": 1,
+          "tag": 3,
+          "bounds": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0.25
+          ],
+          "physical": [
+            9
+          ],
+          "boundary": []
+        },
+        {
+          "dim": 2,
+          "tag": 7,
+          "bounds": [
+            0,
+            0,
+            0,
+            9,
+            9,
+            9
+          ],
+          "physical": [
+            44
+          ],
+          "boundary": []
+        }
+      ],
+      "physical_names": [
+        {
+          "dim": 1,
+          "tag": 9,
+          "name": "edge metadata"
+        },
+        {
+          "dim": 2,
+          "tag": 44,
+          "name": "surface metadata"
+        }
+      ],
+      "fields": [
+        {
+          "location": "NodeData",
+          "strings": [
+            "temperature",
+            "",
+            "extra"
+          ],
+          "reals": [
+            0.5,
+            7.25
+          ],
+          "integers": [
+            8,
+            1,
+            7,
+            31,
+            90
+          ],
+          "entries": [
+            {
+              "tag": 7,
+              "values": [
+                20
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                30
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                99
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                10
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                12
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                23
+              ]
+            },
+            {
+              "tag": 200,
+              "values": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "location": "ElementData",
+          "strings": [
+            "stress",
+            "raw-cell"
+          ],
+          "reals": [
+            0.5
+          ],
+          "integers": [
+            8,
+            9,
+            2,
+            0,
+            92
+          ],
+          "entries": [
+            {
+              "tag": 7,
+              "values": [
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "tag": 700,
+              "values": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "velocity"
+          ],
+          "reals": [],
+          "integers": [
+            3,
+            3,
+            7
+          ],
+          "entries": [
+            {
+              "tag": 2147483647,
+              "values": [
+                9,
+                8,
+                7
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "tag": 200,
+              "values": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                1,
+                1,
+                0.5
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                1,
+                0,
+                0.25
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                2,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "empty"
+          ],
+          "reals": [],
+          "integers": [
+            7,
+            1,
+            0
+          ],
+          "entries": []
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "tensor",
+            "raw-node-scheme"
+          ],
+          "reals": [
+            0.25
+          ],
+          "integers": [
+            4,
+            9,
+            3
+          ],
+          "entries": [
+            {
+              "tag": 50,
+              "values": [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            }
+          ]
+        }
+      ],
+      "unknown_sections": []
+    },
+    "recovered": {
+      "source_version": "4.1",
+      "nodes": [
+        {
+          "tag": 50,
+          "xyz": [
+            0,
+            2,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            1
+          ]
+        },
+        {
+          "tag": 2147483647,
+          "xyz": [
+            9,
+            9,
+            9
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            9,
+            9
+          ]
+        },
+        {
+          "tag": 7,
+          "xyz": [
+            2,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            1,
+            0
+          ]
+        },
+        {
+          "tag": 90,
+          "xyz": [
+            0,
+            0,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0
+          ]
+        },
+        {
+          "tag": 100,
+          "xyz": [
+            1,
+            0,
+            0.25
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "tag": 150,
+          "xyz": [
+            1,
+            1,
+            0.5
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "tag": 200,
+          "xyz": [
+            0,
+            1,
+            0
+          ],
+          "dim": 2,
+          "entity": 7,
+          "parameters": [
+            0,
+            0.5
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "tag": 7,
+          "kind": 8,
+          "nodes": [
+            90,
+            7,
+            100
+          ],
+          "entity": 3,
+          "physical": [
+            9
+          ],
+          "extra": []
+        },
+        {
+          "tag": 700,
+          "kind": 9,
+          "nodes": [
+            90,
+            7,
+            50,
+            100,
+            150,
+            200
+          ],
+          "entity": 7,
+          "physical": [
+            44
+          ],
+          "extra": []
+        }
+      ],
+      "entities": [
+        {
+          "dim": 1,
+          "tag": 3,
+          "bounds": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0.25
+          ],
+          "physical": [
+            9
+          ],
+          "boundary": []
+        },
+        {
+          "dim": 2,
+          "tag": 7,
+          "bounds": [
+            0,
+            0,
+            0,
+            9,
+            9,
+            9
+          ],
+          "physical": [
+            44
+          ],
+          "boundary": []
+        }
+      ],
+      "physical_names": [
+        {
+          "dim": 1,
+          "tag": 9,
+          "name": "edge metadata"
+        },
+        {
+          "dim": 2,
+          "tag": 44,
+          "name": "surface metadata"
+        }
+      ],
+      "fields": [
+        {
+          "location": "NodeData",
+          "strings": [
+            "temperature",
+            "",
+            "extra"
+          ],
+          "reals": [
+            0.5,
+            7.25
+          ],
+          "integers": [
+            8,
+            1,
+            7,
+            31,
+            90
+          ],
+          "entries": [
+            {
+              "tag": 7,
+              "values": [
+                20
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                30
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                99
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                10
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                12
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                23
+              ]
+            },
+            {
+              "tag": 200,
+              "values": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "location": "ElementData",
+          "strings": [
+            "stress",
+            "raw-cell"
+          ],
+          "reals": [
+            0.5
+          ],
+          "integers": [
+            8,
+            9,
+            2,
+            0,
+            92
+          ],
+          "entries": [
+            {
+              "tag": 7,
+              "values": [
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "tag": 700,
+              "values": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "velocity"
+          ],
+          "reals": [],
+          "integers": [
+            3,
+            3,
+            7
+          ],
+          "entries": [
+            {
+              "tag": 2147483647,
+              "values": [
+                9,
+                8,
+                7
+              ]
+            },
+            {
+              "tag": 90,
+              "values": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "tag": 200,
+              "values": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "tag": 150,
+              "values": [
+                1,
+                1,
+                0.5
+              ]
+            },
+            {
+              "tag": 100,
+              "values": [
+                1,
+                0,
+                0.25
+              ]
+            },
+            {
+              "tag": 50,
+              "values": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                2,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "empty"
+          ],
+          "reals": [],
+          "integers": [
+            7,
+            1,
+            0
+          ],
+          "entries": []
+        },
+        {
+          "location": "NodeData",
+          "strings": [
+            "tensor",
+            "raw-node-scheme"
+          ],
+          "reals": [
+            0.25
+          ],
+          "integers": [
+            4,
+            9,
+            3
+          ],
+          "entries": [
+            {
+              "tag": 50,
+              "values": [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            {
+              "tag": 2147483647,
+              "values": [
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            {
+              "tag": 7,
+              "values": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            }
+          ]
+        }
+      ],
+      "unknown_sections": []
+    },
+    "empty": {
+      "source_version": "4.1",
+      "nodes": [],
+      "elements": [],
+      "entities": [],
+      "physical_names": [],
+      "fields": [],
+      "unknown_sections": []
+    }
+  },
+  "request": {
+    "node_tags": [
+      {
+        "old_tag": 7,
+        "new_tag": 2147483647
+      },
+      {
+        "old_tag": 150,
+        "new_tag": 50
+      },
+      {
+        "old_tag": 90,
+        "new_tag": 3
+      },
+      {
+        "old_tag": 2147483647,
+        "new_tag": 7
+      },
+      {
+        "old_tag": 200,
+        "new_tag": 90
+      },
+      {
+        "old_tag": 50,
+        "new_tag": 100
+      },
+      {
+        "old_tag": 100,
+        "new_tag": 150
+      }
+    ],
+    "element_tags": [
+      {
+        "old_tag": 700,
+        "new_tag": 7
+      },
+      {
+        "old_tag": 7,
+        "new_tag": 700
+      }
+    ]
+  },
+  "downstreamVTK": {
+    "points": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        9,
+        9,
+        9
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0.25
+      ],
+      [
+        1,
+        1,
+        0.5
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "connectivity": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        3,
+        2,
+        0,
+        4,
+        5,
+        6
+      ]
+    ],
+    "cell_types": [
+      21,
+      22
+    ],
+    "point_tags": [
+      100,
+      7,
+      2147483647,
+      3,
+      150,
+      50,
+      90
+    ],
+    "cell_tags": [
+      700,
+      7
+    ],
+    "arrays": {
+      "gmsh_value_0": [
+        [
+          30
+        ],
+        [
+          99
+        ],
+        [
+          20
+        ],
+        [
+          10
+        ],
+        [
+          12
+        ],
+        [
+          23
+        ],
+        [
+          13
+        ]
+      ],
+      "gmsh_value_2": [
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          9,
+          8,
+          7
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0.25
+        ],
+        [
+          1,
+          1,
+          0.5
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "gmsh_value_1": [
+        [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ]
+    },
+    "selected_indices": [
+      0,
+      2,
+      1
+    ],
+    "omitted_indices": [
+      3,
+      4
+    ],
+    "losses": [
+      "msh_field_headers_not_in_vtk",
+      "other_field_sections_omitted",
+      "mesh_metadata_omitted"
+    ]
+  },
+  "origin": "Literal original MSH and explicit independent whole target tables before implementation;no product writer/remapper/exporter/verifier supplies expected values.",
+  "roles": "Original node7 and element7 swap in independent domains;MAX isolated node survives as node7 beside new element7. Node50/100/150 form a3cycle;node3 collides entity3;raw head integer90 and semantic entity/physical labels never remap. Line3/Tri6 ordered roles stay.",
+  "scope": "Self-authored actual public/file integration,not external adoption or numbering/geometry/physical authenticity certification."
+}

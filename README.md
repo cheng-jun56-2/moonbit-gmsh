@@ -24,7 +24,7 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 | 字段快照 | 按唯一原段索引选择/重排字段或显式移除全部；保留原时间步、完整头/数据与所有网格元数据 |
 | 字段接入 | 逐tag核完整节点域/数值坐标及单元类型/有序连结后，按准确来源段索引追加1/3/9分量稀疏/空字段；保留接收网格上下文，不插值或按名覆盖 |
 | 参考点字段 | 给定当前帧索引、TET4原单元tag及闭单纯形参考坐标，查询标准NodeData的1/3/9分量值与前向xyz；完整原头/四角色见证，不定位或认证几何 |
-| 变换 | 按单元/物理组取子集、清除未使用节点、紧凑编号；同步维护字段关联 |
+| 变换 | 单元/物理组子集、去未用节点、紧凑编号或按显式完整双域表重编号；保持对应字段关联 |
 | 拓扑 | 线性及Tri6/Tet10/Hex20/Hex27高阶边界；Line3/Quad8/Quad9配套、完整曲面节点匹配；全阶共享节点连通分量 |
 | 边界工作流 | 外面/外边/端点提取，复用显式单元标签/字段，来源映射与损失报告，派生MSH导出 |
 | 标量法向积分 | 单分量节点/面标量与真实导数叉积耦合，返回三分量`∫s n dA`；压力符号/单位/外向由调用者定义 |
@@ -52,6 +52,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 [按维度和精确物理名选取](docs/PHYSICAL-NAME.md)：`node tools/gmsh.mjs physical-name INPUT.msh OPTIONS.json NEW.msh`接收`dimension/name`，同维重名拒绝，跨维同名明确区分，唯一空组沿用空子网格；完整字段和元数据按原subset合同保留。公共包例可运行`moon run examples/physical_name --target js`（亦可wasm-gc）。
 
 [原节点的纯节点MSH快照](docs/NODE-CLOUD.md)：`node tools/gmsh.mjs node-cloud INPUT.msh OPTIONS.json NEW.msh`以原节点tag保留监测点（含孤立点）及NodeData，输出零单元、ElementData留空段，不造vertex cells或投影数据；实际新文件可继续交给既有VTK字段出口。公共包例支持JS/Wasm-GC。
+
+[按完整双域表交付指定编号](docs/TAG-REMAP.md)：`node tools/gmsh.mjs remap-tags INPUT.msh OPTIONS.json NEW.msh`同时应用完整`node_tags/element_tags`原→新表，支持交换/循环，保留全部节点/单元、完整高阶连结与原字段关联/原头，实体/物理等语义ID不改。公共包例`moon run examples/remap_tags --target js`（亦可wasm-gc）及独立实际MSH/VTK接收覆盖完整结果。
 
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 

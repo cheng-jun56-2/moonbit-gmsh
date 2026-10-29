@@ -225,6 +225,7 @@ pub fn Mesh::nodes(Self) -> Array[Node]
 pub fn Mesh::obj(Self, allow_loss? : Bool) -> String raise
 pub fn Mesh::physical_names(Self) -> Array[PhysicalName]
 pub fn Mesh::quality(Self, Int, tolerance? : Double) -> Quality raise
+pub fn Mesh::remap_tags(Self, Array[TagMapping], Array[TagMapping]) -> Self raise MeshError
 pub fn Mesh::sample_gauss_jacobians(Self, Int, reference_normal? : Array[Double]) -> SamplingQualityReport raise
 pub fn Mesh::select_fields(Self, Array[Int]) -> Self raise
 pub fn Mesh::select_physical(Self, Int, Int) -> Self raise
@@ -377,6 +378,12 @@ pub(all) struct SurfaceNormalIntegral {
   certified_error_bound : Bool
 } derive(ToJson)
 pub fn SurfaceNormalIntegral::to_json(Self) -> Json
+
+pub(all) struct TagMapping {
+  old_tag : Int
+  new_tag : Int
+} derive(ToJson)
+pub fn TagMapping::to_json(Self) -> Json
 
 pub(all) struct Tet4FieldEvaluation {
   field : FieldFrame
