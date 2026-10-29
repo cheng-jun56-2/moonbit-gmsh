@@ -1,0 +1,1314 @@
+{
+  "frozenBeforeImplementation": true,
+  "source": {
+    "source_version": "2.2",
+    "nodes": [
+      {
+        "tag": 90,
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 7,
+        "xyz": [
+          1,
+          0,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 50,
+        "xyz": [
+          0,
+          1,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 30,
+        "xyz": [
+          0,
+          0,
+          1
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 20,
+        "xyz": [
+          1,
+          0,
+          1
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 100,
+        "xyz": [
+          0,
+          1,
+          1
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 201,
+        "xyz": [
+          2,
+          0,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 202,
+        "xyz": [
+          3,
+          0,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 203,
+        "xyz": [
+          2,
+          1,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 204,
+        "xyz": [
+          2,
+          0,
+          1
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 205,
+        "xyz": [
+          2.5,
+          0,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 206,
+        "xyz": [
+          2.5,
+          0.5,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 207,
+        "xyz": [
+          2,
+          0.5,
+          0
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 208,
+        "xyz": [
+          2,
+          0,
+          0.5
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 209,
+        "xyz": [
+          2,
+          0.5,
+          0.5
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 210,
+        "xyz": [
+          2.5,
+          0,
+          0.5
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      },
+      {
+        "tag": 2147483647,
+        "xyz": [
+          9,
+          9,
+          9
+        ],
+        "dim": -1,
+        "entity": 0,
+        "parameters": []
+      }
+    ],
+    "elements": [
+      {
+        "tag": 700,
+        "kind": 6,
+        "nodes": [
+          90,
+          7,
+          50,
+          30,
+          20,
+          100
+        ],
+        "entity": 7,
+        "physical": [
+          44
+        ],
+        "extra": [
+          1,
+          17
+        ]
+      },
+      {
+        "tag": 8,
+        "kind": 11,
+        "nodes": [
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210
+        ],
+        "entity": 8,
+        "physical": [
+          55
+        ],
+        "extra": [
+          1,
+          22
+        ]
+      }
+    ],
+    "entities": [],
+    "physical_names": [
+      {
+        "dim": 3,
+        "tag": 44,
+        "name": "wedge"
+      },
+      {
+        "dim": 3,
+        "tag": 55,
+        "name": "tet10"
+      }
+    ],
+    "fields": [
+      {
+        "location": "NodeData",
+        "strings": [
+          "温度",
+          "",
+          "node-extra"
+        ],
+        "reals": [
+          0.25,
+          7.25
+        ],
+        "integers": [
+          3,
+          1,
+          17,
+          31,
+          90
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              17
+            ]
+          },
+          {
+            "tag": 210,
+            "values": [
+              16
+            ]
+          },
+          {
+            "tag": 209,
+            "values": [
+              15
+            ]
+          },
+          {
+            "tag": 208,
+            "values": [
+              14
+            ]
+          },
+          {
+            "tag": 207,
+            "values": [
+              13
+            ]
+          },
+          {
+            "tag": 206,
+            "values": [
+              12
+            ]
+          },
+          {
+            "tag": 205,
+            "values": [
+              11
+            ]
+          },
+          {
+            "tag": 204,
+            "values": [
+              10
+            ]
+          },
+          {
+            "tag": 203,
+            "values": [
+              9
+            ]
+          },
+          {
+            "tag": 202,
+            "values": [
+              8
+            ]
+          },
+          {
+            "tag": 201,
+            "values": [
+              7
+            ]
+          },
+          {
+            "tag": 100,
+            "values": [
+              6
+            ]
+          },
+          {
+            "tag": 20,
+            "values": [
+              5
+            ]
+          },
+          {
+            "tag": 30,
+            "values": [
+              4
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              3
+            ]
+          },
+          {
+            "tag": 7,
+            "values": [
+              2
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "velocity",
+          "named-descriptor"
+        ],
+        "reals": [],
+        "integers": [
+          5,
+          3,
+          17
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              16,
+              32,
+              -16
+            ]
+          },
+          {
+            "tag": 210,
+            "values": [
+              15,
+              30,
+              -15
+            ]
+          },
+          {
+            "tag": 209,
+            "values": [
+              14,
+              28,
+              -14
+            ]
+          },
+          {
+            "tag": 208,
+            "values": [
+              13,
+              26,
+              -13
+            ]
+          },
+          {
+            "tag": 207,
+            "values": [
+              12,
+              24,
+              -12
+            ]
+          },
+          {
+            "tag": 206,
+            "values": [
+              11,
+              22,
+              -11
+            ]
+          },
+          {
+            "tag": 205,
+            "values": [
+              10,
+              20,
+              -10
+            ]
+          },
+          {
+            "tag": 204,
+            "values": [
+              9,
+              18,
+              -9
+            ]
+          },
+          {
+            "tag": 203,
+            "values": [
+              8,
+              16,
+              -8
+            ]
+          },
+          {
+            "tag": 202,
+            "values": [
+              7,
+              14,
+              -7
+            ]
+          },
+          {
+            "tag": 201,
+            "values": [
+              6,
+              12,
+              -6
+            ]
+          },
+          {
+            "tag": 100,
+            "values": [
+              5,
+              10,
+              -5
+            ]
+          },
+          {
+            "tag": 20,
+            "values": [
+              4,
+              8,
+              -4
+            ]
+          },
+          {
+            "tag": 30,
+            "values": [
+              3,
+              6,
+              -3
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              2,
+              4,
+              -2
+            ]
+          },
+          {
+            "tag": 7,
+            "values": [
+              1,
+              2,
+              -1
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "location": "ElementData",
+        "strings": [
+          "stress",
+          "",
+          "cell-extra"
+        ],
+        "reals": [
+          0.5
+        ],
+        "integers": [
+          8,
+          9,
+          2,
+          0,
+          92
+        ],
+        "entries": [
+          {
+            "tag": 8,
+            "values": [
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          },
+          {
+            "tag": 700,
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "omitted"
+        ],
+        "reals": [],
+        "integers": [
+          0,
+          1,
+          0
+        ],
+        "entries": []
+      }
+    ],
+    "unknown_sections": []
+  },
+  "audit": {
+    "fields": [
+      {
+        "field": {
+          "field_index": 2,
+          "name": "stress",
+          "location": "ElementData",
+          "components": 9,
+          "time_step": 8,
+          "entries": 2,
+          "time": 0.5,
+          "partition": 0
+        },
+        "value_array": "gmsh_value_2",
+        "strings": [
+          "stress",
+          "",
+          "cell-extra"
+        ],
+        "reals": [
+          0.5
+        ],
+        "integers": [
+          8,
+          9,
+          2,
+          0,
+          92
+        ]
+      },
+      {
+        "field": {
+          "field_index": 0,
+          "name": "温度",
+          "location": "NodeData",
+          "components": 1,
+          "time_step": 3,
+          "entries": 17,
+          "time": 0.25,
+          "partition": 31
+        },
+        "value_array": "gmsh_value_0",
+        "strings": [
+          "温度",
+          "",
+          "node-extra"
+        ],
+        "reals": [
+          0.25,
+          7.25
+        ],
+        "integers": [
+          3,
+          1,
+          17,
+          31,
+          90
+        ]
+      },
+      {
+        "field": {
+          "field_index": 1,
+          "name": "velocity",
+          "location": "NodeData",
+          "components": 3,
+          "time_step": 5,
+          "entries": 17,
+          "interpolation_scheme": "named-descriptor"
+        },
+        "value_array": "gmsh_value_1",
+        "strings": [
+          "velocity",
+          "named-descriptor"
+        ],
+        "reals": [],
+        "integers": [
+          5,
+          3,
+          17
+        ]
+      }
+    ],
+    "source_version": "2.2",
+    "omitted_field_indices": [
+      3
+    ],
+    "losses": [
+      "msh_field_headers_not_in_vtk",
+      "other_field_sections_omitted",
+      "mesh_metadata_omitted"
+    ]
+  },
+  "fieldsReadback": {
+    "points": 17,
+    "cells": 2,
+    "has_point_tags": true,
+    "has_cell_tags": true,
+    "point_tags": [
+      90,
+      7,
+      50,
+      30,
+      20,
+      100,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      2147483647
+    ],
+    "cell_tags": [
+      700,
+      8
+    ],
+    "fields": [
+      {
+        "field": {
+          "field_index": 2,
+          "name": "stress",
+          "location": "ElementData",
+          "components": 9,
+          "time_step": 8,
+          "entries": 2,
+          "time": 0.5,
+          "partition": 0
+        },
+        "value_array": "gmsh_value_2",
+        "values": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "field": {
+          "field_index": 0,
+          "name": "温度",
+          "location": "NodeData",
+          "components": 1,
+          "time_step": 3,
+          "entries": 17,
+          "time": 0.25,
+          "partition": 31
+        },
+        "value_array": "gmsh_value_0",
+        "values": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13
+          ],
+          [
+            14
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ]
+        ]
+      },
+      {
+        "field": {
+          "field_index": 1,
+          "name": "velocity",
+          "location": "NodeData",
+          "components": 3,
+          "time_step": 5,
+          "entries": 17,
+          "interpolation_scheme": "named-descriptor"
+        },
+        "value_array": "gmsh_value_1",
+        "values": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            -1
+          ],
+          [
+            2,
+            4,
+            -2
+          ],
+          [
+            3,
+            6,
+            -3
+          ],
+          [
+            4,
+            8,
+            -4
+          ],
+          [
+            5,
+            10,
+            -5
+          ],
+          [
+            6,
+            12,
+            -6
+          ],
+          [
+            7,
+            14,
+            -7
+          ],
+          [
+            8,
+            16,
+            -8
+          ],
+          [
+            9,
+            18,
+            -9
+          ],
+          [
+            10,
+            20,
+            -10
+          ],
+          [
+            11,
+            22,
+            -11
+          ],
+          [
+            12,
+            24,
+            -12
+          ],
+          [
+            13,
+            26,
+            -13
+          ],
+          [
+            14,
+            28,
+            -14
+          ],
+          [
+            15,
+            30,
+            -15
+          ],
+          [
+            16,
+            32,
+            -16
+          ]
+        ]
+      }
+    ],
+    "source_version": "2.2",
+    "omitted_field_indices": [
+      3
+    ],
+    "losses": [
+      "msh_field_headers_not_in_vtk",
+      "other_field_sections_omitted",
+      "mesh_metadata_omitted"
+    ]
+  },
+  "expected": {
+    "fields": {
+      "points": 17,
+      "cells": 2,
+      "has_point_tags": true,
+      "has_cell_tags": true,
+      "point_tags": [
+        90,
+        7,
+        50,
+        30,
+        20,
+        100,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        2147483647
+      ],
+      "cell_tags": [
+        700,
+        8
+      ],
+      "fields": [
+        {
+          "field": {
+            "field_index": 2,
+            "name": "stress",
+            "location": "ElementData",
+            "components": 9,
+            "time_step": 8,
+            "entries": 2,
+            "time": 0.5,
+            "partition": 0
+          },
+          "value_array": "gmsh_value_2",
+          "values": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            [
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "field": {
+            "field_index": 0,
+            "name": "温度",
+            "location": "NodeData",
+            "components": 1,
+            "time_step": 3,
+            "entries": 17,
+            "time": 0.25,
+            "partition": 31
+          },
+          "value_array": "gmsh_value_0",
+          "values": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ],
+            [
+              12
+            ],
+            [
+              13
+            ],
+            [
+              14
+            ],
+            [
+              15
+            ],
+            [
+              16
+            ],
+            [
+              17
+            ]
+          ]
+        },
+        {
+          "field": {
+            "field_index": 1,
+            "name": "velocity",
+            "location": "NodeData",
+            "components": 3,
+            "time_step": 5,
+            "entries": 17,
+            "interpolation_scheme": "named-descriptor"
+          },
+          "value_array": "gmsh_value_1",
+          "values": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              -1
+            ],
+            [
+              2,
+              4,
+              -2
+            ],
+            [
+              3,
+              6,
+              -3
+            ],
+            [
+              4,
+              8,
+              -4
+            ],
+            [
+              5,
+              10,
+              -5
+            ],
+            [
+              6,
+              12,
+              -6
+            ],
+            [
+              7,
+              14,
+              -7
+            ],
+            [
+              8,
+              16,
+              -8
+            ],
+            [
+              9,
+              18,
+              -9
+            ],
+            [
+              10,
+              20,
+              -10
+            ],
+            [
+              11,
+              22,
+              -11
+            ],
+            [
+              12,
+              24,
+              -12
+            ],
+            [
+              13,
+              26,
+              -13
+            ],
+            [
+              14,
+              28,
+              -14
+            ],
+            [
+              15,
+              30,
+              -15
+            ],
+            [
+              16,
+              32,
+              -16
+            ]
+          ]
+        }
+      ],
+      "source_version": "2.2",
+      "omitted_field_indices": [
+        3
+      ],
+      "losses": [
+        "msh_field_headers_not_in_vtk",
+        "other_field_sections_omitted",
+        "mesh_metadata_omitted"
+      ]
+    },
+    "source_node_tags": [
+      90,
+      7,
+      50,
+      30,
+      20,
+      100,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      2147483647
+    ],
+    "source_element_tags": [
+      700,
+      8
+    ],
+    "points": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2.5,
+        0,
+        0
+      ],
+      [
+        2.5,
+        0.5,
+        0
+      ],
+      [
+        2,
+        0.5,
+        0
+      ],
+      [
+        2,
+        0,
+        0.5
+      ],
+      [
+        2,
+        0.5,
+        0.5
+      ],
+      [
+        2.5,
+        0,
+        0.5
+      ],
+      [
+        9,
+        9,
+        9
+      ]
+    ],
+    "connectivity": [
+      [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4
+      ],
+      [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        14
+      ]
+    ],
+    "cell_types": [
+      13,
+      24
+    ]
+  },
+  "origin": "Hand MSH2.2,legacy ASCII VTK and audit. Explicit wedge role permutation[0,2,1,3,5,4],Tet10 swap last2 roles; literal fields/source tags. No product encoder/verifier as oracle.",
+  "badGeometryVariants": {
+    "coordinate": "change isolated9,9,9 to9,9,9.5",
+    "connectivity": "wedge[0,2,1,3,5,4] to[0,1,2,3,5,4]",
+    "cell_type": "13 to12",
+    "arity": "drop last wedge role and adjust CELLS size18->17"
+  },
+  "semantics": "Exact numeric ordered exported representation only; signed zero equivalent. Source tag arrays are supplied-source order witnesses; absent serialized association tags remain disclosed in nested old loss report."
+}

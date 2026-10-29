@@ -47,6 +47,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [按原tag读取原始字段观测](docs/FIELD-RECORDS.md)：`moon run examples/field_records --target js`（亦可wasm-gc）；实际文件用`node tools/gmsh.mjs field-records INPUT.msh OPTIONS.json NEW_RESULT.json`。明确节点/单元关联、原tag及段列表，返回完整原头/数值与有序对象见证；不补缺值、解释命名方案或对齐时间。
 
+[复核已保存VTK的完整导出表示](docs/VTK-MESH-REVIEW.md)：`node examples/verify_vtk_mesh/run.mjs SOURCE.msh SAVED.vtk AUDIT.json NEW_RESULT.json`同时核原字段、坐标、原顺序连结及类型，返回实际读回几何；旧字段复核入口保持。公共包示例支持JS/Wasm-GC，必要门见[CI-PLAN.md](CI-PLAN.md)。
+
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 
 需要核对原始字段时，使用[显式源字段比较](docs/VTK-FIELDS.md#显式源字段比较)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields`。按准确源段索引、完整原头和原tag比较1/3/9分量值；默认字节核验保持，比较成功也不代表几何相同或来源可信。

@@ -234,6 +234,7 @@ pub fn Mesh::surface_flux_breakdown(Self, Int, max_samples? : Int, max_elements?
 pub fn Mesh::topology(Self, dimension? : Int) -> Topology raise
 pub fn Mesh::unknown_sections(Self) -> Array[Section]
 pub fn Mesh::verify_vtk_fields(Self, Bytes, Json) -> VtkFieldsReadback raise
+pub fn Mesh::verify_vtk_mesh(Self, Bytes, Json) -> VtkMeshReadback raise
 pub fn Mesh::vtk(Self, allow_loss? : Bool) -> String raise
 pub fn Mesh::vtk_field(Self, Int, allow_loss? : Bool) -> VtkFieldExport raise
 pub fn Mesh::vtk_fields(Self, Array[Int], allow_loss? : Bool) -> VtkFieldsExport raise
@@ -451,6 +452,16 @@ pub(all) struct VtkFieldsReadback {
   losses : Array[String]
 } derive(ToJson)
 pub fn VtkFieldsReadback::to_json(Self) -> Json
+
+pub(all) struct VtkMeshReadback {
+  fields : VtkFieldsReadback
+  source_node_tags : Array[Int]
+  source_element_tags : Array[Int]
+  points : Array[Array[Double]]
+  connectivity : Array[Array[Int]]
+  cell_types : Array[Int]
+} derive(ToJson)
+pub fn VtkMeshReadback::to_json(Self) -> Json
 
 // Type aliases
 

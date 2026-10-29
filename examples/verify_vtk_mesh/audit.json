@@ -1,0 +1,92 @@
+{
+  "fields": [
+    {
+      "field": {
+        "field_index": 2,
+        "name": "stress",
+        "location": "ElementData",
+        "components": 9,
+        "time_step": 8,
+        "entries": 2,
+        "time": 0.5,
+        "partition": 0
+      },
+      "value_array": "gmsh_value_2",
+      "strings": [
+        "stress",
+        "",
+        "cell-extra"
+      ],
+      "reals": [
+        0.5
+      ],
+      "integers": [
+        8,
+        9,
+        2,
+        0,
+        92
+      ]
+    },
+    {
+      "field": {
+        "field_index": 0,
+        "name": "温度",
+        "location": "NodeData",
+        "components": 1,
+        "time_step": 3,
+        "entries": 17,
+        "time": 0.25,
+        "partition": 31
+      },
+      "value_array": "gmsh_value_0",
+      "strings": [
+        "温度",
+        "",
+        "node-extra"
+      ],
+      "reals": [
+        0.25,
+        7.25
+      ],
+      "integers": [
+        3,
+        1,
+        17,
+        31,
+        90
+      ]
+    },
+    {
+      "field": {
+        "field_index": 1,
+        "name": "velocity",
+        "location": "NodeData",
+        "components": 3,
+        "time_step": 5,
+        "entries": 17,
+        "interpolation_scheme": "named-descriptor"
+      },
+      "value_array": "gmsh_value_1",
+      "strings": [
+        "velocity",
+        "named-descriptor"
+      ],
+      "reals": [],
+      "integers": [
+        5,
+        3,
+        17
+      ]
+    }
+  ],
+  "source_version": "2.2",
+  "omitted_field_indices": [
+    3
+  ],
+  "losses": [
+    "msh_field_headers_not_in_vtk",
+    "other_field_sections_omitted",
+    "mesh_metadata_omitted"
+  ]
+}

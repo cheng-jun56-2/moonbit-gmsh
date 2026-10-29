@@ -18,6 +18,7 @@ options(
         "append_fields",
         "read_vtk_fields",
         "verify_vtk_fields",
+        "verify_vtk_mesh",
       ],
       "format": "esm",
     },
