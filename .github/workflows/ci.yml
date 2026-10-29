@@ -86,6 +86,14 @@ jobs:
           moon run examples/group_resultants --target wasm-gc > "$GMSH_CI_EVIDENCE/group-resultants-public-wasm-gc.json"
           cmp "$GMSH_CI_EVIDENCE/group-resultants-public-js.json" "$GMSH_CI_EVIDENCE/group-resultants-public-wasm-gc.json"
           python tools/verify-group-resultants.py --public-receipt "$GMSH_CI_EVIDENCE/group-resultants-public-js.json" --evidence "$GMSH_CI_EVIDENCE/group-resultants.json" --outputs "$GMSH_CI_EVIDENCE/group-resultants"
+      - name: Original tag field record receivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          moon run examples/field_records --target js > "$GMSH_CI_EVIDENCE/field-records-public-js.json"
+          moon run examples/field_records --target wasm-gc > "$GMSH_CI_EVIDENCE/field-records-public-wasm-gc.json"
+          cmp "$GMSH_CI_EVIDENCE/field-records-public-js.json" "$GMSH_CI_EVIDENCE/field-records-public-wasm-gc.json"
+          python tools/verify-field-records.py --public-receipt "$GMSH_CI_EVIDENCE/field-records-public-js.json" --evidence "$GMSH_CI_EVIDENCE/field-records.json" --outputs "$GMSH_CI_EVIDENCE/field-records"
       - name: Install independent reference readers
         run: |
           sudo apt-get update

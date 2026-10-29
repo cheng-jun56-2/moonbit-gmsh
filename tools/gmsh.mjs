@@ -9,6 +9,7 @@ Reports: inspect dump validate quality topology components boundary coverage vtk
          vtk-field (field_index and allow_loss=true; JSON text+raw headers/losses)
          vtk-fields (unique nonempty field_indices and allow_loss=true; combined JSON)
          field-frames / surface-field-coverage (field_index required for coverage; max_missing optional)
+         field-records (location, tag, unique nonempty original field_indices; raw JSON)
          evaluate-tet4-field (field_index, element_tag, reference:[r,s,t]; standard NodeData only)
          integrate-surface-field / integrate-surface-flux / surface-flux-breakdown
          integrate-surface-normal-field (exactly1 supplied scalar -> vector)

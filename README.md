@@ -45,6 +45,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [按物理组交付标量法向合量](docs/GROUP-RESULTANTS.md)：`node examples/group_resultants/run.mjs INPUT.msh OPTIONS.json NEW_DIRECTORY`接收已有MSH及明确字段段/组列表，保存每组实际二进制子网格、基于该字节的合量、原件/请求和SHA清单；重叠组分别报告，不编造跨组合计。纯公共包接收例可运行`moon run examples/group_resultants --target js`（亦可wasm-gc）。
 
+[按原tag读取原始字段观测](docs/FIELD-RECORDS.md)：`moon run examples/field_records --target js`（亦可wasm-gc）；实际文件用`node tools/gmsh.mjs field-records INPUT.msh OPTIONS.json NEW_RESULT.json`。明确节点/单元关联、原tag及段列表，返回完整原头/数值与有序对象见证；不补缺值、解释命名方案或对齐时间。
+
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 
 需要核对原始字段时，使用[显式源字段比较](docs/VTK-FIELDS.md#显式源字段比较)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields`。按准确源段索引、完整原头和原tag比较1/3/9分量值；默认字节核验保持，比较成功也不代表几何相同或来源可信。

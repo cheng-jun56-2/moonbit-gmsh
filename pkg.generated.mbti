@@ -155,6 +155,26 @@ pub(all) struct FieldFrame {
 } derive(ToJson)
 pub fn FieldFrame::to_json(Self) -> Json
 
+pub(all) struct FieldRecord {
+  field : FieldFrame
+  strings : Array[String]
+  reals : Array[Double]
+  integers : Array[Int]
+  values : Array[Double]
+} derive(ToJson)
+pub fn FieldRecord::to_json(Self) -> Json
+
+pub(all) struct FieldRecords {
+  source_version : String
+  location : String
+  tag : Int
+  nodes : Array[Node]
+  element : Element?
+  records : Array[FieldRecord]
+  unknown_section_names : Array[String]
+} derive(ToJson)
+pub fn FieldRecords::to_json(Self) -> Json
+
 pub(all) struct JacobianSample {
   reference : Array[Double]
   xyz : Array[Double]
@@ -195,6 +215,7 @@ pub fn Mesh::export_to_obj(Self, ExportPolicy) -> (String, LossReport) raise
 pub fn Mesh::export_to_stl(Self, ExportPolicy) -> (String, LossReport) raise
 pub fn Mesh::extract_boundary(Self, dimension? : Int, max_facets? : Int) -> Boundary raise
 pub fn Mesh::field_frames(Self) -> Array[FieldFrame]
+pub fn Mesh::field_records(Self, String, Int, Array[Int]) -> FieldRecords raise MeshError
 pub fn Mesh::fields(Self) -> Array[Field]
 pub fn Mesh::integrate_surface_field(Self, Int, max_samples? : Int) -> SurfaceIntegral raise
 pub fn Mesh::integrate_surface_flux(Self, Int, max_samples? : Int) -> SurfaceFlux raise
