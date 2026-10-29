@@ -51,6 +51,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [按维度和精确物理名选取](docs/PHYSICAL-NAME.md)：`node tools/gmsh.mjs physical-name INPUT.msh OPTIONS.json NEW.msh`接收`dimension/name`，同维重名拒绝，跨维同名明确区分，唯一空组沿用空子网格；完整字段和元数据按原subset合同保留。公共包例可运行`moon run examples/physical_name --target js`（亦可wasm-gc）。
 
+[原节点的纯节点MSH快照](docs/NODE-CLOUD.md)：`node tools/gmsh.mjs node-cloud INPUT.msh OPTIONS.json NEW.msh`以原节点tag保留监测点（含孤立点）及NodeData，输出零单元、ElementData留空段，不造vertex cells或投影数据；实际新文件可继续交给既有VTK字段出口。公共包例支持JS/Wasm-GC。
+
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 
 需要核对原始字段时，使用[显式源字段比较](docs/VTK-FIELDS.md#显式源字段比较)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields`。按准确源段索引、完整原头和原tag比较1/3/9分量值；默认字节核验保持，比较成功也不代表几何相同或来源可信。
@@ -110,7 +112,7 @@ node tools/gmsh.mjs create OPTIONS.json OUTPUT
 ```
 
 OPTIONS 是 UTF-8 JSON **文件路径**，不是内联 JSON。 CLI与单帧/多帧VTK文件例程在解码前校验外部JSON选项字节；非法UTF-8退出2且不创建输出，合法Unicode（包括正确编码的U+FFFD）保持原样。原有文件预算和禁止覆盖规则保持。
-可写命令：`copy convert subset physical physical-name compact boundary-msh select-fields`。报告命令：
+可写命令：`copy convert subset node-cloud physical physical-name compact boundary-msh select-fields`。报告命令：
 `inspect dump validate quality topology components boundary coverage vtk obj`，另有`field-frames`、`surface-field-coverage`、`integrate-surface-normal-field`、`vtk-field`和`vtk-fields`。两个字段VTK命令返回含文本/原头/损失的JSON，文件配对例程见上方指南。
 未指定 OUTPUT 时报告到 stdout；VTK/OBJ 输出文本，其余输出 JSON。
 

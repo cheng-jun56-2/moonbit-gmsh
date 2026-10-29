@@ -1,4 +1,4 @@
-# 当前必要CI与R09接收边界
+# 当前必要CI与R10接收边界
 
 普通push或pull_request的`.github/workflows/ci.yml`运行唯一必要job`verify`。按精确最终head核对job和全部必要step成功；失败属于同一轮修复，不按push数计。云端job/artifact元数据与本地实际编译文件身份分别记录。
 
@@ -10,4 +10,6 @@ R08保留step`Saved VTK mesh representation receivers`：公共包JS/Wasm-GC读�
 
 R08接收仅证明原有有序VTK导出表示及选定原字段与显式源一致；不扩展格式、求几何同构或认证有效性、单位、误差/来源。最终head源码ZIP逐成员读回一次，封存技术交付后等主控独立ACCEPT，不自行计数或启动下一轮。
 
-R09新增必要step`Exact physical name selection receivers`：双后端公共包完整子网格接收及独立原始MSH文件读回；同维重名必须拒绝，跨维同名/声明空组/空名称/原数字入口及全部字段元数据保持。仅名称解析是新能力，subset/编码/科学合同不改；不重开已过科学生成器。原始stdout/stderr/exit分开记录，实际测试checkout/运行输入副本/编译/远程metadata分别固定。
+R09保留step`Exact physical name selection receivers`：双后端公共包完整子网格接收及独立原始MSH文件读回；同维重名必须拒绝，跨维同名/声明空组/空名称/原数字入口及全部字段元数据保持。仅名称解析是新能力，subset/编码/科学合同不改；不重开已过科学生成器。原始stdout/stderr/exit分开记录，实际测试checkout/运行输入副本/编译/远程metadata分别固定。
+
+R10新增必要step`Original node cloud receivers`：新节点域快照双后端完整Mesh接收，独立MSH原始读取，再实际以产生的MSH调用既有vtk-fields并独立核对全部点/tag/1/3/9数值及零单元。清空单元数据而不投影，孤立点及稀疏字段保持；不跑旧曲面/高阶generator或把下游接收当原生VTK渲染认证。新本地命令stdout/stderr/exit分开留存。

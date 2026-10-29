@@ -220,6 +220,7 @@ pub fn Mesh::fields(Self) -> Array[Field]
 pub fn Mesh::integrate_surface_field(Self, Int, max_samples? : Int) -> SurfaceIntegral raise
 pub fn Mesh::integrate_surface_flux(Self, Int, max_samples? : Int) -> SurfaceFlux raise
 pub fn Mesh::integrate_surface_normal_field(Self, Int, max_samples? : Int) -> SurfaceNormalIntegral raise
+pub fn Mesh::node_cloud(Self, Array[Int]) -> Self raise
 pub fn Mesh::nodes(Self) -> Array[Node]
 pub fn Mesh::obj(Self, allow_loss? : Bool) -> String raise
 pub fn Mesh::physical_names(Self) -> Array[PhysicalName]

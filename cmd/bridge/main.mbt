@@ -342,6 +342,7 @@ fn do_transform(data : Bytes, options : String) -> Bytes raise {
     "copy" | "convert" => m
     "select-fields" => m.select_fields(ints(o, "field_indices", required=true))
     "subset" => m.subset(ints(o, "tags", required=true))
+    "node-cloud" => m.node_cloud(ints(o, "tags", required=true))
     "physical" =>
       m.select_physical(req_int(o, "dimension"), req_int(o, "group"))
     "physical-name" =>
