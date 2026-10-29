@@ -1,15 +1,15 @@
 # MoonGmsh
 
-项目仓库：[moonbit-gmsh](https://github.com/cheng-jun56-2/moonbit-gmsh)。本仓库提供0.11.0源码：明确选择的多个完整节点/单元字段可放进同一份VTK，保留原tag及逐段原头/损失侧车，旧单帧和几何出口保持。模块名与原许可保留，未发布0.11.0的Mooncakes包；0.2.1公开记录保留为历史。
+项目仓库：[moonbit-gmsh](https://github.com/cheng-jun56-2/moonbit-gmsh)。本仓库提供0.11.0源码：明确选择的多个完整节点/单元字段可放进同一份VTK，保留原tag及逐段原头/损失侧车，旧单帧和几何出口保持。当前维护与申报归属为`cheng-jun56-2`，模块为`cheng-jun56-2/gmsh`。原项目作者、贡献与Git历史保留，版权以LICENSE及第三方来源说明为准；当前命名空间通过源码使用，旧0.2.1发布记录作为历史保存。
 
 评审/首次使用请先看[实际任务、替代方案与可运行证据](REVIEW.md)：读MSH，选定单元维度，消除内部共享面，提取边界，保留匹配的显式边界标签/字段，报告父单元来源与损失，再导出MSH或几何文件。
 
 纯 MoonBit 的 Gmsh MSH 网格交换、拓扑与几何检查库。核心不调用 Gmsh、
 meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和退出码。
-模块 `cheng-jun56/gmsh`，MIT；0.2.1 的公开状态及对应提交以本文末尾“2026-09-30 核对”记录为准。本仓库的当前核验以[Actions](https://github.com/cheng-jun56-2/moonbit-gmsh/actions)对应提交为准；以下带日期的旧核验记录及SUBMISSION.json是历史资料，不代表本次导入的CI或比赛状态。
+模块 `cheng-jun56-2/gmsh`，MIT，版本0.11.0。当前源码与各提交的验证见本仓库[Actions](https://github.com/cheng-jun56-2/moonbit-gmsh/actions)。带日期的旧发布记录及SUBMISSION.json描述原命名空间的历史，不能用作当前模块发布或申报归属。
 不是网格生成器，也不把“能读取文件”当成有限元网格质量认证。
 
-0.2.0 增加公共边界标签覆盖检查和[公开Gmsh教程工作流](docs/PUBLIC-TUTORIAL.md)：404节点、80条边界、10条未分组，实际Gmsh/meshio独立核验。完整选题说明见[申报草案](PROPOSAL.md)。
+0.2.0 增加公共边界标签覆盖检查和[公开Gmsh教程工作流](docs/PUBLIC-TUTORIAL.md)：404节点、80条边界、10条未分组，实际Gmsh/meshio独立核验。完整选题说明见[项目申报说明](PROPOSAL.md)。
 
 ## 已实现范围
 
@@ -61,13 +61,13 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 已有连通分量的[带字段MSH拆分交付例程](docs/COMPONENT-CONSUMER.md)：`node examples/split_components/run.mjs INPUT.msh NEW_DIRECTORY`保存原tag与紧凑4.1二进制文件及实际tag顺序清单。按完整共享节点连接所有维度，不按坐标焊接；字段随既有subset/compact维护。
 
-已有审计STL的[独立文件交付例程](docs/STL-CONSUMER.md)：`node examples/audited_stl/run.mjs INPUT.msh NEW_DIRECTORY --permissive`把STL、原损失报告与SHA清单一起保存；省略显式允许时保持Strict。第15轮核对实际面顶点/法向和meshio消费，不新增核心能力或打印认证。
+已有审计STL的[独立文件交付例程](docs/STL-CONSUMER.md)：`node examples/audited_stl/run.mjs INPUT.msh NEW_DIRECTORY --permissive`把STL、原损失报告与SHA清单一起保存；省略显式允许时保持Strict。独立读取核对实际面顶点/法向和meshio消费，不新增核心能力或打印认证。
 
 新增[按原字段段索引导出快照](docs/FIELD-SELECTION.md)：`moon run examples/select_fields --target js`（亦可wasm-gc），实际文件运行`node examples/select_fields/run.mjs NEW_DIRECTORY`。原段1可成为输出位置0，原时间步仍保持1；空选择移除全部字段，网格和孤立节点不裁剪。
 
 新增[标量法向向量积分](docs/NORMAL-FIELD.md)：`moon run examples/normal_field --target js`（亦可wasm-gc）。从准确标量帧计算曲壁法向合量；保持标量变化与完整二阶曲面法向的耦合，不用平均值乘面积向量代替。
 
-[第12轮结果复核](docs/RESULT-REVIEW.md)检查坐标/向量基、单位缩放、镜像及重建插值。0.7.0核心与API保持；可运行`tools/verify-result-laws.py`生成真实文件和独立解析/Gmsh回执。
+[结果定律复核](docs/RESULT-REVIEW.md)检查坐标/向量基、单位缩放、镜像及重建插值。0.7.0核心与API保持；可运行`tools/verify-result-laws.py`生成真实文件和独立解析/Gmsh回执。
 
 新增[字段帧目录与曲面覆盖查询](docs/FIELDS.md)：`moon run examples/field_coverage --target js`（亦可wasm-gc）。先查明确帧、完整高阶节点或面tag是否齐全，再调用原积分；数据条数相同仍可能缺节点，覆盖完整也不等于几何有效。
 
@@ -233,7 +233,7 @@ AI 辅助开发事实保留在真实 Git 作者中，不伪造身份或凑提交
 
 ## 2026-09-27：独立格式检查加入自动流程
 
-在既有公开T1教程门之外，CI新增固定 meshio 5.3.5 / NumPy 2.5.3 的格式与几何正确性矩阵。`python tools/verify-reference.py --skip-benchmark --evidence evidence/reference-ci.json` 跳过合成性能工作负载，独立覆盖17种meshio单元与2种struct单元、多版本/编码、稀疏字段与坏输入；输出单独回执，不覆盖历史reference.json。当前本地Python3.12.14实跑580次调用/2041项断言全部通过，约1秒；这个时间只描述本次运行，不是性能承诺。GitHub流程配置有5分钟超时并保留报告，但未声称远端已执行。该次验证针对 0.2.0 核心；本地交付 0.2.1 仅补全仓库地址元数据，核心/API 与此回执对应的实现相同。
+格式与几何参考门固定meshio 5.3.5 / NumPy 2.5.3。`python tools/verify-reference.py --skip-benchmark --evidence evidence/reference-ci.json`跳过合成性能工作负载，独立覆盖17种meshio单元与2种struct单元、多版本/编码、稀疏字段与坏输入；回执单独保存，历史reference.json保持。旧0.2.0核心的Python3.12.14记录为580次调用/2041项断言，耗时只描述该次运行。当前完整workflow、超时与产物设置见[CI配置](.github/workflows/ci.yml)，各提交结果见Actions。
 
 当前检查见 [reference-gate-20260927/LOCAL-CHECKS.json](evidence/reference-gate-20260927/LOCAL-CHECKS.json)，原公开T1数据证据仍独立保留。本改动加强持续核验，不新增网格能力、不证明高阶工程质量或赛事接受。
 
@@ -249,13 +249,13 @@ moon build --target js --release --deny-warn
 moon package
 ```
 
-跨平台复核（2026-09-28，本地 Ubuntu-D 26.04 WSL2）：从当时的源码归档全新解包，固定 `moonc 0.10.14+7d59c7ec9` 下通过 `moon update`、`moon fmt --check`、`moon info`、严格检查、JS/Wasm-GC 测试及 JS release 构建；Node 24.21.0 跑通本仓一条宿主入口。本次补记仅修改文档，代码与 CI 未变；复核日志在本地交接包中，公开提交后的 GitHub Actions 仍须单独核对。
+跨平台历史复核（2026-09-28，Ubuntu-D 26.04 WSL2）：当时源码归档在`moonc 0.10.14+7d59c7ec9`下通过依赖、格式、API、严格检查、JS/Wasm-GC测试及JS release构建；Node24.21.0运行文件入口。该记录只对应当时源码与环境，当前提交以本仓Actions为准。
 
 本地核验：JS/Wasm-GC 各 22 项测试、release 构建和 Node CLI 示例通过。 `moon package` 已完成离线打包预检，它不等于已发布到 Mooncakes。
 
-**公开状态（2026-09-30 核对）**：GitHub [公开仓库](https://github.com/cheng-jun56/moonbit-gmsh) 默认分支 `main` 的提交 `8806654c281a` 已有 [成功 CI](https://github.com/cheng-jun56/moonbit-gmsh/actions/runs/36651983141)；[Mooncakes 0.2.1](https://mooncakes.io/docs/cheng-jun56/gmsh@0.2.1) 已发布，安装所得核心、包配置与公共 API 源文件和受审代码逐字节一致。本次命名与材料调整属于新的本地文档修改，尚未推送；表单一致性、换题和赛事审核结果仍未核实。
+**原命名空间历史（2026-09-30 核对）**：旧GitHub[公开仓库](https://github.com/cheng-jun56/moonbit-gmsh)的提交`8806654c281a`对应[历史CI](https://github.com/cheng-jun56/moonbit-gmsh/actions/runs/36651983141)；[Mooncakes 0.2.1](https://mooncakes.io/docs/cheng-jun56/gmsh@0.2.1)属于旧`cheng-jun56/gmsh`命名空间。当日核对的包源码与当时受审实现一致。这些链接保留来源，当前维护、申报与源码模块使用上文的新账号及命名空间。
 
-[申报书](cheng-jun56-gmsh-%E7%94%B3%E6%8A%A5%E4%B9%A6.md)
+[申报书](cheng-jun56-2-gmsh-%E7%94%B3%E6%8A%A5%E4%B9%A6.md)
 
 ## 0.5.0 高阶交付入口（本地未发布）
 
@@ -279,9 +279,9 @@ python tools/verify-high-order.py --evidence NEW_EVIDENCE.json
 
 字段头的4096 UTF-16单元是本库交换上限；Gmsh4.15.2实际拒读4096汉字字段名样本，未将此记作Gmsh互操作通过。原样本由独立UTF-8/struct检查保真；额外字符串头只保留，不实现其中指向的插值方案（Gmsh将第2字符串解释为方案名，见[官方格式说明](https://gmsh.info/doc/texinfo/gmsh.html#MSH-file-format)）。
 
-0.4.0新增曲面字段积分API/CLI和体网格→选定曲壁→热流/牵引力汇总示例；五族15次独立Gmsh请求、145检查通过，实际文件/CLI另33检查。新增5组积分回归通过JS/Wasm-GC/native。还修复旧线性质量在中间坐标差溢出时误拒有限面积/质量和塌陷诊断的路径；2组修复与2组相关回归在三个后端通过。上述为本轮定向结果，未重跑历史大集合。
+0.4.0新增曲面字段积分API/CLI和体网格→选定曲壁→热流/牵引力汇总示例；五族15次独立Gmsh请求、145检查通过，实际文件/CLI另33检查。新增5组积分回归通过JS/Wasm-GC/native。还修复旧线性质量在中间坐标差溢出时误拒有限面积/质量和塌陷诊断的路径；2组修复与2组相关回归在三个后端通过。这些记录描述相应版本的定向回归。
 
-0.5.0新增法向通量API/CLI和正向/反向曲壁的两帧示例。五族正反向NodeData/ElementData20请求、190项独立Gmsh检查，以及实际文件/CLI43检查通过；新增5组及相关旧5组回归通过JS/Wasm-GC/native。帧/紧凑编号/绕向审查未发现现有错误，本轮拓展不冒称旧接口修复。旧分量积分含义保留，无自动外法向或认证误差界。
+0.5.0新增法向通量API/CLI和正向/反向曲壁的两帧示例。五族正反向NodeData/ElementData20请求、190项独立Gmsh检查，以及实际文件/CLI43检查通过；新增5组及相关旧5组回归通过JS/Wasm-GC/native。帧/紧凑编号/绕向审查未发现现有错误，该扩展保留旧接口语义。旧分量积分含义保留，无自动外法向或认证误差界。
 
 ## 0.6.0 逐面通量与4.1顺序
 
@@ -293,13 +293,11 @@ python tools/verify-high-order.py --evidence NEW_EVIDENCE.json
 
 新增`field_frames()`和`surface_field_coverage(field_index,max_missing?)`，保留原`inspect/dump`及全部数学接口。目录逐段显示分量、时间步/时间、条数及可选方案/分区，不按名称合并。覆盖只检查所选2D面的完整唯一tag，不把低维/孤立数据计为必需节点，不自动继承体字段。
 
-缺失列表默认最多1000、可设0..100000；完整计数和`all_required_tags_present`始终反映全选区，`missing_truncated`明确表示列表截断。CLI严格模式缺值退出3并输出报告；非法查询退出2。详细场景与例程见[FIELDS.md](docs/FIELDS.md)。本轮原稀疏帧/子集/边界/紧凑二进制链审查通过，新增的是可用性接口，不冒称旧bug修复。
+缺失列表默认最多1000、可设0..100000；完整计数和`all_required_tags_present`始终反映全选区，`missing_truncated`明确表示列表截断。CLI严格模式缺值退出3并输出报告；非法查询退出2。详细场景与例程见[FIELDS.md](docs/FIELDS.md)。该接口保留原稀疏帧、子集、边界与紧凑二进制语义。
 
-## 第12轮：结果定律有限审查（核心仍为0.7.0）
+## 结果定律开发复核（0.7.0）
 
 旋转同步向量分量、面积/单位缩放和镜像符号，以及兼容细分/不同插值重建，均按定义通过。38份数值报告走真实文件CLI，44次CLI/400检查，Gmsh读入15份网格。未发现核心缺陷；可复现工具和[解释说明](docs/RESULT-REVIEW.md)明确同角点数据的Q1四边形与P1三角形不一定代表同一字段。工具是开发审查，不是新增坐标变换或重采样API。
-
-本轮没有重跑已通过的稀疏tag、覆盖cap、compact和未变后端集合；全部MoonBit源码/包/API保持冻结11身份，JS桥复用并核对同一散列。旧外部消费与认证限制继续适用。
 
 ## 0.8.0 标量法向向量积分
 

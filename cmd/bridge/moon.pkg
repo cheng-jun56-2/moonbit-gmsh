@@ -1,5 +1,5 @@
 import {
-  "cheng-jun56/gmsh" @lib,
+  "cheng-jun56-2/gmsh" @lib,
   "moonbitlang/core/json",
   "moonbitlang/core/debug",
 }

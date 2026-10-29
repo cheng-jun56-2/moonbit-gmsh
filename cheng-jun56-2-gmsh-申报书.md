@@ -1,6 +1,6 @@
 # MoonGmsh：MoonBit 网格交换与边界字段处理
-MoonGmsh（cheng-jun56/gmsh，0.11.0）提供MSH交换、完整节点边界、明确字段帧计算与损失说明。
-面向MoonBit已有网格的边界/字段处理与文件交付。
+MoonGmsh（cheng-jun56-2/gmsh，0.11.0）提供MSH交换、完整节点边界、明确字段帧计算与损失说明。
+维护及申报归属：cheng-jun56-2；原作者与版权保留。
 
 - 网格交换：读取/写出MSH 2.2、4.1的ASCII与二进制，处理大小端、稀疏乱序tag、类型1–19及实体/物理组/参数坐标、多帧1/3/9分量数据；正tag限Int32，已知元数据表达损失须明示。
 - 边界提取：对线性及指定二阶族匹配完整节点，消去内部共享面，输出边界与父单元/局部面来源；显式面的绕向、标签和字段可复用，体属性不自动变成面属性。
@@ -18,6 +18,6 @@ MoonGmsh（cheng-jun56/gmsh，0.11.0）提供MSH交换、完整节点边界、�
 输出两份JSON报告：一份含温度、三分量速度、九分量单元应力及两类原tag映射，另一份只含点字段；报告内附VTK文本和损失说明，文件落盘步骤见README。
 
 Gmsh、meshio、VTK/PyVista已有交换、积分和多数组能力。本项目组合MoonBit原tag、完整节点、原帧、覆盖/损失合同，不主张格式/数学/算法首创。
-JS/Wasm-GC/native、独立解析及Gmsh/meshio消费者已有验证；源码与CI已公开，以对应提交Actions为准，竞赛验收未建立。
+验证含JS/Wasm-GC/native及独立解析、Gmsh/meshio消费；各提交CI见仓库Actions。
 边界：不生成网格或求解，不提供任意高阶/多面体、字段转移、时间对齐、单位/基变换或自定义插值方案解释；固定求积和采样不认证全域有效、外向或工程适用性，单位与压力符号由调用者定义。VTK不能还原完整MSH语义，保留原MSH；不保证所有读者及符号零位级保真，未运行原生VTK。
 仓库：[cheng-jun56-2/moonbit-gmsh](https://github.com/cheng-jun56-2/moonbit-gmsh)。自有代码与自建样例按根LICENSE的MIT许可。附带Gmsh教程t1.geo为GPL-2.0-or-later，保留独立许可与生成文件来源；meshio(MIT)、NumPy(BSD-3-Clause)、Gmsh仅作开发工具，未打包依赖。明细见docs/SOURCES.md。

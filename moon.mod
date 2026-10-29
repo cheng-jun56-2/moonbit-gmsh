@@ -1,4 +1,4 @@
-name = "cheng-jun56/gmsh"
+name = "cheng-jun56-2/gmsh"
 
 version = "0.11.0"
 

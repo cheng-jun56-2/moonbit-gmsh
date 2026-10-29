@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "cheng-jun56/gmsh"
+package "cheng-jun56-2/gmsh"
 
 import {
   "moonbitlang/core/debug",

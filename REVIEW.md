@@ -38,9 +38,8 @@ moon run examples/extract_boundary --target wasm-gc
 
 ## 交付状态
 
-本地实现、可运行示例和独立参考证据与公开发布是两回事。
-模块命名空间为 cheng-jun56/gmsh，与公开仓库及 Mooncakes 账号一致。
-仓库可匿名克隆、默认分支内容、对应SHA的CI和正式链接需在提交时核对；不能用个人主页或历史截图代替。
+当前源码模块为`cheng-jun56-2/gmsh`，维护与申报归属`cheng-jun56-2`，仓库为[cheng-jun56-2/moonbit-gmsh](https://github.com/cheng-jun56-2/moonbit-gmsh)。原作者、版权、上游来源和旧包发布历史保留；迁移维护账号不改写原创作者。
+可运行示例和独立参考证据与注册表发布分别说明；当前提交验证见本仓Actions，旧命名空间的Mooncakes0.2.1记录仅为历史来源。
 
 ## 0.2.0 当前增量
 

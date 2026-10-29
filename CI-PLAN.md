@@ -13,3 +13,5 @@ R08接收仅证明原有有序VTK导出表示及选定原字段与显式源一�
 R09保留step`Exact physical name selection receivers`：双后端公共包完整子网格接收及独立原始MSH文件读回；同维重名必须拒绝，跨维同名/声明空组/空名称/原数字入口及全部字段元数据保持。仅名称解析是新能力，subset/编码/科学合同不改；不重开已过科学生成器。原始stdout/stderr/exit分开记录，实际测试checkout/运行输入副本/编译/远程metadata分别固定。
 
 R10新增必要step`Original node cloud receivers`：新节点域快照双后端完整Mesh接收，独立MSH原始读取，再实际以产生的MSH调用既有vtk-fields并独立核对全部点/tag/1/3/9数值及零单元。清空单元数据而不投影，孤立点及稀疏字段保持；不跑旧曲面/高阶generator或把下游接收当原生VTK渲染认证。新本地命令stdout/stderr/exit分开留存。
+
+命名空间同步：当前自有模块与全部公共包导入为`cheng-jun56-2/gmsh`。原完整workflow命令保持，all-target/API与各后端测试重新按此模块构建；Original node cloud receivers实际运行新命名空间公共包及产生文件的独立下游消费。Node桥接仍使用包相对构建路径，旧完整行为期望保持。只改自有标识及当前归属，不改算法、格式、依赖、版权或历史证据。
