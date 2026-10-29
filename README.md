@@ -43,6 +43,8 @@ meshio、Python 或 JS 解析器；Node 宿主只处理参数、真实文件和�
 
 [接入同一离散网格的结果字段](docs/FIELD-APPEND.md)：`moon run examples/append_fields --target js`（亦可wasm-gc）。实际两原件运行`node tools/gmsh.mjs append-fields examples/append_fields/recipient.msh examples/append_fields/donor.msh examples/append_fields/options.json NEW.msh`。先核离散身份，再按来源[2,0,1,3]追加完整原头/数据，接收方原标签和已有字段保持；不做空间字段转移或物理等价认证。
 
+[按物理组交付标量法向合量](docs/GROUP-RESULTANTS.md)：`node examples/group_resultants/run.mjs INPUT.msh OPTIONS.json NEW_DIRECTORY`接收已有MSH及明确字段段/组列表，保存每组实际二进制子网格、基于该字节的合量、原件/请求和SHA清单；重叠组分别报告，不编造跨组合计。纯公共包接收例可运行`moon run examples/group_resultants --target js`（亦可wasm-gc）。
+
 [只读复核已交付的VTK bundle](docs/VTK-FIELDS.md#离线复核)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY`读取现有清单、VTK和侧车，逐文件核SHA并读回字段/原tag关联；可显式附原MSH及选项文件核字节身份和选择顺序。无需重生成；哈希一致不等于真实性或数值认证。
 
 需要核对原始字段时，使用[显式源字段比较](docs/VTK-FIELDS.md#显式源字段比较)：`node examples/vtk_fields/verify.mjs BUNDLE_DIRECTORY ORIGINAL.msh OPTIONS.json --compare-source-fields`。按准确源段索引、完整原头和原tag比较1/3/9分量值；默认字节核验保持，比较成功也不代表几何相同或来源可信。

@@ -78,6 +78,14 @@ jobs:
           moon run examples/append_fields --target wasm-gc > "$GMSH_CI_EVIDENCE/append-public-wasm-gc.json"
           cmp "$GMSH_CI_EVIDENCE/append-public-js.json" "$GMSH_CI_EVIDENCE/append-public-wasm-gc.json"
           python tools/verify-field-append.py --public-receipt "$GMSH_CI_EVIDENCE/append-public-js.json" --evidence "$GMSH_CI_EVIDENCE/field-append.json" --outputs "$GMSH_CI_EVIDENCE/field-append"
+      - name: Physical group resultant receivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          moon run examples/group_resultants --target js > "$GMSH_CI_EVIDENCE/group-resultants-public-js.json"
+          moon run examples/group_resultants --target wasm-gc > "$GMSH_CI_EVIDENCE/group-resultants-public-wasm-gc.json"
+          cmp "$GMSH_CI_EVIDENCE/group-resultants-public-js.json" "$GMSH_CI_EVIDENCE/group-resultants-public-wasm-gc.json"
+          python tools/verify-group-resultants.py --public-receipt "$GMSH_CI_EVIDENCE/group-resultants-public-js.json" --evidence "$GMSH_CI_EVIDENCE/group-resultants.json" --outputs "$GMSH_CI_EVIDENCE/group-resultants"
       - name: Install independent reference readers
         run: |
           sudo apt-get update

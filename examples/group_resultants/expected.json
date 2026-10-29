@@ -1,0 +1,1446 @@
+{
+  "frozenBeforeImplementation": true,
+  "origin": "Literal hand ASCII4.1, elementary planar areas/cross products and affine p=1+x. No new product encoder/report used as oracle.",
+  "source": {
+    "source_version": "4.1",
+    "nodes": [
+      {
+        "tag": 50,
+        "xyz": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "tag": 2147483647,
+        "xyz": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          9.0,
+          9.0
+        ]
+      },
+      {
+        "tag": 70,
+        "xyz": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "tag": 10,
+        "xyz": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "tag": 90,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "tag": 8,
+        "kind": 2,
+        "nodes": [
+          90,
+          50,
+          70
+        ],
+        "entity": 8,
+        "physical": [
+          44,
+          66
+        ],
+        "extra": []
+      },
+      {
+        "tag": 1000,
+        "kind": 1,
+        "nodes": [
+          90,
+          10
+        ],
+        "entity": 3,
+        "physical": [
+          44
+        ],
+        "extra": []
+      },
+      {
+        "tag": 700,
+        "kind": 2,
+        "nodes": [
+          90,
+          10,
+          50
+        ],
+        "entity": 7,
+        "physical": [
+          44,
+          55
+        ],
+        "extra": []
+      },
+      {
+        "tag": 201,
+        "kind": 2,
+        "nodes": [
+          90,
+          50,
+          10
+        ],
+        "entity": 9,
+        "physical": [
+          55
+        ],
+        "extra": []
+      }
+    ],
+    "entities": [
+      {
+        "dim": 1,
+        "tag": 3,
+        "bounds": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        "physical": [
+          44
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 7,
+        "bounds": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        "physical": [
+          44,
+          55
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 8,
+        "bounds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          3.0
+        ],
+        "physical": [
+          44,
+          66
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 9,
+        "bounds": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        "physical": [
+          55
+        ],
+        "boundary": []
+      }
+    ],
+    "physical_names": [
+      {
+        "dim": 2,
+        "tag": 44,
+        "name": "受载甲"
+      },
+      {
+        "dim": 2,
+        "tag": 55,
+        "name": "opposed"
+      },
+      {
+        "dim": 2,
+        "tag": 66,
+        "name": "vertical"
+      },
+      {
+        "dim": 1,
+        "tag": 44,
+        "name": "edge same id"
+      }
+    ],
+    "fields": [
+      {
+        "location": "ElementData",
+        "strings": [
+          "stress",
+          "named-descriptor",
+          "other-field"
+        ],
+        "reals": [],
+        "integers": [
+          2,
+          9,
+          3,
+          0,
+          90
+        ],
+        "entries": [
+          {
+            "tag": 700,
+            "values": [
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0,
+              6.0,
+              7.0,
+              8.0,
+              9.0
+            ]
+          },
+          {
+            "tag": 8,
+            "values": [
+              9.0,
+              8.0,
+              7.0,
+              6.0,
+              5.0,
+              4.0,
+              3.0,
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "tag": 201,
+            "values": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "压力",
+          "",
+          "source-extra"
+        ],
+        "reals": [
+          0.25,
+          9.25
+        ],
+        "integers": [
+          7,
+          1,
+          5,
+          31,
+          91
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              9.0
+            ]
+          },
+          {
+            "tag": 10,
+            "values": [
+              3.0
+            ]
+          },
+          {
+            "tag": 70,
+            "values": [
+              1.0
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              1.0
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              1.0
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "压力",
+          ""
+        ],
+        "reals": [
+          0.25
+        ],
+        "integers": [
+          7,
+          1,
+          3,
+          0
+        ],
+        "entries": [
+          {
+            "tag": 90,
+            "values": [
+              10.0
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              10.0
+            ]
+          },
+          {
+            "tag": 70,
+            "values": [
+              10.0
+            ]
+          }
+        ]
+      },
+      {
+        "location": "ElementData",
+        "strings": [
+          "face scalar"
+        ],
+        "reals": [],
+        "integers": [
+          9,
+          1,
+          3
+        ],
+        "entries": [
+          {
+            "tag": 700,
+            "values": [
+              2.0
+            ]
+          },
+          {
+            "tag": 8,
+            "values": [
+              -1.0
+            ]
+          },
+          {
+            "tag": 201,
+            "values": [
+              2.0
+            ]
+          }
+        ]
+      }
+    ],
+    "unknown_sections": []
+  },
+  "groups": {
+    "55": {
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 50,
+            "xyz": [
+              0.0,
+              2.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "tag": 10,
+            "xyz": [
+              2.0,
+              0.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "tag": 90,
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 700,
+            "kind": 2,
+            "nodes": [
+              90,
+              10,
+              50
+            ],
+            "entity": 7,
+            "physical": [
+              44,
+              55
+            ],
+            "extra": []
+          },
+          {
+            "tag": 201,
+            "kind": 2,
+            "nodes": [
+              90,
+              50,
+              10
+            ],
+            "entity": 9,
+            "physical": [
+              55
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              44,
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              3.0
+            ],
+            "physical": [
+              44,
+              66
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "受载甲"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "opposed"
+          },
+          {
+            "dim": 2,
+            "tag": 66,
+            "name": "vertical"
+          },
+          {
+            "dim": 1,
+            "tag": 44,
+            "name": "edge same id"
+          }
+        ],
+        "fields": [
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-descriptor",
+              "other-field"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              2,
+              0,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 700,
+                "values": [
+                  1.0,
+                  2.0,
+                  3.0,
+                  4.0,
+                  5.0,
+                  6.0,
+                  7.0,
+                  8.0,
+                  9.0
+                ]
+              },
+              {
+                "tag": 201,
+                "values": [
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              "",
+              "source-extra"
+            ],
+            "reals": [
+              0.25,
+              9.25
+            ],
+            "integers": [
+              7,
+              1,
+              3,
+              31,
+              91
+            ],
+            "entries": [
+              {
+                "tag": 10,
+                "values": [
+                  3.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  1.0
+                ]
+              },
+              {
+                "tag": 90,
+                "values": [
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              ""
+            ],
+            "reals": [
+              0.25
+            ],
+            "integers": [
+              7,
+              1,
+              2,
+              0
+            ],
+            "entries": [
+              {
+                "tag": 90,
+                "values": [
+                  10.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  10.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "face scalar"
+            ],
+            "reals": [],
+            "integers": [
+              9,
+              1,
+              2
+            ],
+            "entries": [
+              {
+                "tag": 700,
+                "values": [
+                  2.0
+                ]
+              },
+              {
+                "tag": 201,
+                "values": [
+                  2.0
+                ]
+              }
+            ]
+          }
+        ],
+        "unknown_sections": []
+      },
+      "element_tags": [
+        700,
+        201
+      ],
+      "node_tags": [
+        50,
+        10,
+        90
+      ],
+      "surface_measure": 4,
+      "area_vector": [
+        0,
+        0,
+        0
+      ],
+      "normal_integral": [
+        0,
+        0,
+        0
+      ],
+      "samples": 12
+    },
+    "44": {
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 50,
+            "xyz": [
+              0.0,
+              2.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "tag": 70,
+            "xyz": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              3.0
+            ]
+          },
+          {
+            "tag": 10,
+            "xyz": [
+              2.0,
+              0.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "tag": 90,
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 8,
+            "kind": 2,
+            "nodes": [
+              90,
+              50,
+              70
+            ],
+            "entity": 8,
+            "physical": [
+              44,
+              66
+            ],
+            "extra": []
+          },
+          {
+            "tag": 700,
+            "kind": 2,
+            "nodes": [
+              90,
+              10,
+              50
+            ],
+            "entity": 7,
+            "physical": [
+              44,
+              55
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              44,
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              3.0
+            ],
+            "physical": [
+              44,
+              66
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "受载甲"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "opposed"
+          },
+          {
+            "dim": 2,
+            "tag": 66,
+            "name": "vertical"
+          },
+          {
+            "dim": 1,
+            "tag": 44,
+            "name": "edge same id"
+          }
+        ],
+        "fields": [
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-descriptor",
+              "other-field"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              2,
+              0,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 700,
+                "values": [
+                  1.0,
+                  2.0,
+                  3.0,
+                  4.0,
+                  5.0,
+                  6.0,
+                  7.0,
+                  8.0,
+                  9.0
+                ]
+              },
+              {
+                "tag": 8,
+                "values": [
+                  9.0,
+                  8.0,
+                  7.0,
+                  6.0,
+                  5.0,
+                  4.0,
+                  3.0,
+                  2.0,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              "",
+              "source-extra"
+            ],
+            "reals": [
+              0.25,
+              9.25
+            ],
+            "integers": [
+              7,
+              1,
+              4,
+              31,
+              91
+            ],
+            "entries": [
+              {
+                "tag": 10,
+                "values": [
+                  3.0
+                ]
+              },
+              {
+                "tag": 70,
+                "values": [
+                  1.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  1.0
+                ]
+              },
+              {
+                "tag": 90,
+                "values": [
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              ""
+            ],
+            "reals": [
+              0.25
+            ],
+            "integers": [
+              7,
+              1,
+              3,
+              0
+            ],
+            "entries": [
+              {
+                "tag": 90,
+                "values": [
+                  10.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  10.0
+                ]
+              },
+              {
+                "tag": 70,
+                "values": [
+                  10.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "face scalar"
+            ],
+            "reals": [],
+            "integers": [
+              9,
+              1,
+              2
+            ],
+            "entries": [
+              {
+                "tag": 700,
+                "values": [
+                  2.0
+                ]
+              },
+              {
+                "tag": 8,
+                "values": [
+                  -1.0
+                ]
+              }
+            ]
+          }
+        ],
+        "unknown_sections": []
+      },
+      "element_tags": [
+        8,
+        700
+      ],
+      "node_tags": [
+        50,
+        70,
+        10,
+        90
+      ],
+      "surface_measure": 5,
+      "area_vector": [
+        3,
+        0,
+        2
+      ],
+      "normal_integral": [
+        3,
+        0,
+        3.3333333333333335
+      ],
+      "samples": 12
+    },
+    "66": {
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 50,
+            "xyz": [
+              0.0,
+              2.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "tag": 70,
+            "xyz": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              3.0
+            ]
+          },
+          {
+            "tag": 90,
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 8,
+            "kind": 2,
+            "nodes": [
+              90,
+              50,
+              70
+            ],
+            "entity": 8,
+            "physical": [
+              44,
+              66
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              44,
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              3.0
+            ],
+            "physical": [
+              44,
+              66
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              0.0
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "受载甲"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "opposed"
+          },
+          {
+            "dim": 2,
+            "tag": 66,
+            "name": "vertical"
+          },
+          {
+            "dim": 1,
+            "tag": 44,
+            "name": "edge same id"
+          }
+        ],
+        "fields": [
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-descriptor",
+              "other-field"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              1,
+              0,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 8,
+                "values": [
+                  9.0,
+                  8.0,
+                  7.0,
+                  6.0,
+                  5.0,
+                  4.0,
+                  3.0,
+                  2.0,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              "",
+              "source-extra"
+            ],
+            "reals": [
+              0.25,
+              9.25
+            ],
+            "integers": [
+              7,
+              1,
+              3,
+              31,
+              91
+            ],
+            "entries": [
+              {
+                "tag": 70,
+                "values": [
+                  1.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  1.0
+                ]
+              },
+              {
+                "tag": 90,
+                "values": [
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "压力",
+              ""
+            ],
+            "reals": [
+              0.25
+            ],
+            "integers": [
+              7,
+              1,
+              3,
+              0
+            ],
+            "entries": [
+              {
+                "tag": 90,
+                "values": [
+                  10.0
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  10.0
+                ]
+              },
+              {
+                "tag": 70,
+                "values": [
+                  10.0
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "face scalar"
+            ],
+            "reals": [],
+            "integers": [
+              9,
+              1,
+              1
+            ],
+            "entries": [
+              {
+                "tag": 8,
+                "values": [
+                  -1.0
+                ]
+              }
+            ]
+          }
+        ],
+        "unknown_sections": []
+      },
+      "element_tags": [
+        8
+      ],
+      "node_tags": [
+        50,
+        70,
+        90
+      ],
+      "surface_measure": 3,
+      "area_vector": [
+        3,
+        0,
+        0
+      ],
+      "normal_integral": [
+        3,
+        0,
+        0
+      ],
+      "samples": 6
+    }
+  },
+  "requestOrder": [
+    55,
+    44
+  ],
+  "selectedFieldIndex": 1,
+  "analyticalDerivation": "A=(90,10,50):area2,+z,p average5/3,integral z10/3; B=(90,50,70):area3,+x,p1,integral x3; C=(90,50,10):area2,-z,integral z-10/3. Group55=A+C;44=B+A;66=B. Group overlap is intentional; no aggregate sum of groups.",
+  "alternateFields": {
+    "2": {
+      "group66NormalIntegral": [
+        30,
+        0,
+        0
+      ],
+      "group44": "reject missing node10"
+    },
+    "3": {
+      "group44NormalIntegral": [
+        -3,
+        0,
+        4
+      ],
+      "group55NormalIntegral": [
+        0,
+        0,
+        0
+      ],
+      "time": null
+    }
+  },
+  "scope": "Numerical tolerances only for fixed-rule estimates, complete exact tags/roles/raw field context for saved meshes."
+}
