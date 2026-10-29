@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import {isUtf8} from 'node:buffer';
-import {report,transform,new_file} from '../_build/js/release/build/cmd/bridge/bridge.js';
+import {report,transform,new_file,append_fields} from '../_build/js/release/build/cmd/bridge/bridge.js';
 const usage=`Usage: node tools/gmsh.mjs COMMAND INPUT [OPTIONS.json] [OUTPUT]
        node tools/gmsh.mjs create OPTIONS.json OUTPUT
+       node tools/gmsh.mjs append-fields RECIPIENT.msh DONOR.msh OPTIONS.json OUTPUT.msh
 Reports: inspect dump validate quality topology components boundary coverage vtk obj
          vtk-field (field_index and allow_loss=true; JSON text+raw headers/losses)
          vtk-fields (unique nonempty field_indices and allow_loss=true; combined JSON)
@@ -46,6 +47,11 @@ try {
   else if(a[0]==='create') {
     if(a.length!==3) throw new Error(usage);
     save(a[2],Buffer.from(new_file(JSON.stringify(options(a[1])))));
+  } else if(a[0]==='append-fields') {
+    if(a.length!==5) throw new Error(usage);
+    const o=options(a[3]);
+    const recipient=read(a[1],134_217_728),donor=read(a[2],134_217_728);
+    save(a[4],Buffer.from(append_fields(recipient,donor,JSON.stringify(o))));
   } else {
     if(a.length<2||a.length>4) throw new Error(usage);
     const [command,input,opts,output]=a,o=options(opts);o.command=command;

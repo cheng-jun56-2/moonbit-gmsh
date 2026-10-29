@@ -70,6 +70,14 @@ jobs:
           moon run examples/tet4_field --target wasm-gc > "$GMSH_CI_EVIDENCE/tet4-public-wasm-gc.json"
           cmp "$GMSH_CI_EVIDENCE/tet4-public-js.json" "$GMSH_CI_EVIDENCE/tet4-public-wasm-gc.json"
           python tools/verify-tet4-field.py --public-receipt "$GMSH_CI_EVIDENCE/tet4-public-js.json" --evidence "$GMSH_CI_EVIDENCE/tet4-field.json" --outputs "$GMSH_CI_EVIDENCE/tet4-field"
+      - name: Field append receivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          moon run examples/append_fields --target js > "$GMSH_CI_EVIDENCE/append-public-js.json"
+          moon run examples/append_fields --target wasm-gc > "$GMSH_CI_EVIDENCE/append-public-wasm-gc.json"
+          cmp "$GMSH_CI_EVIDENCE/append-public-js.json" "$GMSH_CI_EVIDENCE/append-public-wasm-gc.json"
+          python tools/verify-field-append.py --public-receipt "$GMSH_CI_EVIDENCE/append-public-js.json" --evidence "$GMSH_CI_EVIDENCE/field-append.json" --outputs "$GMSH_CI_EVIDENCE/field-append"
       - name: Install independent reference readers
         run: |
           sudo apt-get update

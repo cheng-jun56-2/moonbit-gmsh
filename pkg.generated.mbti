@@ -183,6 +183,7 @@ pub fn LossReport::to_json(Self) -> Json
 pub struct Mesh {
   // private fields
 }
+pub fn Mesh::append_fields(Self, Self, Array[Int]) -> Self raise MeshError
 pub fn Mesh::compact(Self) -> Self raise
 pub fn Mesh::components(Self) -> Array[Array[Int]]
 pub fn Mesh::diagnostics(Self, tolerance? : Double) -> Diagnostics raise

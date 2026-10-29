@@ -367,6 +367,24 @@ pub fn new_file(options : String) -> Bytes {
 }
 
 ///|
+pub fn append_fields(data : Bytes, donor : Bytes, options : String) -> Bytes {
+  try {
+    let o = object(options)
+    let recipient = @lib.decode(data)
+    let source = @lib.decode(donor)
+    let drop = opt(o, "drop_unknown", false)
+    let recipient = if drop { recipient.without_unknown() } else { recipient }
+    let source = if drop { source.without_unknown() } else { source }
+    encode(
+      recipient.append_fields(source, ints(o, "field_indices", required=true)),
+      o,
+    )
+  } catch {
+    e => fail_bytes(@debug.to_string(e))
+  }
+}
+
+///|
 pub fn read_vtk_fields(data : Bytes, audit : String) -> String {
   @lib.read_vtk_fields(data, @json.parse(audit)).to_json().stringify() catch {
     e => fail_string(@debug.to_string(e))

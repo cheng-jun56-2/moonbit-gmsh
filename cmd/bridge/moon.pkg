@@ -15,6 +15,7 @@ options(
         "report",
         "transform",
         "new_file",
+        "append_fields",
         "read_vtk_fields",
         "verify_vtk_fields",
       ],
