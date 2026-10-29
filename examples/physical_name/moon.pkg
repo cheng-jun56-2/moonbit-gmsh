@@ -1,0 +1,6 @@
+import {
+  "cheng-jun56/gmsh",
+  "moonbitlang/core/encoding/utf8",
+}
+
+pkgtype(kind: "executable")

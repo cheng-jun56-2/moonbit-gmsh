@@ -227,6 +227,7 @@ pub fn Mesh::quality(Self, Int, tolerance? : Double) -> Quality raise
 pub fn Mesh::sample_gauss_jacobians(Self, Int, reference_normal? : Array[Double]) -> SamplingQualityReport raise
 pub fn Mesh::select_fields(Self, Array[Int]) -> Self raise
 pub fn Mesh::select_physical(Self, Int, Int) -> Self raise
+pub fn Mesh::select_physical_name(Self, Int, String) -> Self raise
 pub fn Mesh::source_version(Self) -> String
 pub fn Mesh::subset(Self, Array[Int]) -> Self raise
 pub fn Mesh::surface_field_coverage(Self, Int, max_missing? : Int) -> SurfaceFieldCoverage raise

@@ -344,6 +344,8 @@ fn do_transform(data : Bytes, options : String) -> Bytes raise {
     "subset" => m.subset(ints(o, "tags", required=true))
     "physical" =>
       m.select_physical(req_int(o, "dimension"), req_int(o, "group"))
+    "physical-name" =>
+      m.select_physical_name(req_int(o, "dimension"), req(o, "name"))
     "compact" => m.compact()
     "boundary-msh" =>
       m

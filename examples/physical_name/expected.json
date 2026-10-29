@@ -1,0 +1,1432 @@
+{
+  "frozenBeforeImplementation": true,
+  "source": {
+    "source_version": "4.1",
+    "nodes": [
+      {
+        "tag": 50,
+        "xyz": [
+          0,
+          3,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0,
+          1
+        ]
+      },
+      {
+        "tag": 2147483647,
+        "xyz": [
+          9,
+          9,
+          9
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          9,
+          9
+        ]
+      },
+      {
+        "tag": 7,
+        "xyz": [
+          2,
+          0,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          1,
+          0
+        ]
+      },
+      {
+        "tag": 90,
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "dim": 2,
+        "entity": 7,
+        "parameters": [
+          0,
+          0
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "tag": 3,
+        "kind": 1,
+        "nodes": [
+          90,
+          7
+        ],
+        "entity": 3,
+        "physical": [
+          9
+        ],
+        "extra": []
+      },
+      {
+        "tag": 8,
+        "kind": 2,
+        "nodes": [
+          7,
+          2147483647,
+          50
+        ],
+        "entity": 8,
+        "physical": [
+          55
+        ],
+        "extra": []
+      },
+      {
+        "tag": 700,
+        "kind": 2,
+        "nodes": [
+          90,
+          7,
+          50
+        ],
+        "entity": 7,
+        "physical": [
+          44
+        ],
+        "extra": []
+      }
+    ],
+    "entities": [
+      {
+        "dim": 1,
+        "tag": 3,
+        "bounds": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "physical": [
+          9
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 7,
+        "bounds": [
+          0,
+          0,
+          0,
+          9,
+          9,
+          9
+        ],
+        "physical": [
+          44
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 8,
+        "bounds": [
+          0,
+          0,
+          0,
+          9,
+          9,
+          9
+        ],
+        "physical": [
+          55
+        ],
+        "boundary": []
+      },
+      {
+        "dim": 2,
+        "tag": 9,
+        "bounds": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "physical": [
+          88
+        ],
+        "boundary": []
+      }
+    ],
+    "physical_names": [
+      {
+        "dim": 2,
+        "tag": 44,
+        "name": "热壁 面"
+      },
+      {
+        "dim": 1,
+        "tag": 9,
+        "name": "热壁 面"
+      },
+      {
+        "dim": 2,
+        "tag": 55,
+        "name": "outlet"
+      },
+      {
+        "dim": 2,
+        "tag": 88,
+        "name": "declared-only"
+      },
+      {
+        "dim": 0,
+        "tag": 5,
+        "name": ""
+      }
+    ],
+    "fields": [
+      {
+        "location": "NodeData",
+        "strings": [
+          "temperature",
+          "",
+          "extra"
+        ],
+        "reals": [
+          0.5,
+          7.25
+        ],
+        "integers": [
+          8,
+          1,
+          4,
+          31,
+          90
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              9
+            ]
+          },
+          {
+            "tag": 7,
+            "values": [
+              20
+            ]
+          },
+          {
+            "tag": 50,
+            "values": [
+              30
+            ]
+          },
+          {
+            "tag": 90,
+            "values": [
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "location": "ElementData",
+        "strings": [
+          "stress",
+          "named-rule"
+        ],
+        "reals": [],
+        "integers": [
+          2,
+          9,
+          2,
+          0,
+          92
+        ],
+        "entries": [
+          {
+            "tag": 8,
+            "values": [
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          },
+          {
+            "tag": 700,
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "isolated vector"
+        ],
+        "reals": [],
+        "integers": [
+          3,
+          3,
+          1
+        ],
+        "entries": [
+          {
+            "tag": 2147483647,
+            "values": [
+              9,
+              8,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "location": "NodeData",
+        "strings": [
+          "empty"
+        ],
+        "reals": [],
+        "integers": [
+          7,
+          1,
+          0
+        ],
+        "entries": []
+      }
+    ],
+    "unknown_sections": []
+  },
+  "expected": {
+    "wall": {
+      "request": {
+        "dimension": 2,
+        "name": "热壁 面"
+      },
+      "resolved_tag": 44,
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 50,
+            "xyz": [
+              0,
+              3,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0,
+              1
+            ]
+          },
+          {
+            "tag": 7,
+            "xyz": [
+              2,
+              0,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              1,
+              0
+            ]
+          },
+          {
+            "tag": 90,
+            "xyz": [
+              0,
+              0,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0,
+              0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 700,
+            "kind": 2,
+            "nodes": [
+              90,
+              7,
+              50
+            ],
+            "entity": 7,
+            "physical": [
+              44
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "physical": [
+              9
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "physical": [
+              88
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 1,
+            "tag": 9,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "outlet"
+          },
+          {
+            "dim": 2,
+            "tag": 88,
+            "name": "declared-only"
+          },
+          {
+            "dim": 0,
+            "tag": 5,
+            "name": ""
+          }
+        ],
+        "fields": [
+          {
+            "location": "NodeData",
+            "strings": [
+              "temperature",
+              "",
+              "extra"
+            ],
+            "reals": [
+              0.5,
+              7.25
+            ],
+            "integers": [
+              8,
+              1,
+              3,
+              31,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 7,
+                "values": [
+                  20
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  30
+                ]
+              },
+              {
+                "tag": 90,
+                "values": [
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-rule"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              1,
+              0,
+              92
+            ],
+            "entries": [
+              {
+                "tag": 700,
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "isolated vector"
+            ],
+            "reals": [],
+            "integers": [
+              3,
+              3,
+              0
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "empty"
+            ],
+            "reals": [],
+            "integers": [
+              7,
+              1,
+              0
+            ],
+            "entries": []
+          }
+        ],
+        "unknown_sections": []
+      }
+    },
+    "line": {
+      "request": {
+        "dimension": 1,
+        "name": "热壁 面"
+      },
+      "resolved_tag": 9,
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 7,
+            "xyz": [
+              2,
+              0,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              1,
+              0
+            ]
+          },
+          {
+            "tag": 90,
+            "xyz": [
+              0,
+              0,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0,
+              0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 3,
+            "kind": 1,
+            "nodes": [
+              90,
+              7
+            ],
+            "entity": 3,
+            "physical": [
+              9
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "physical": [
+              9
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "physical": [
+              88
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 1,
+            "tag": 9,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "outlet"
+          },
+          {
+            "dim": 2,
+            "tag": 88,
+            "name": "declared-only"
+          },
+          {
+            "dim": 0,
+            "tag": 5,
+            "name": ""
+          }
+        ],
+        "fields": [
+          {
+            "location": "NodeData",
+            "strings": [
+              "temperature",
+              "",
+              "extra"
+            ],
+            "reals": [
+              0.5,
+              7.25
+            ],
+            "integers": [
+              8,
+              1,
+              2,
+              31,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 7,
+                "values": [
+                  20
+                ]
+              },
+              {
+                "tag": 90,
+                "values": [
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-rule"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              0,
+              0,
+              92
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "isolated vector"
+            ],
+            "reals": [],
+            "integers": [
+              3,
+              3,
+              0
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "empty"
+            ],
+            "reals": [],
+            "integers": [
+              7,
+              1,
+              0
+            ],
+            "entries": []
+          }
+        ],
+        "unknown_sections": []
+      }
+    },
+    "outlet": {
+      "request": {
+        "dimension": 2,
+        "name": "outlet"
+      },
+      "resolved_tag": 55,
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [
+          {
+            "tag": 50,
+            "xyz": [
+              0,
+              3,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              0,
+              1
+            ]
+          },
+          {
+            "tag": 2147483647,
+            "xyz": [
+              9,
+              9,
+              9
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              9,
+              9
+            ]
+          },
+          {
+            "tag": 7,
+            "xyz": [
+              2,
+              0,
+              0
+            ],
+            "dim": 2,
+            "entity": 7,
+            "parameters": [
+              1,
+              0
+            ]
+          }
+        ],
+        "elements": [
+          {
+            "tag": 8,
+            "kind": 2,
+            "nodes": [
+              7,
+              2147483647,
+              50
+            ],
+            "entity": 8,
+            "physical": [
+              55
+            ],
+            "extra": []
+          }
+        ],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "physical": [
+              9
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "physical": [
+              88
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 1,
+            "tag": 9,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "outlet"
+          },
+          {
+            "dim": 2,
+            "tag": 88,
+            "name": "declared-only"
+          },
+          {
+            "dim": 0,
+            "tag": 5,
+            "name": ""
+          }
+        ],
+        "fields": [
+          {
+            "location": "NodeData",
+            "strings": [
+              "temperature",
+              "",
+              "extra"
+            ],
+            "reals": [
+              0.5,
+              7.25
+            ],
+            "integers": [
+              8,
+              1,
+              3,
+              31,
+              90
+            ],
+            "entries": [
+              {
+                "tag": 2147483647,
+                "values": [
+                  9
+                ]
+              },
+              {
+                "tag": 7,
+                "values": [
+                  20
+                ]
+              },
+              {
+                "tag": 50,
+                "values": [
+                  30
+                ]
+              }
+            ]
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-rule"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              1,
+              0,
+              92
+            ],
+            "entries": [
+              {
+                "tag": 8,
+                "values": [
+                  9,
+                  8,
+                  7,
+                  6,
+                  5,
+                  4,
+                  3,
+                  2,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "isolated vector"
+            ],
+            "reals": [],
+            "integers": [
+              3,
+              3,
+              1
+            ],
+            "entries": [
+              {
+                "tag": 2147483647,
+                "values": [
+                  9,
+                  8,
+                  7
+                ]
+              }
+            ]
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "empty"
+            ],
+            "reals": [],
+            "integers": [
+              7,
+              1,
+              0
+            ],
+            "entries": []
+          }
+        ],
+        "unknown_sections": []
+      }
+    },
+    "declared": {
+      "request": {
+        "dimension": 2,
+        "name": "declared-only"
+      },
+      "resolved_tag": 88,
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [],
+        "elements": [],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "physical": [
+              9
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "physical": [
+              88
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 1,
+            "tag": 9,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "outlet"
+          },
+          {
+            "dim": 2,
+            "tag": 88,
+            "name": "declared-only"
+          },
+          {
+            "dim": 0,
+            "tag": 5,
+            "name": ""
+          }
+        ],
+        "fields": [
+          {
+            "location": "NodeData",
+            "strings": [
+              "temperature",
+              "",
+              "extra"
+            ],
+            "reals": [
+              0.5,
+              7.25
+            ],
+            "integers": [
+              8,
+              1,
+              0,
+              31,
+              90
+            ],
+            "entries": []
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-rule"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              0,
+              0,
+              92
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "isolated vector"
+            ],
+            "reals": [],
+            "integers": [
+              3,
+              3,
+              0
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "empty"
+            ],
+            "reals": [],
+            "integers": [
+              7,
+              1,
+              0
+            ],
+            "entries": []
+          }
+        ],
+        "unknown_sections": []
+      }
+    },
+    "empty_name": {
+      "request": {
+        "dimension": 0,
+        "name": ""
+      },
+      "resolved_tag": 5,
+      "mesh": {
+        "source_version": "4.1",
+        "nodes": [],
+        "elements": [],
+        "entities": [
+          {
+            "dim": 1,
+            "tag": 3,
+            "bounds": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "physical": [
+              9
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 7,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              44
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 8,
+            "bounds": [
+              0,
+              0,
+              0,
+              9,
+              9,
+              9
+            ],
+            "physical": [
+              55
+            ],
+            "boundary": []
+          },
+          {
+            "dim": 2,
+            "tag": 9,
+            "bounds": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "physical": [
+              88
+            ],
+            "boundary": []
+          }
+        ],
+        "physical_names": [
+          {
+            "dim": 2,
+            "tag": 44,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 1,
+            "tag": 9,
+            "name": "热壁 面"
+          },
+          {
+            "dim": 2,
+            "tag": 55,
+            "name": "outlet"
+          },
+          {
+            "dim": 2,
+            "tag": 88,
+            "name": "declared-only"
+          },
+          {
+            "dim": 0,
+            "tag": 5,
+            "name": ""
+          }
+        ],
+        "fields": [
+          {
+            "location": "NodeData",
+            "strings": [
+              "temperature",
+              "",
+              "extra"
+            ],
+            "reals": [
+              0.5,
+              7.25
+            ],
+            "integers": [
+              8,
+              1,
+              0,
+              31,
+              90
+            ],
+            "entries": []
+          },
+          {
+            "location": "ElementData",
+            "strings": [
+              "stress",
+              "named-rule"
+            ],
+            "reals": [],
+            "integers": [
+              2,
+              9,
+              0,
+              0,
+              92
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "isolated vector"
+            ],
+            "reals": [],
+            "integers": [
+              3,
+              3,
+              0
+            ],
+            "entries": []
+          },
+          {
+            "location": "NodeData",
+            "strings": [
+              "empty"
+            ],
+            "reals": [],
+            "integers": [
+              7,
+              1,
+              0
+            ],
+            "entries": []
+          }
+        ],
+        "unknown_sections": []
+      }
+    }
+  },
+  "origin": "Literal manual MSH4.1,explicit dimension/name->tag and full selected original-tag/role/header/data expectations. No new lookup/encoder/verifier used as oracle.",
+  "ambiguity": "Add a different dimension2 tag66 with identical name热壁 面,even without members: input remains legal but new name selector must reject. Across dimensions same name is unambiguous after explicitdimension.",
+  "emptySemantics": "Declared unique name with no actual member returns the existing empty subset with all entity/name metadata and filtered empty fields; empty declared name itself is a valid exact key."
+}
